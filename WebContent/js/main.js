@@ -696,6 +696,16 @@ function hotIssueMenu(){
 	$("#hotIssue").show();
 	$(".active").removeClass();
 	$("#hotIssueMenu").parent().addClass("active");
-	hotIssueList();
+	var d = new Date();
+	var n = d.toLocaleDateString();
+	setCookie("currentDate", n);
+	hotIssueList(n);
 	setCookie("viewPage", "hotIssue");
+}
+
+window.onclick = function(event) {
+	var modal = document.getElementById('id01');
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
 }

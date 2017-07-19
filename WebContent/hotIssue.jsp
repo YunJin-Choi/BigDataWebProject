@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <script src="js/hotIssue.js"></script>
+
 <div class="section_serch_area menu" style="width: 100%">
 	<div class="select_inbo _picker_component">
 		<%-- 
@@ -224,10 +225,10 @@
 						</div>
 					</div>
 				</div>
-				<a href="#"	class="keyword_btn_prev _realkwd_jcarousel-control-prev">
+				<a href="#"	class="keyword_btn_prev _realkwd_jcarousel-control-prev" id="pre">
 					<i class="fa fa-angle-left" style="font-size:64px;line-height: 12;"></i>
 				</a> 
-				<a href="#"	class="keyword_btn_next _realkwd_jcarousel-control-next">
+				<a href="#"	class="keyword_btn_next _realkwd_jcarousel-control-next" id="post">
 					<i class="fa fa-angle-right" style="font-size:64px;line-height: 12;"></i>
 				</a>
 			</div>
