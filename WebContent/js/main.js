@@ -681,7 +681,13 @@ function boardMenu( boardName ){
 	$("#board").show();
 	$(".active").removeClass();
 	$(id).parent().addClass("active");
-	boardList(boardName);
+	if(boardName == "communityMkt"){
+		MktboardList();
+	}else if(boardName == "communityOwner"){
+		OwnerboardList();
+	}else if(boardName == "communityQnA"){
+		QnAboardList();
+	}
 	setCookie("viewPage", boardName);
 }
 
