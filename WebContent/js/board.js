@@ -2,11 +2,12 @@ function boardList(boardName){
 	$.ajax({
 		url: "Controller",
 		data: {
-			command: boardName, boardName: "selectAllCommunityMkt"
+			command: boardName, boardCommand: "selectAllCommunityMkt"
 		},
 		method: "post",
 		dataType: "html",
 		success: function(result){
+			alert(result);
 			$("#boardView").html(result);
 		}	
 	});	

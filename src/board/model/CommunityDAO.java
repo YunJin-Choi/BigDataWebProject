@@ -20,8 +20,7 @@ public class CommunityDAO {
 		ArrayList<CommunityDTO> boardList = null;
 		try {
 			conn = DBUtil.getConnection();
-			pstmt = conn.prepareStatement(sql.getString("selectAllCommunity"));
-			pstmt.setString(1, community);
+			pstmt = conn.prepareStatement("SELECT * FROM "+community);
 			rset = pstmt.executeQuery();
 			boardList = new ArrayList<>();
 			while (rset.next()) {
@@ -40,9 +39,8 @@ public class CommunityDAO {
 		ResultSet rset = null;
 		try {
 			conn = DBUtil.getConnection();
-			pstmt = conn.prepareStatement(sql.getString("selectCommunityById"));
-			pstmt.setString(1, community);
-			pstmt.setString(2, num);
+			pstmt = conn.prepareStatement("SELECT * FROM "+community+" WHERE writing_no=?");
+			pstmt.setString(1, num);
 			rset = pstmt.executeQuery();
 			if(rset.next()) {
 				return new CommunityDTO(rset.getInt(1), rset.getString(2), rset.getString(3), rset.getString(4), rset.getInt(5),
@@ -59,15 +57,14 @@ public class CommunityDAO {
 		PreparedStatement pstmt = null;
 		try {
 			conn = DBUtil.getConnection();
-			pstmt = conn.prepareStatement(sql.getString("createCommunity"));
+			pstmt = conn.prepareStatement("INSERT INTO "+community+" VALUES(?_writing_no_seq.nextval,?,?,?,0,sysdate,0,?,?,?)");
 			pstmt.setString(1, community);
-			pstmt.setString(2, community);
-			pstmt.setString(3, board.getTitle());
-			pstmt.setString(4, board.getContents());
-			pstmt.setString(5, board.getNickname());
-			pstmt.setString(6, board.getBizType());
-			pstmt.setString(7, board.getBizSize());
-			pstmt.setString(8, board.getBizLocal());
+			pstmt.setString(2, board.getTitle());
+			pstmt.setString(3, board.getContents());
+			pstmt.setString(4, board.getNickname());
+			pstmt.setString(5, board.getBizType());
+			pstmt.setString(6, board.getBizSize());
+			pstmt.setString(7, board.getBizLocal());
 			
 			int count = pstmt.executeUpdate();
 			if(count != 0) {
@@ -84,11 +81,10 @@ public class CommunityDAO {
 		PreparedStatement pstmt = null;
 		try {
 			conn = DBUtil.getConnection();
-			pstmt = conn.prepareStatement(sql.getString("updateCommunity"));
-			pstmt.setString(1, community);
-			pstmt.setString(2, board.getTitle());
-			pstmt.setString(3, board.getContents());
-			pstmt.setInt(4, board.getNum());
+			pstmt = conn.prepareStatement("UPDATE "+community+" SET title=?, contents=? WHERE writing_no=?");
+			pstmt.setString(1, board.getTitle());
+			pstmt.setString(2, board.getContents());
+			pstmt.setInt(3, board.getNum());
 			int count = pstmt.executeUpdate();
 			if(count != 0) {
 				return true;
@@ -104,9 +100,8 @@ public class CommunityDAO {
 		PreparedStatement pstmt = null;
 		try {
 			conn = DBUtil.getConnection();
-			pstmt = conn.prepareStatement(sql.getString("updateViewNum"));
-			pstmt.setString(1, community);
-			pstmt.setString(2, num);
+			pstmt = conn.prepareStatement("UPDATE "+community+" SET view_no=view_no+1 WHERE writing_no=?");
+			pstmt.setString(1, num);
 			int count = pstmt.executeUpdate();
 			if(count != 0) {
 				return true;
@@ -122,9 +117,8 @@ public class CommunityDAO {
 		PreparedStatement pstmt = null;
 		try {
 			conn = DBUtil.getConnection();
-			pstmt = conn.prepareStatement(sql.getString("deleteCommunity"));
-			pstmt.setString(1, community);
-			pstmt.setString(2, num);
+			pstmt = conn.prepareStatement("DELETE FROM "+community+" WHERE writing_no=?");
+			pstmt.setString(1, num);
 			int count = pstmt.executeUpdate();
 			if(count != 0) {
 				return true;

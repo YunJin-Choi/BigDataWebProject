@@ -39,8 +39,7 @@ public class Controller extends HttpServlet {
 	
 	// Start CommunityMkt
 	private void communityMkt(HttpServletRequest request, HttpServletResponse response) {
-		String command = request.getParameter("communityMkt");
-		
+		String command = request.getParameter("boardCommand");
 		if(command != null) {
 			if(command.equals("selectAllCommunityMkt")) {
 				selectAllCommunityMkt(request, response);
@@ -116,7 +115,7 @@ public class Controller extends HttpServlet {
 	
 	// Start CommunityOwner
 	private void communityOwner(HttpServletRequest request, HttpServletResponse response) {
-		String command = request.getParameter("communityOwner");
+		String command = request.getParameter("boardCommand");
 		
 		if(command != null) {
 			if(command.equals("selectAllCommunityOwner")) {
@@ -192,7 +191,7 @@ public class Controller extends HttpServlet {
 	
 	// Start QnA
 	private void QnA(HttpServletRequest request, HttpServletResponse response) {
-		String command = request.getParameter("QnA");
+		String command = request.getParameter("boardCommand");
 		
 		if(command != null) {
 			if(command.equals("selectAllQnABoardOwner")) {
