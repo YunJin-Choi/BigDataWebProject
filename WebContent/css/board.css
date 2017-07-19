@@ -1,0 +1,12 @@
+.boardTable {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.boardth, .boardtd {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.effect:hover{background-color:#f5f5f5}
