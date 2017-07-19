@@ -1632,8 +1632,8 @@ button{background:transparent;cursor:pointer}
 .section_lst_area .keyword_rank .rank_inner .rank_title{padding-bottom:20px;font-size:24px}
 .section_lst_area .keyword_rank .rank_inner .rank_title.v2{font-size:20px}
 .section_lst_area .keyword_rank .rank_inner .rank_title.v2 em{display:block;font-weight:normal;font-size:16px;padding-top:4px;color:#999;letter-spacing:0}
-.section_lst_area .keyword_rank.select_date .rank_inner .rank_title.v2{color:#1dbd00}
-.section_lst_area .keyword_rank.select_date .rank_inner .rank_title.v2 em{color:#1dbd00}
+.section_lst_area .keyword_rank.select_date .rank_inner .rank_title.v2{color:#ff3b30}
+.section_lst_area .keyword_rank.select_date .rank_inner .rank_title.v2 em{color:#ff3b30}
 .section_lst_area .keyword_rank .rank_inner .rank_title em{color:#4480e6}
 .section_lst_area .keyword_rank .rank_title{margin:0}
 .section_lst_area .keyword_rank .rank_list{float:left;overflow:hidden;padding:11px 20px 20px;width:219px}

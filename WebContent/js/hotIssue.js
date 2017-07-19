@@ -17,7 +17,8 @@ function addDate(){
 	var d = new Date();
 	var n = d.toLocaleDateString();
 	$(".date_txt").html(n);
-	$(".rank_title,.rank_kr").html(n + "<em>Korea Hot Issue</em>");
+	$(".rank_kr").html(n + "<em>Korea Hot Issue</em>");
+	$(".rank_fr").html(n + "<em>Foreign Hot Issue</em>");
 }
 
 $(".date_ico_box").click(function(){

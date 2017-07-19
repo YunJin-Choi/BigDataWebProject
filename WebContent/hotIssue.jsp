@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <script src="js/hotIssue.js"></script>
 <div class="section_serch_area menu" style="width: 100%">
@@ -194,15 +195,17 @@
 			style="overflow: hidden; margin: 0 auto;">
 			<div class="jcarousel _realtime_carousel">
 				<div class="section_lst_area carousel_area" style="width: 1263px">
-					<div class="keyword_rank" style="float: left; margin-left: 200px">
-						<div class="rank_inner">
-							<div class="com_guide_error">
-								<div class="error_area">
-									<div class="error_desc">
-										<span class="sp_com_warn"></span> <strong class="desc_em">데이터가
-											없습니다.</strong> 다른 기간을 선택하시기 바랍니다.
-									</div>
-								</div>
+					<div class="keyword_rank select_date" style="float: left; margin-left: 200px">
+						<div class="rank_inner v2">
+							<strong class="rank_title v2 rank_fr"></strong>
+							<div class="rank_scroll" style="left: 0px;">
+								<ul class="rank_list">
+									<c:forEach items="${hotIssueForeignList}" var="data">
+										<li class="list"><a href="${data.url}" class="list_area"> <em
+											class="num">${data.rank}</em> <span class="title">${data.contents}</span>
+										</a></li>
+									</c:forEach>
+								</ul>
 							</div>
 						</div>
 					</div>
@@ -211,68 +214,11 @@
 							<strong class="rank_title v2 rank_kr"></strong>
 							<div class="rank_scroll" style="left: 0px;">
 								<ul class="rank_list">
-									<li class="list"><a href="#" class="list_area"> <em
-											class="num">1</em> <span class="title">양수경</span>
-									</a></li>
-									<li class="list"><a href="#" class="list_area"> <em
-											class="num">2</em> <span class="title">이상우</span>
-									</a></li>
-									<li class="list"><a href="#" class="list_area"> <em
-											class="num">3</em> <span class="title">이란 중국</span>
-									</a></li>
-									<li class="list"><a href="#" class="list_area"> <em
-											class="num">4</em> <span class="title">김소연</span>
-									</a></li>
-									<li class="list"><a href="#" class="list_area"> <em
-											class="num">5</em> <span class="title">한국 시리아</span>
-									</a></li>
-									<li class="list"><a href="#" class="list_area"> <em
-											class="num">6</em> <span class="title">그녀는 거짓말을 너무 사랑해</span>
-									</a></li>
-									<li class="list"><a href="#" class="list_area"> <em
-											class="num">7</em> <span class="title">우즈베키스탄 카타르</span>
-									</a></li>
-									<li class="list"><a href="#" class="list_area"> <em
-											class="num">8</em> <span class="title">2018 러시아 월드컵
-												최종예선</span>
-									</a></li>
-									<li class="list"><a href="#" class="list_area"> <em
-											class="num">9</em> <span class="title">귓속말</span>
-									</a></li>
-									<li class="list"><a href="#" class="list_area"> <em
-											class="num">10</em> <span class="title">2018 러시아 월드컵
-												최종예선 순위</span>
-									</a></li>
-									<li class="list"><a href="#" class="list_area"> <em
-											class="num">11</em> <span class="title">정신이슈</span>
-									</a></li>
-									<li class="list"><a href="#" class="list_area"> <em
-											class="num">12</em> <span class="title">복학왕</span>
-									</a></li>
-									<li class="list"><a href="#" class="list_area"> <em
-											class="num">13</em> <span class="title">완벽한 아내</span>
-									</a></li>
-									<li class="list"><a href="#" class="list_area"> <em
-											class="num">14</em> <span class="title">기성용</span>
-									</a></li>
-									<li class="list"><a href="#" class="list_area"> <em
-											class="num">15</em> <span class="title">역적</span>
-									</a></li>
-									<li class="list"><a href="#" class="list_area"> <em
-											class="num">16</em> <span class="title">이비에스아이</span>
-									</a></li>
-									<li class="list"><a href="#" class="list_area"> <em
-											class="num">17</em> <span class="title">이승우</span>
-									</a></li>
-									<li class="list"><a href="#" class="list_area"> <em
-											class="num">18</em> <span class="title">v앱</span>
-									</a></li>
-									<li class="list"><a href="#" class="list_area"> <em
-											class="num">19</em> <span class="title">축구</span>
-									</a></li>
-									<li class="list"><a href="#" class="list_area"> <em
-											class="num">20</em> <span class="title">내일날씨</span>
-									</a></li>
+									<c:forEach items="${hotIssueKoreaList}" var="data">
+										<li class="list"><a href="${data.url}" class="list_area"> <em
+											class="num">${data.rank}</em> <span class="title">${data.contents}</span>
+										</a></li>
+									</c:forEach>
 								</ul>
 							</div>
 						</div>
