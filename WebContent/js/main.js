@@ -726,13 +726,20 @@ function loginCheck() {
 		$.ajax({
 			url: "Controller",
 			data: {
-				command: "member", boardCommand: "selectAllCommunityMkt"
+				command: "member", member: "loginMember",
+				email: document.login.email.value,
+				password: document.login.password.value
 			},
 			method: "post",
 			dataType: "html",
 			success: function(result){
-				$("#boardView").html(result);
-			}	
+				if(result == "fail"){
+					alert("email 또는 password가 틀렸습니다.");
+				}
+			},
+			error : function(msg){
+				alert(msg);
+			}
 		});	
 	}
 }

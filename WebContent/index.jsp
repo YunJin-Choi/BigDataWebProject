@@ -50,8 +50,8 @@ function showDivs(n) {
   for (i = 0; i < dots.length; i++) {
      dots[i].className = dots[i].className.replace(" w3-white", "");
   }
-  x[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " w3-white";
+  //x[slideIndex-1].style.display = "block";  
+  //dots[slideIndex-1].className += " w3-white";
 }
 </script>
 
@@ -119,8 +119,20 @@ function showDivs(n) {
 						<li><a href="#" id="communityOwnerMenu" onclick="boardMenu('communityOwner');"><span>Owner Board</span></a></li>
 						<li><a href="#" id="QnAMenu" onclick="boardMenu('QnA');"><span>QnA Board</span></a></li>
 						<li><a href="#" id="hotIssueMenu" onclick="hotIssueMenu();"><span>Hot Issue</span></a></li>
-						<li class="call-to-action"><a href="#" onclick="document.getElementById('id01').style.display='block'" 
-						style="width:auto;"><span>Login</span></a></li>
+						<c:choose>
+							
+							<c:when test="${1==1}">
+								<li class="call-to-action"><a href="#" onclick="document.getElementById('id01').style.display='block'" 
+								style="width:auto;"><span>Login</span></a></li>
+								<li><a><span>${Member.nickname}님 안녕하세요.</span></a></li>
+							</c:when>
+							<c:otherwise>
+								<li><a><span>${Member.nickname}님 안녕하세요.</span></a></li>
+							</c:otherwise>
+						</c:choose>
+						
+						
+						
 					</ul>
 				</div>
 			</nav>
@@ -139,14 +151,14 @@ function showDivs(n) {
 		<!-- Slideshow -->
 		<div class="w3-container">
 			<div class="w3-display-container mySlides">
-				<img src="/w3images/coffee.jpg" style="width: 100%">
+				<img src="" style="width: 100%">
 				<div class="w3-display-topleft w3-container w3-padding-32">
 					<span class="w3-white w3-padding-large w3-animate-bottom">마케터
 						카테고리</span>
 				</div>
 			</div>
 			<div class="w3-display-container mySlides">
-				<img src="/w3images/workbench.jpg" style="width: 100%">
+				<img src="" style="width: 100%">
 				<div class="w3-display-middle w3-container w3-padding-32">
 					<span class="w3-white w3-padding-large w3-animate-bottom">자영업자
 						카테고리</span>
@@ -235,11 +247,10 @@ function showDivs(n) {
 	<!-- End Hot Issue -->
 	<!-- Start Login -->
 	<div id="id01" class="modal">
-		<form class="modal-content animate" name=login action="index.jsp">
+		<form class="modal-content animate" method="post" name=login>
 			<div class="imgcontainer">
 				<span onclick="document.getElementById('id01').style.display='none'"
 					class="close" title="Close Modal">&times;</span> 
-				<img src="images/login.png" alt="Avatar" class="avatar">
 			</div>
 			<div class="containerLogin">
 				<label><b>Email</b></label> 

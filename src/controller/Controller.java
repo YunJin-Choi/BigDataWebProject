@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,6 +16,7 @@ import board.model.MemberDAO;
 import board.model.QnADAO;
 import board.model.TrendDAO;
 import board.model.dto.CommunityDTO;
+import board.model.dto.MemberDTO;
 import board.model.dto.QnABoardDTO;
 
 @WebServlet("/Controller")
@@ -35,7 +37,7 @@ public class Controller extends HttpServlet {
 			}else if(command.equals("recommend")) {
 				recommend(request, response);
 			}else if(command.equals("member")) {
-				
+				member(request, response);
 			}
 		}
 	}
@@ -353,23 +355,33 @@ public class Controller extends HttpServlet {
 	// End Recommend
 	
 	// Start Member
-	private void member(HttpServletRequest request, HttpServletResponse response) {
+	private void member(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String command = request.getParameter("member");
 		
-		if(command.equals("loginMember")) {
-			loginMember(request, response);
+		if(command != null) {
+			if(command.equals("loginMember")) {
+				loginMember(request, response);
+			}
 		}
+		
 	}
 	
-	private void loginMember(HttpServletRequest request, HttpServletResponse response) {
+	private void loginMember(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
 			String email = request.getParameter("email");
 			String password = request.getParameter("password");
-			request.setAttribute("Member", MemberDAO.loginMember(email, password));
+			MemberDTO member = MemberDAO.loginMember(email, password);
+			
+			PrintWriter out = response.getWriter();
+			if(member != null) {
+				request.setAttribute("Member", member);
+				request.getRequestDispatcher("response.jsp").forward(request, response);
+			}else {
+				out.print("fail");
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 	// End Member
-		
 }
