@@ -106,7 +106,7 @@
 				</div>
 			</div>
 		</section>
-		
+	</div>
 	<!-- Start Board -->
 	<div class="menu" id="board" style="display: none;">
 		<div style="height: 300px"></div>
