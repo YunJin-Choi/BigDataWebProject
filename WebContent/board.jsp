@@ -3,7 +3,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<table class="boardTable" style="width: 80%">
+<head>
+<link rel="stylesheet" href="css/board.css">
+<script type="text/javascript" src="js/board.js"></script>
+</head>
+
+<body>
+<table class="boardTable" align="center" style="width: 80%">
 	<tr class="boardtr">
 		<td class="boardtd" width="10%" align="center">글번호</td>
 		<td class="boardtd" width="10%" align="center">업종</td>
@@ -28,4 +34,5 @@
 	</c:choose>
 </table>
 <br><br>
-<center><a href="write.jsp"><input type="button" value="글쓰기"></a></center>
+<center><a href="boardwrite.jsp"><input type="button" value="글쓰기"></a></center>
+<body>
