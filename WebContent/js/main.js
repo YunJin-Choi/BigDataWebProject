@@ -624,47 +624,71 @@
 		trustedAnimate();
 		footerAnimate();
 		
-
 	});
 
-	$("#MktboardMenu").click(function(){
-		$(".menu").hide();
-		$("#board").show();
-		$(".active").removeClass();
-		$(this).parent().addClass("active");
-		boardList("MktboardMenu");
-	});
-	
-	$("#OwnerboardMenu").click(function(){
-		$(".menu").hide();
-		$("#board").show();
-		$(".active").removeClass();
-		$(this).parent().addClass("active");
-		boardList("OwnerboardMenu");
-	});
-	
-	$("#QnAboardMenu").click(function(){
-		$(".menu").hide();
-		$("#board").show();
-		$(".active").removeClass();
-		$(this).parent().addClass("active");
-		boardList("QnAboardMenu");
-	});
-	
-	$("#homeMenu").click(function(){
-		$(".menu").hide();
-		$("#home").show();
-		$(".active").removeClass();
-		$(this).parent().addClass("active");
-		
-	});
-	
-	$("#hotIssueMenu").click(function(){
-		$(".menu").hide();
-		$("#hotIssue").show();
-		$(".active").removeClass();
-		$(this).parent().addClass("active");
-		hotIssueList();
-	});
 	
 }());
+
+$(document).keydown(function(e){
+	key = (e) ? e.keyCode : event.keyCode;
+    if (key == 116) {
+    	var value = getCookie("viewPage");
+    	if(value == "home"){
+    		homeMenu();
+    	}else if(value == "communityMkt"){
+    		boardMenu("communityMkt");
+    	}else if(value == "communityOwner"){
+    		boardMenu("communityOwner");
+    	}else if(value == "QnA"){
+    		boardMenu("QnA");
+    	}else if(value == "hotIssue"){
+    		hotIssueMenu();
+    	}else{
+    		homeMenu();
+    	}
+        e.preventDefault();
+    }
+});
+
+function setCookie(name, value){
+	document.cookie=name+"="+value;
+}
+
+function getCookie(c_name)
+{
+	var i, x, y, ARRcookies = document.cookie.split(";");
+	for (i = 0; i < ARRcookies.length; i++){
+		x = ARRcookies[i].substr(0, ARRcookies[i].indexOf("="));
+		y = ARRcookies[i].substr(ARRcookies[i].indexOf("=") + 1);
+		x = x.replace(/^\s+|\s+$/g, "");
+		if (x == c_name){
+			return unescape(y);
+		}
+	}
+}
+
+function boardMenu( boardName ){
+	$(".menu").hide();
+	$("#board").show();
+	$(".active").removeClass();
+	$(this).parent().addClass("active");
+	boardList(boardName);
+	setCookie("viewPage", boardName);
+}
+
+function homeMenu(){
+	$(".menu").hide();
+	$("#home").show();
+	$(".active").removeClass();
+	$(this).parent().addClass("active");
+	setCookie("viewPage", "home");
+}
+
+function hotIssueMenu(){
+	$(".menu").hide();
+	$("#hotIssue").show();
+	$(".active").removeClass();
+	$(this).parent().addClass("active");
+	hotIssueList();
+	setCookie("viewPage", "hotIssue");
+}

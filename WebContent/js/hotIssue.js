@@ -2,7 +2,7 @@ function hotIssueList(){
 	$.ajax({
 		url: "Controller",
 		data: {
-			command: "hotissue", "hotissueCommand": "selectHotIssueByDate"
+			command: "hotissue", "hotissue": "selectHotIssueByDate"
 		},
 		method: "post",
 		dataType: "html",

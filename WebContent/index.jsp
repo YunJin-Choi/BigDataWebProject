@@ -61,7 +61,6 @@
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
-
 	</head>
 	<body>
 	<header role="banner" id="fh5co-header">
@@ -74,12 +73,12 @@
 				</div>
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
-						<li class="active"><a href="#" id="homeMenu"><span>Home</span></a></li>
-						<li><a href="#" id="MktboardMenu"><span>Marketing Board</span></a></li>
-						<li><a href="#" id="OwnerboardMenu"><span>Owner Board</span></a></li>
-						<li><a href="#" id="QnAboardMenu"><span>QnA Board</span></a></li>
-						<li><a href="#" id="hotIssueMenu"><span>Hot Issue</span></a></li>
-						<li class="call-to-action"><a href="#"><span>Sign up free</span></a></li>
+						<li class="active"><a href="#" onclick="homeMenu();"><span>Home</span></a></li>
+						<li><a href="#" onclick="boardMenu('communityMkt');"><span>Marketing Board</span></a></li>
+						<li><a href="#" onclick="boardMenu('communityOwner');"><span>Owner Board</span></a></li>
+						<li><a href="#" onclick="boardMenu('QnA');"><span>QnA Board</span></a></li>
+						<li><a href="#" onclick="hotIssueMenu();"><span>Hot Issue</span></a></li>
+						<li class="call-to-action"><a href="#"><span>Login</span></a></li>
 					</ul>
 				</div>
 			</nav>

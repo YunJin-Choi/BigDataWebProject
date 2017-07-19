@@ -39,7 +39,7 @@ public class Controller extends HttpServlet {
 	
 	// Start CommunityMkt
 	private void communityMkt(HttpServletRequest request, HttpServletResponse response) {
-		String command = request.getParameter("communityMktCommand");
+		String command = request.getParameter("communityMkt");
 		
 		if(command != null) {
 			if(command.equals("selectAllCommunityMkt")) {
@@ -116,7 +116,7 @@ public class Controller extends HttpServlet {
 	
 	// Start CommunityOwner
 	private void communityOwner(HttpServletRequest request, HttpServletResponse response) {
-		String command = request.getParameter("communityOwnerCommand");
+		String command = request.getParameter("communityOwner");
 		
 		if(command != null) {
 			if(command.equals("selectAllCommunityOwner")) {
@@ -192,7 +192,7 @@ public class Controller extends HttpServlet {
 	
 	// Start QnA
 	private void QnA(HttpServletRequest request, HttpServletResponse response) {
-		String command = request.getParameter("QnACommand");
+		String command = request.getParameter("QnA");
 		
 		if(command != null) {
 			if(command.equals("selectAllQnABoardOwner")) {
@@ -266,7 +266,7 @@ public class Controller extends HttpServlet {
 	
 	// Start Trend
 	private void trend(HttpServletRequest request, HttpServletResponse response) {
-		String command = request.getParameter("trendCommand");
+		String command = request.getParameter("trend");
 		
 		if(command != null) {
 			if(command.equals("selectAllTrend")) {
@@ -299,7 +299,7 @@ public class Controller extends HttpServlet {
 	
 	//	Start Hot Issue
 	private void hotissue(HttpServletRequest request, HttpServletResponse response) {
-		String command = request.getParameter("hotissueCommand");
+		String command = request.getParameter("hotissue");
 		
 		if(command != null) {
 			if(command.equals("selectHotIssueByDate")) {
@@ -321,7 +321,7 @@ public class Controller extends HttpServlet {
 	
 	// Start Recommend
 	private void recommend(HttpServletRequest request, HttpServletResponse response) {
-		String command = request.getParameter("recommendCommand");
+		String command = request.getParameter("recommend");
 		
 	}
 	// End Recommend
