@@ -667,28 +667,29 @@ function getCookie(c_name)
 	}
 }
 
-function boardMenu( boardName ){
-	$(".menu").hide();
-	$("#board").show();
-	$(".active").removeClass();
-	$(this).parent().addClass("active");
-	boardList(boardName);
-	setCookie("viewPage", boardName);
-}
-
 function homeMenu(){
 	$(".menu").hide();
 	$("#home").show();
 	$(".active").removeClass();
-	$(this).parent().addClass("active");
+	$("#homeMenu").parent().addClass("active");
 	setCookie("viewPage", "home");
+}
+
+function boardMenu( boardName ){
+	var id = "#"+boardName+"Menu";
+	$(".menu").hide();
+	$("#board").show();
+	$(".active").removeClass();
+	$(id).parent().addClass("active");
+	boardList(boardName);
+	setCookie("viewPage", boardName);
 }
 
 function hotIssueMenu(){
 	$(".menu").hide();
 	$("#hotIssue").show();
 	$(".active").removeClass();
-	$(this).parent().addClass("active");
+	$("#hotIssueMenu").parent().addClass("active");
 	hotIssueList();
 	setCookie("viewPage", "hotIssue");
 }

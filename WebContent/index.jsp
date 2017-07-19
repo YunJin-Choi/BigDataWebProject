@@ -74,11 +74,11 @@
 				</div>
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
-						<li class="active"><a href="#" onclick="homeMenu();"><span>Home</span></a></li>
-						<li><a href="#" onclick="boardMenu('communityMkt');"><span>Marketing Board</span></a></li>
-						<li><a href="#" onclick="boardMenu('communityOwner');"><span>Owner Board</span></a></li>
-						<li><a href="#" onclick="boardMenu('QnA');"><span>QnA Board</span></a></li>
-						<li><a href="#" onclick="hotIssueMenu();"><span>Hot Issue</span></a></li>
+						<li class="active"><a href="#" id="homeMenu" onclick="homeMenu();"><span>Home</span></a></li>
+						<li><a href="#" id="communityMktMenu" onclick="boardMenu('communityMkt');"><span>Marketing Board</span></a></li>
+						<li><a href="#" id="communityOwnerMenu" onclick="boardMenu('communityOwner');"><span>Owner Board</span></a></li>
+						<li><a href="#" id="QnAMenu" onclick="boardMenu('QnA');"><span>QnA Board</span></a></li>
+						<li><a href="#" id="hotIssueMenu" onclick="hotIssueMenu();"><span>Hot Issue</span></a></li>
 						<li class="call-to-action"><a href="#"><span>Login</span></a></li>
 					</ul>
 				</div>
