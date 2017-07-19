@@ -4,10 +4,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>MainUI 작업중</title>
-<meta charset="UTF-8">
+<meta charset="EUC-KR">
+<title>MainUI 작업중</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
@@ -27,7 +25,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
  	<meta name="Generator" content="EditPlus®">
  	<meta name="Author" content="">
 	
-	<script>
+<script>
 // Slideshow
 var slideIndex = 1;
 showDivs(slideIndex);
@@ -130,82 +128,97 @@ function showDivs(n) {
 	</header>
 	<!-- Home Page -->
 		<!-- Content -->
-<div class="w3-content" style="max-width:1100px;margin-top:80px;margin-bottom:80px">
+	<div class="menu" id="home" style="display: block;">
 
-  <div class="w3-panel">
-    <h1><b>MARKETING</b></h1>
-  </div>
+		<div class="w3-panel">
+			<h1>
+				<b>MARKETING</b>
+			</h1>
+		</div>
 
-  <!-- Slideshow -->
-  <div class="w3-container">
-    <div class="w3-display-container mySlides">
-      <img src="/w3images/coffee.jpg" style="width:100%">
-      <div class="w3-display-topleft w3-container w3-padding-32">
-        <span class="w3-white w3-padding-large w3-animate-bottom">마케터 카테고리</span>
-      </div>
-    </div>
-    <div class="w3-display-container mySlides">
-      <img src="/w3images/workbench.jpg" style="width:100%">
-      <div class="w3-display-middle w3-container w3-padding-32">
-        <span class="w3-white w3-padding-large w3-animate-bottom">자영업자 카테고리</span>
-      </div>
-    </div>
-    <!-- Slideshow next/previous buttons -->
-    <div class="w3-container w3-dark-grey w3-padding w3-xlarge">
-      <div class="w3-left" onclick="plusDivs(-1)"><i class="fa fa-arrow-circle-left w3-hover-text-teal"></i></div>
-      <div class="w3-right" onclick="plusDivs(1)"><i class="fa fa-arrow-circle-right w3-hover-text-teal"></i></div>
-    
-      <div class="w3-center">
-        <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
-        <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
-      </div>
-    </div>
-  </div>
-  
-  <!-- Grid -->
-  <div class="w3-row w3-container">
-    <div class="w3-center w3-padding-64">
-      <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">유용한페이지</span>
-    </div>
-      <iframe src="http://www.i-boss.co.kr/ab-74576" height="500" width="700" 
-      style="border:5px solid grey;">
-      </iframe>   
-  </div>
+		<!-- Slideshow -->
+		<div class="w3-container">
+			<div class="w3-display-container mySlides">
+				<img src="/w3images/coffee.jpg" style="width: 100%">
+				<div class="w3-display-topleft w3-container w3-padding-32">
+					<span class="w3-white w3-padding-large w3-animate-bottom">마케터
+						카테고리</span>
+				</div>
+			</div>
+			<div class="w3-display-container mySlides">
+				<img src="/w3images/workbench.jpg" style="width: 100%">
+				<div class="w3-display-middle w3-container w3-padding-32">
+					<span class="w3-white w3-padding-large w3-animate-bottom">자영업자
+						카테고리</span>
+				</div>
+			</div>
+			<!-- Slideshow next/previous buttons -->
+			<div class="w3-container w3-dark-grey w3-padding w3-xlarge">
+				<div class="w3-left" onclick="plusDivs(-1)">
+					<i class="fa fa-arrow-circle-left w3-hover-text-teal"></i>
+				</div>
+				<div class="w3-right" onclick="plusDivs(1)">
+					<i class="fa fa-arrow-circle-right w3-hover-text-teal"></i>
+				</div>
 
-  <!-- Contact -->
-  <div class="w3-center w3-padding-64" id="contact">
-    <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">
-    홈페이지 담당자에게 연락하세요
-    </span>
-  </div>
+				<div class="w3-center">
+					<span
+						class="w3-tag demodots w3-border w3-transparent w3-hover-white"
+						onclick="currentDiv(1)"></span> <span
+						class="w3-tag demodots w3-border w3-transparent w3-hover-white"
+						onclick="currentDiv(2)"></span>
+				</div>
+			</div>
+		</div>
 
-  <form class="w3-container" action="/action_page.php" target="_blank">
+		<!-- Grid -->
+		<div class="w3-row w3-container">
+			<div class="w3-center w3-padding-64">
+				<span
+					class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">유용한페이지</span>
+			</div>
+			<iframe src="http://www.i-boss.co.kr/ab-74576" height="500"
+				width="700" style="border: 5px solid grey;"> </iframe>
+		</div>
 
-    <div class="w3-section">
-      <label>Name</label>
-      <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="text" name="Name" required>
-    </div>
+		<!-- Contact -->
+		<div class="w3-center w3-padding-64" id="contact">
+			<span
+				class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">
+				홈페이지 담당자에게 연락하세요 </span>
+		</div>
 
-    <div class="w3-section">
-      <label>Email</label>
-      <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="text" name="Email" required>
-    </div>
+		<form class="w3-container" action="/action_page.php" target="_blank">
 
-    <div class="w3-section">
-      <label>Subject</label>
-      <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" name="Subject" required>
-    </div>
+			<div class="w3-section">
+				<label>Name</label> <input
+					class="w3-input w3-border w3-hover-border-black"
+					style="width: 100%;" type="text" name="Name" required>
+			</div>
 
-    <div class="w3-section">
-      <label>Message</label>
-      <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" name="Message" required>
-    </div>
-    
-    <button type="submit" class="w3-button w3-block w3-black">Send</button>
+			<div class="w3-section">
+				<label>Email</label> <input
+					class="w3-input w3-border w3-hover-border-black"
+					style="width: 100%;" type="text" name="Email" required>
+			</div>
 
-  </form>
+			<div class="w3-section">
+				<label>Subject</label> <input
+					class="w3-input w3-border w3-hover-border-black"
+					style="width: 100%;" name="Subject" required>
+			</div>
 
-</div>
+			<div class="w3-section">
+				<label>Message</label> <input
+					class="w3-input w3-border w3-hover-border-black"
+					style="width: 100%;" name="Message" required>
+			</div>
+
+			<button type="submit" class="w3-button w3-block w3-black">Send</button>
+
+		</form>
+
+	</div>
 	<!-- End Home -->
 	<!-- Start Board -->
 	<div class="menu" id="board" style="display: none;">
@@ -222,7 +235,7 @@ function showDivs(n) {
 	<!-- End Hot Issue -->
 	<!-- Start Login -->
 	<div id="id01" class="modal">
-		<form class="modal-content animate" action="/action_page.php">
+		<form class="modal-content animate" name=login action="index.jsp">
 			<div class="imgcontainer">
 				<span onclick="document.getElementById('id01').style.display='none'"
 					class="close" title="Close Modal">&times;</span> 
@@ -233,13 +246,13 @@ function showDivs(n) {
 				<input class="loginInput" type="text" placeholder="Enter Email" name="email" required> 
 				<label><b>Password</b></label>
 				<input class="loginInput" type="password" placeholder="Enter Password" name="password" required>
-				<button class="loginButton" type="submit">Login</button>
+				<button class="loginButton" type="submit" onclick="loginCheck()">Login</button>
 			</div>
 		</form>
 	</div>
 	<!-- End Login -->
 	<!-- Main JS (Do not remove) -->
-	<script src="js/main.js"></script>
+	<script src="js/main.js" charset="utf-8"></script>
 	</body>
 </html>
 

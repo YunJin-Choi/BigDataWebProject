@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
+import board.model.dto.MemberDTO;
 import dbutil.DBUtil;
 
 public class MemberDAO {
@@ -47,7 +48,7 @@ public class MemberDAO {
 		return false;
 	}
 	
-	public static boolean loginMember(String email, String password) throws SQLException {
+	public static MemberDTO loginMember(String email, String password) throws SQLException {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
@@ -58,11 +59,12 @@ public class MemberDAO {
 			pstmt.setString(2, password);
 			rset = pstmt.executeQuery();
 			if(rset.next()) {
-				return true;
+				return new MemberDTO(rset.getString(1), rset.getString(2), rset.getString(3), rset.getString(4),
+						rset.getString(5), rset.getInt(6));
 			}
 		} finally {
 			DBUtil.close(conn, pstmt, rset);
 		}
-		return false;
+		return null;
 	}
 }

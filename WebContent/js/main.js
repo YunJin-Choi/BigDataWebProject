@@ -709,3 +709,30 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
+function loginCheck() {
+	var email_pattern = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
+	if (document.login.email.value == "") {
+		alert("email을 꼭 입력해주세요.");
+		document.login.email.focus();
+	} else if(email_pattern.test(document.login.email.value)==false){
+		alert("정상적인 email이 아닙니다.");
+		document.login.email.value="";
+		document.login.email.focus();
+	} else if (document.login.password.value == "") {
+		alert("password을 꼭 입력해주세요.");
+		document.login.password.focus();
+	}else{
+		$.ajax({
+			url: "Controller",
+			data: {
+				command: "member", boardCommand: "selectAllCommunityMkt"
+			},
+			method: "post",
+			dataType: "html",
+			success: function(result){
+				$("#boardView").html(result);
+			}	
+		});	
+	}
+}

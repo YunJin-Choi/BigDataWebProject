@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import board.model.CommentDAO;
 import board.model.CommunityDAO;
 import board.model.HotIssueDAO;
+import board.model.MemberDAO;
 import board.model.QnADAO;
 import board.model.TrendDAO;
 import board.model.dto.CommunityDTO;
@@ -33,6 +34,8 @@ public class Controller extends HttpServlet {
 				hotissue(request, response);
 			}else if(command.equals("recommend")) {
 				recommend(request, response);
+			}else if(command.equals("member")) {
+				
 			}
 		}
 	}
@@ -349,4 +352,24 @@ public class Controller extends HttpServlet {
 	}
 	// End Recommend
 	
+	// Start Member
+	private void member(HttpServletRequest request, HttpServletResponse response) {
+		String command = request.getParameter("member");
+		
+		if(command.equals("loginMember")) {
+			loginMember(request, response);
+		}
+	}
+	
+	private void loginMember(HttpServletRequest request, HttpServletResponse response) {
+		try {
+			String email = request.getParameter("email");
+			String password = request.getParameter("password");
+			request.setAttribute("Member", MemberDAO.loginMember(email, password));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	// End Member
+		
 }

@@ -1,34 +1,31 @@
 package board.model.dto;
 
 public class MemberDTO {
-	private int num;
+	private String nickName;
 	private String email;
-	private String pw;
+	private String password;
 	private String callNum;
 	private String job;
-	private String nickName;
 	private int point;
 	
 	public MemberDTO() {
 		super();
 	}	
 	
-	public MemberDTO(int num, String email, String pw, String callNum, String job, String nickName, int point) {
-		super();
-		this.num = num;
+	public MemberDTO(String nickName, String email, String password, String callNum, String job, int point) {
+		this.nickName = nickName;
 		this.email = email;
-		this.pw = pw;
+		this.password = password;
 		this.callNum = callNum;
 		this.job = job;
-		this.nickName = nickName;
 		this.point = point;
 	}
 
-	public int getNum() {
-		return num;
+	public String getNickName() {
+		return nickName;
 	}
-	public void setNum(int num) {
-		this.num = num;
+	public void setNickName(String nickName) {
+		this.nickName = nickName;
 	}
 	public String getEmail() {
 		return email;
@@ -36,11 +33,11 @@ public class MemberDTO {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getPw() {
-		return pw;
+	public String getPassword() {
+		return password;
 	}
-	public void setPw(String pw) {
-		this.pw = pw;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	public String getCallNum() {
 		return callNum;
@@ -54,12 +51,6 @@ public class MemberDTO {
 	public void setJob(String job) {
 		this.job = job;
 	}
-	public String getNickName() {
-		return nickName;
-	}
-	public void setNickName(String nickName) {
-		this.nickName = nickName;
-	}
 	public int getPoint() {
 		return point;
 	}
@@ -67,9 +58,4 @@ public class MemberDTO {
 		this.point = point;
 	}
 
-	@Override
-	public String toString() {
-		return "memberDTO [num=" + num + ", email=" + email + ", pw=" + pw + ", callNum=" + callNum + ", job=" + job
-				+ ", nickName=" + nickName + ", point=" + point + "]";
-	}
 }
