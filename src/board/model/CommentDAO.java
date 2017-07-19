@@ -1,11 +1,11 @@
-/* 1. ������ 2. �ڿ�����
- * 	1. Ŀ�´�Ƽ
- * 		         ���
+/* 1. 占쏙옙占쏙옙占쏙옙 2. 占쌘울옙占쏙옙占쏙옙
+ * 	1. 커占승댐옙티
+ * 		         占쏙옙占�
 					C : createCommentOwner
-					R : selectAllCommentOwner(��ü)
-					    selectCommentOwnerById(Ư��)
+					R : selectAllCommentOwner(占쏙옙체)
+					    selectCommentOwnerById(특占쏙옙)
 					U : updateCommentOwner
-					D : deleteCommentOwner (��� ���� ����)
+					D : deleteCommentOwner (占쏙옙占� 占쏙옙占쏙옙 占쏙옙占쏙옙)
  */
 package board.model;
 
@@ -29,9 +29,10 @@ public class CommentDAO {
 			con = DBUtil.getConnection();
 			pstmt = con.prepareStatement(sql.getString("createCommentOwner"));
 			pstmt.setString(1, moq);
-			pstmt.setInt(2, writing_no);
-			pstmt.setString(3, nickname);
-			pstmt.setString(4, contents);
+			pstmt.setString(2, moq);
+			pstmt.setInt(3, writing_no);
+			pstmt.setString(4, nickname);
+			pstmt.setString(5, contents);
 			int count = pstmt.executeUpdate();
 			if(count != 0) {
 				return true;
@@ -42,7 +43,7 @@ public class CommentDAO {
 		return false;
 	}
 	// R 
-	// selectAllComment(��ü)
+	// selectAllComment(占쏙옙체)
 	public static ArrayList<CommentDTO> selectAllComment(String moq, String writing_no) throws SQLException{		
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -66,7 +67,7 @@ public class CommentDAO {
 		return commentList;
 	}
 	
-	// U : updateCommentOwne (����)
+	// U : updateCommentOwne (占쏙옙占쏙옙)
 	public static boolean updateComment(String moq, int comment_no, String contents) throws SQLException{		
 		Connection con = null;
 		PreparedStatement pstmt = null;
