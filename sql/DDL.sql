@@ -9,22 +9,22 @@ drop table HOTISSUE cascade constraint;
 drop table MarketingTrend cascade constraint;
 
 drop sequence MemberInfo_personal_no_seq;
-drop sequence FreeBoard_writing_no_seq;
+drop sequence MktBoard_writing_no_seq;
+drop sequence OwnerBoard_writing_no_seq;
 drop sequence QABoard_writing_no_seq;
 drop sequence HOTISSUE_writing_no_seq;
-drop sequence Comment_FreeBoard_writing_no_seq;
-drop sequence Comment_QABoard_writing_no_seq;
+drop sequence Comment_FreeBoard_seq;
+drop sequence Comment_QABoard_seq;
 drop sequence MarketingTrend_writing_no_seq;
 
 create sequence MemberInfo_personal_no_seq;
 create table MemberInfo (
-		personal_no			number(4) primary key,
-		email						varchar2(25) not null,
+		nickname				varchar2(20)  primary key,
+		email					varchar2(25) not null,
 		password				varchar2(15) not null,
 		callnumber				varchar2(13) not null,
 		job						varchar2(10) not null,
-		nickname				varchar2(20) not null,
-		point						number(4) not null
+		point					number(4) not null
 );
 
 create sequence MktBoard_writing_no_seq;
@@ -68,7 +68,7 @@ create table QABoard (
 		point						number(4) not null
 );
 
-create sequence Comment_MktBoard_comment_no_seq;
+create sequence Comment_MktBoard_seq;
 create table Comment_MktBoard (
 		comment_no			number(4) primary key,
 		writing_no				number(4) not null,
@@ -77,7 +77,7 @@ create table Comment_MktBoard (
 		contents				varchar2(4000) not null
 );
 
-create sequence Comment_OwnerBoard_comment_no_seq;
+create sequence Comment_OwnerBoard_seq;
 create table Comment_OwnerBoard (
 		comment_no			number(4) primary key,
 		writing_no				number(4) not null,
@@ -86,7 +86,7 @@ create table Comment_OwnerBoard (
 		contents				varchar2(4000) not null
 );
 
-create sequence Comment_QABoard_comment_no_seq;
+create sequence Comment_QABoard_seq;
 create table Comment_QABoard (
 		comment_no			number(4) primary key,
 		writing_no				number(4) not null,
@@ -113,10 +113,9 @@ create table MarketingTrend (
 		contents			varchar2(4000) not null
 );
 
-ALTER TABLE MktBoard ADD FOREIGN KEY nickname REFERENCES MemberInfo (nickname);
-ALTER TABLE OwnerBoard ADD FOREIGN KEY nickname REFERENCES MemberInfo (nickname);
-ALTER TABLE QABoard ADD FOREIGN KEY nickname  REFERENCES MemberInfo (nickname);
-ALTER TABLE QABoard ADD FOREIGN KEY point REFERENCES MemberInfo (point);
-ALTER TABLE Comment_MktBoard ADD FOREIGN KEY writing_no REFERENCES MktBoard (writing_no) ON DELETE CASCADE;
-ALTER TABLE Comment_QABoard ADD FOREIGN KEY writing_no REFERENCES QABoard (writing_no) ON DELETE CASCADE;
-ALTER TABLE Comment_OwnerBoard ADD FOREIGN KEY writing_no REFERENCES OwnerBoard (writing_no) ON DELETE CASCADE;
+ALTER TABLE MktBoard ADD FOREIGN KEY(nickname) REFERENCES MemberInfo (nickname);
+ALTER TABLE OwnerBoard ADD FOREIGN KEY(nickname) REFERENCES MemberInfo (nickname);
+ALTER TABLE QABoard ADD FOREIGN KEY(nickname) REFERENCES MemberInfo (nickname);
+ALTER TABLE Comment_MktBoard ADD FOREIGN KEY(writing_no) REFERENCES MktBoard (writing_no) ON DELETE CASCADE;
+ALTER TABLE Comment_QABoard ADD FOREIGN KEY(writing_no) REFERENCES QABoard (writing_no) ON DELETE CASCADE;
+ALTER TABLE Comment_OwnerBoard ADD FOREIGN KEY(writing_no) REFERENCES OwnerBoard (writing_no) ON DELETE CASCADE;
