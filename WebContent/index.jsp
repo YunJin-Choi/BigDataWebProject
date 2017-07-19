@@ -79,7 +79,8 @@
 						<li><a href="#" id="communityOwnerMenu" onclick="boardMenu('communityOwner');"><span>Owner Board</span></a></li>
 						<li><a href="#" id="QnAMenu" onclick="boardMenu('QnA');"><span>QnA Board</span></a></li>
 						<li><a href="#" id="hotIssueMenu" onclick="hotIssueMenu();"><span>Hot Issue</span></a></li>
-						<li class="call-to-action"><a href="#"><span>Login</span></a></li>
+						<li class="call-to-action"><a href="#" onclick="document.getElementById('id01').style.display='block'" 
+						style="width:auto;"><span>Login</span></a></li>
 					</ul>
 				</div>
 			</nav>
@@ -87,26 +88,7 @@
 	</header>
 	<!-- Home Page -->
 	
-	<div class="menu" id="home" style="display: block;">
-		<section id="fh5co-home" data-section="home" style="background-image: url(images/full_image_3.jpg);" data-stellar-background-ratio="0.5">
-			<div class="gradient"></div>
-			<div class="container">
-				<div class="text-wrap">
-					<div class="text-inner">
-						<div class="row">
-							<div class="col-md-8 col-md-offset-2">
-								<h1 class="to-animate">커뮤니티 인기글 목록</h1>
-								<div class="call-to-action">
-									<a href="#" class="demo to-animate">Demo</a>
-									<a href="#" class="download to-animate">Download</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-	</div>
+	<!-- End Home -->
 	<!-- Start Board -->
 	<div class="menu" id="board" style="display: none;">
 		<div style="height: 300px"></div>
@@ -120,7 +102,24 @@
 		<div id="hotIssueView"></div>
 	</div>
 	<!-- End Hot Issue -->
-	
+	<!-- Start Login -->
+	<div id="id01" class="modal">
+		<form class="modal-content animate" action="/action_page.php">
+			<div class="imgcontainer">
+				<span onclick="document.getElementById('id01').style.display='none'"
+					class="close" title="Close Modal">&times;</span> 
+				<img src="images/login.png" alt="Avatar" class="avatar">
+			</div>
+			<div class="containerLogin">
+				<label><b>Email</b></label> 
+				<input class="loginInput" type="text" placeholder="Enter Email" name="email" required> 
+				<label><b>Password</b></label>
+				<input class="loginInput" type="password" placeholder="Enter Password" name="password" required>
+				<button class="loginButton" type="submit">Login</button>
+			</div>
+		</form>
+	</div>
+	<!-- End Login -->
 	<!-- Main JS (Do not remove) -->
 	<script src="js/main.js"></script>
 	</body>

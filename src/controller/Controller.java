@@ -303,11 +303,35 @@ public class Controller extends HttpServlet {
 		if(command != null) {
 			if(command.equals("selectHotIssueByDate")) {
 				selectHotIssueByDate(request, response);
+			}else if(command.equals("selectHotIssuePreDate")) {
+				selectHotIssueByDate(request, response);
+			}else if(command.equals("selectHotIssuePostDate")) {
+				selectHotIssueByDate(request, response);
 			}
 		}
 	}
 	
 	private void selectHotIssueByDate(HttpServletRequest request, HttpServletResponse response) {
+		try {
+			String date = request.getParameter("date");
+			request.setAttribute("hotIssue", HotIssueDAO.selectHotIssueByDate(date));
+			request.getRequestDispatcher("hotIssue.jsp").forward(request, response);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	private void selectHotIssuePreDate(HttpServletRequest request, HttpServletResponse response) {
+		try {
+			String date = request.getParameter("date");
+			request.setAttribute("hotIssue", HotIssueDAO.selectHotIssueByDate(date));
+			request.getRequestDispatcher("hotIssue.jsp").forward(request, response);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	private void selectHotIssuePostDate(HttpServletRequest request, HttpServletResponse response) {
 		try {
 			String date = request.getParameter("date");
 			request.setAttribute("hotIssue", HotIssueDAO.selectHotIssueByDate(date));
