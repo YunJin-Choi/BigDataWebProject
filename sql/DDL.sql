@@ -36,9 +36,9 @@ create table MktBoard (
 		view_no					number(4) not null,
 		writing_date			varchar2(20) not null,
 		comment_no			number(3) not null,
-		business_type		varchar2(10) not null,
-		business_size			varchar2(10) not null,
-		business_local		varchar2(10) not null
+		business_type		varchar2(30) not null,
+		business_size			varchar2(30) not null,
+		business_local		varchar2(30) not null
 );
 
 create sequence OwnerBoard_writing_no_seq;
