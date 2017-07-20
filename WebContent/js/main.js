@@ -685,7 +685,7 @@ function boardMenu( boardName ){
 		MktboardList();
 	}else if(boardName == "communityOwner"){
 		OwnerboardList();
-	}else if(boardName == "communityQnA"){
+	}else if(boardName == "QnA"){
 		QnAboardList();
 	}
 	setCookie("viewPage", boardName);
