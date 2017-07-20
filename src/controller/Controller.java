@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import board.model.CommentDAO;
 import board.model.CommunityDAO;
@@ -521,7 +522,9 @@ public class Controller extends HttpServlet {
 			MemberDTO member = MemberDAO.loginMember(email, password);
 			
 			if(member != null) {
-				request.getSession().setAttribute("Member", member);
+				HttpSession session = request.getSession();
+				session.setAttribute("Member", member);
+				session.setMaxInactiveInterval(60*60) ;
 			}else {
 				PrintWriter out = response.getWriter();
 				out.print("fail");
