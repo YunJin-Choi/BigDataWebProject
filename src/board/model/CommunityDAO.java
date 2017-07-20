@@ -13,7 +13,6 @@ import dbutil.DBUtil;
 public class CommunityDAO {
 	static ResourceBundle sql = DBUtil.getResourceBundle();
 	
-	// Board
 	public static ArrayList<CommunityDTO> selectAllCommunity(String community) throws SQLException {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -21,7 +20,7 @@ public class CommunityDAO {
 		ArrayList<CommunityDTO> boardList = null;
 		try {
 			conn = DBUtil.getConnection();
-			pstmt = conn.prepareStatement("SELECT * FROM "+community);
+			pstmt = conn.prepareStatement("SELECT * FROM "+community+" order by writing_no desc");
 			rset = pstmt.executeQuery();
 			boardList = new ArrayList<>();
 			while (rset.next()) {
@@ -39,8 +38,6 @@ public class CommunityDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
 		try {
-			System.out.println("selectCommunityById");
-			System.out.println(num);
 			conn = DBUtil.getConnection();
 			pstmt = conn.prepareStatement("SELECT * FROM "+community+" WHERE writing_no=?");
 			pstmt.setString(1, num);
@@ -54,6 +51,7 @@ public class CommunityDAO {
 		}
 		return null;
 	}
+
 	
 	public static boolean createCommunity(String community, CommunityDTO board) throws SQLException {
 		Connection conn = null;
@@ -140,7 +138,7 @@ public class CommunityDAO {
 		ArrayList<CommunityDTO> boardList = null;
 		try {
 			conn = DBUtil.getConnection();
-			pstmt = conn.prepareStatement(sql.getString("selectPamphlet"));
+			pstmt = conn.prepareStatement("SELECT * FROM MktBoard WHERE title like '%전단지%' OR contents like '%전단지%'");
 			rset = pstmt.executeQuery();
 			boardList = new ArrayList<>();
 			while (rset.next()) {
@@ -160,7 +158,7 @@ public class CommunityDAO {
 		ArrayList<CommunityDTO> boardList = null;
 		try {
 			conn = DBUtil.getConnection();
-			pstmt = conn.prepareStatement(sql.getString("selectSNS"));
+			pstmt = conn.prepareStatement("SELECT * FROM MktBoard WHERE title like '%페이스북%' OR title like '%인스타%' OR title like '%블로그%' OR contents like '%페이스북%' OR contents like '%인스타%' OR contents like '%블로그%'");
 			rset = pstmt.executeQuery();
 			boardList = new ArrayList<>();
 			while (rset.next()) {
@@ -180,7 +178,7 @@ public class CommunityDAO {
 		ArrayList<CommunityDTO> boardList = null;
 		try {
 			conn = DBUtil.getConnection();
-			pstmt = conn.prepareStatement(sql.getString("selectNews"));
+			pstmt = conn.prepareStatement("SELECT * FROM MktBoard WHERE title like '%뉴스%' OR contents like '%뉴스%'");
 			rset = pstmt.executeQuery();
 			boardList = new ArrayList<>();
 			while (rset.next()) {
@@ -200,7 +198,7 @@ public class CommunityDAO {
 		ArrayList<CommunityDTO> boardList = null;
 		try {
 			conn = DBUtil.getConnection();
-			pstmt = conn.prepareStatement(sql.getString("selectExperience"));
+			pstmt = conn.prepareStatement("SELECT * FROM MktBoard WHERE title like '%체험%' OR contents like '%체험%'");
 			rset = pstmt.executeQuery();
 			boardList = new ArrayList<>();
 			while (rset.next()) {

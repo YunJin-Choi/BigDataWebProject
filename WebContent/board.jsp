@@ -1,3 +1,4 @@
+<%@page import="board.model.CommunityDAO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -7,10 +8,10 @@
 <title>Marketer free board</title>
 <link rel="stylesheet" href="css/board.css">
 
-<script type="text/javascript" src="./js/jquery.min.js"></script>
-<script type="text/javascript" src="./js/board.js"></script>
-
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/board.js"></script>
 </head>
+
 <body>
 <input type="hidden" name="boardName" value="communityMkt">
 <table class="boardTable" align="center" style="width: 80%">
@@ -37,7 +38,8 @@
 		</c:when>
 	</c:choose>
 </table>
+
 <br><br>
-<center><a href="boardwrite.jsp"><input type="button" value="글쓰기"></a></center>
+<center><button onclick="pageMove()">새로 글쓰기</button></center>
 </body>
 </html>

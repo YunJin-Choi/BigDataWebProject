@@ -30,7 +30,7 @@ function QnAboardList(){
 	$.ajax({
 		url: "Controller",
 		data: {
-			command: "QnA", boardCommand: "selectAllQnABoardOwner"
+			command: "communityQnA", boardCommand: "selectAllCommunityQnA"
 		},
 		method: "post",
 		dataType: "html",
@@ -70,6 +70,22 @@ function MrkboardView(num){
 	});
 }
 
+function MrkboardDelete(num){
+	$.ajax({
+		url: "Controller",
+		data: {
+			command: "communityMkt", boardCommand: "deleteCommunityMkt", boardNum: num
+		},
+		method: "post",
+		dataType: "html",
+		success: function(result){
+			alert(result);
+			alert("삭제되었습니다!");
+			$("#boardView").html(result);
+		}	
+	});	
+}
+
 function MrkboardUpdate(num){
 	var tValue = $("#titleId").val();
 	var cValue = $("#contentId").val();
@@ -88,36 +104,79 @@ function MrkboardUpdate(num){
 	});
 }
 
+function pageMove() {
+	$.ajax({
+		url:"boardwrite.jsp",
+		success: function(result){
+			$("#boardView").html(result);
+		}
+	})
+}
+
 function errorCheck() {
 	if (document.ffm.title.value == "") {
 		alert("input title");
 		ffm.title.focus();
-		return;
+		return false;
 	}
 	if (document.ffm.bizType.value == "") {
 		alert("업종을 선택하세요");
 		ffm.bizType.focus();
-		return;
+		return false;
 	}
 	if (document.ffm.bizLocal.value == "") {
 		alert("지역을 선택하세요");
 		ffm.bizLocal.focus();
-		return;
+		return false;
 	}
 	if (document.ffm.bizSize.value == "") {
 		alert("규모를 입력하세요");
 		ffm.bizSize.focus();
-		return;
+		return false;
 	}
 	if (document.ffm.contents.value == "") {
 		alert("내용이 없습니다");
 		ffm.contents.focus();
-		return;
+		return false;
 	}
 	if (document.ffm.pwd.value == "") {
 		alert("비밀번호를 입력하세요");
 		ffm.pwd.focus();
-		return;
+		return false;
+	}else{
+		insert();
+
 	}
-	ffm.submit();
 }
+
+function insert() {
+	alert(1);
+	var titleV = document.getElementById("titleId").value;
+	var contentV = $("#contentId").val();
+	var typeV = $("#typeId").val();
+	var localV = $("#localId").val();
+	var nicknameV = $("#nickId").val();
+	var sizeV = $("#sizeId").val();
+	var localV = $("#localId").val();
+	
+	$.ajax({
+		url: "Controller",
+		data : {
+			command : "communityMkt",
+			boardCommand : "createCommunityMkt",
+			nickname : nicknameV,
+			bizType : typeV,
+			bizSize : sizeV,
+			title : titleV,
+			contents : contentV,
+			bizLocal : localV
+		},
+		method: "get",
+		dataType: "html",
+		success: function(result){
+			alert(result);
+			MrkboardList();
+		}
+	});
+}
+	

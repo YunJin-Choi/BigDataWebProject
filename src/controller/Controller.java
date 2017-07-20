@@ -2,7 +2,6 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -46,6 +45,7 @@ public class Controller extends HttpServlet {
 	//Start CommunityMkt
 	private void communityMkt(HttpServletRequest request, HttpServletResponse response) {
 		String command = request.getParameter("boardCommand");
+		System.out.println(command);
 		if(command != null) {
 			if(command.equals("selectAllCommunityMkt")) {
 				selectAllCommunityMkt(request, response);
@@ -80,7 +80,7 @@ public class Controller extends HttpServlet {
 			System.out.println("selectCommunityMktById");
 			String num = request.getParameter("boardNum");
 			CommunityDTO dto = CommunityDAO.selectCommunityById("MktBoard", num);
-			//CommunityDAO.updateViewNum("MktBoard", num);
+			CommunityDAO.updateViewNum("MktBoard", num);
 			//dto.setComments(CommentDAO.selectAllComment("Mkt", num));
 			System.out.println("selectCommunityMktById2");
 			request.setAttribute("data", dto);
@@ -108,12 +108,18 @@ public class Controller extends HttpServlet {
 	
 	private void createCommunityMkt(HttpServletRequest request, HttpServletResponse response) {
 		try {
+			System.out.println("createCommunityMkt");
 			String title = request.getParameter("title");
 			String contents = request.getParameter("contents");
 			String nickname = request.getParameter("nickname");
 			String bizType = request.getParameter("bizType");
 			String bizSize = request.getParameter("bizSize");
 			String bizLocal = request.getParameter("bizLocal");
+			System.out.println(title);
+			System.out.println(contents);
+			System.out.println(nickname);
+			System.out.println(bizType);
+			System.out.println(bizLocal);
 			 CommunityDAO.createCommunity("MktBoard", 
 						new CommunityDTO(0, title, contents, nickname, 0, null, 0, bizType, bizSize, bizLocal, null));
 			 
@@ -145,8 +151,11 @@ public class Controller extends HttpServlet {
 	
 	private void deleteCommunityMkt(HttpServletRequest request, HttpServletResponse response) {
 		try {
-			String num = request.getParameter("num");
+			String num = request.getParameter("boardNum");
+			System.out.println(num);
 			CommunityDAO.deleteCommunity("MktBoard", num);
+			request.setAttribute("list", CommunityDAO.selectAllCommunity("MktBoard"));
+			request.getRequestDispatcher("board.jsp").forward(request, response);
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -404,10 +413,9 @@ public class Controller extends HttpServlet {
 			request.setAttribute("SNSList", SNSList);
 			request.setAttribute("newsList", newsList);
 			request.setAttribute("experienceList", experienceList);
-			
 			PrintWriter out = response.getWriter();
 			out.println("{Pamphlet:"+pamphletList.size()+", SNS:"+SNSList.size()+", News:"+newsList.size()
-			+ ", Experience:"+experienceList.size());
+			+ ", Experience:"+experienceList.size()+"}");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

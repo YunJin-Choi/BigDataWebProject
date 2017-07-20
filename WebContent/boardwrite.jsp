@@ -12,16 +12,16 @@
 <body>
 	<br>
 	<br>
-	<form name="ffm" action="Controller" method="post">
+	<form name="ffm" method="post">
 		<table align="center" border="0">
 			<tr bgColor="#ffffff" height="25">
 				<td width="10%" align="center">글제목</td>
-				<td width="90%"><input type="text" name="title" maxlength="20"
+				<td width="90%"><input id="titleId" type="text" name="title" maxlength="20"
 					size="40"></td>
 			</tr>
 			<tr bgColor="#ffffff" height="25">
 				<td width="10%" align="center">업종</td>
-				<td width="90%"><select name="bizType">
+				<td width="90%"><select id="typeId" name="bizType">
 						<option value="">업종을 선택하세요</option>
 						<option value="volvo">식당</option>
 						<option value="volvo">식당</option>
@@ -32,7 +32,7 @@
 			</tr>
 			<tr bgColor="#ffffff" height="25">
 				<td width="10%" align="center">지역</td>
-				<td width="90%"><select name="bizLocal">
+				<td width="90%"><select id="localId" name="bizLocal">
 						<option value="volvo">서울</option>
 						<option value="saab">인천</option>
 						<option value="opel">경기도</option>
@@ -48,21 +48,21 @@
 			</tr>
 			<tr bgColor="#ffffff" height="25">
 				<td width="10%" align="center">규모</td>
-				<td width="90%"><input type="text" name="bizSize" maxlength="20"
+				<td width="90%"><input id="sizeId"type="text" name="bizSize" maxlength="20"
 					size="40"></td>
 			</tr>
 			<tr bgColor="#ffffff" height="50">
 				<td width="10%" align="center">글 내용</td>
-				<td width="90%"><textarea cols="100" rows="20" name="contents"></textarea></td>
+				<td width="90%"><textarea cols="100" rows="20" id="contentId" name="contents"></textarea></td>
 			</tr>
 			<tr bgColor="#ffffff" height="25">
 				<td width="10%" align="center">암호</td>
-				<td width="90%"><input type="password" name="pwd"
+				<td width="90%"><input type="password" id="pwdId" name="pwd"
 					maxlength="20"></td>
 			</tr>
 			<tr bgColor="#ffffff" height="25">
 				<td width="10%" align="center">이름</td>
-				<td width="90%"><input type="text" name="nickname" maxlength="20"></td>
+				<td width="90%"><input type="text" id="nickId"name="nickname" maxlength="20"></td>
 			</tr>
 			<tr>
 				<td>&nbsp;</td>
@@ -73,14 +73,14 @@
 					<table width="100%">
 						<tr>
 							<td width="70%">
-							<input type="hidden" name="command" value="communityMkt">
-							<input type="hidden" name="boardCommand" value="createCommunityMkt">
-							<input type="button" value="글쓰기" onclick="errorCheck()" style="height: 22; border: 1 solid">&nbsp;&nbsp;
+							<button onclick="return errorCheck()">글쓰기</button>
+							<!-- <input type="button" value="글쓰기" onclick="errorCheck()" style="height: 22; border: 1 solid">
+							-->&nbsp;&nbsp;
 								<input type="reset" value="다시 쓰기"
 								style="height: 22; border: 1 solid">
 								</td>
-							<td width="30%"><a href ="index.jsp">
-							     <input	type="button" value="리스트로 돌아가기"></a></td>
+							<td width="30%"><a href ="#">
+							     <input	type="button" value="리스트로 돌아가기" onclick="MktboardList()"></a></td>
 						</tr>
 					</table>
 				</td>

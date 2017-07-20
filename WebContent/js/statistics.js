@@ -11,7 +11,6 @@ function statistics() {
 		dataType: "html",
 		success: function(result){
 			result = eval("("+result+")");
-			alert(result);
 			makeChart(result.Pamphlet, result.SNS, result.News, result.Experience);
 		}
 	});	
@@ -29,7 +28,7 @@ function makeChart(pamphlet, SNS, News, Experience){
 			['뉴스', News],
 			['체험단', Experience],
 		]);
-
+		
 		// 그래프 옵션
 		var options = {
 			title : 'Marketer가 이용하는 게시글 목록', // 제목
@@ -42,8 +41,13 @@ function makeChart(pamphlet, SNS, News, Experience){
 				position : 'none'
 			}
 		};
-
+		
 		var chart = new google.visualization.PieChart(document.getElementById('chartView'));
 		chart.draw(data, options);
+
+		google.visualization.events.addListener(chart, 'select', function(e){
+			var selection = chart.getSelection()[0];
+			
+	    });
 	}
 }

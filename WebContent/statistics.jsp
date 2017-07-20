@@ -42,5 +42,6 @@
 	<br>
 	<button class="w3-button w3-light-grey w3-block" onclick="statistics()" style="width: 20%">°Ë»ö</button>
 </div>
+<!-- <div id="chartView" align="center"></div> -->
 <div id="chartView" align="center"></div>
 <div id="boardView"></div>
