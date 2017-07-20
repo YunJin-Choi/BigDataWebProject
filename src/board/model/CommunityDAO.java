@@ -38,6 +38,8 @@ public class CommunityDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
 		try {
+			System.out.println("selectCommunityById");
+			System.out.println(num);
 			conn = DBUtil.getConnection();
 			pstmt = conn.prepareStatement("SELECT * FROM "+community+" WHERE writing_no=?");
 			pstmt.setString(1, num);
@@ -57,14 +59,14 @@ public class CommunityDAO {
 		PreparedStatement pstmt = null;
 		try {
 			conn = DBUtil.getConnection();
-			pstmt = conn.prepareStatement("INSERT INTO "+community+" VALUES(?_writing_no_seq.nextval,?,?,?,0,sysdate,0,?,?,?)");
-			pstmt.setString(1, community);
-			pstmt.setString(2, board.getTitle());
-			pstmt.setString(3, board.getContents());
-			pstmt.setString(4, board.getNickname());
-			pstmt.setString(5, board.getBizType());
-			pstmt.setString(6, board.getBizSize());
-			pstmt.setString(7, board.getBizLocal());
+			
+			pstmt = conn.prepareStatement("INSERT INTO "+community+	" VALUES("+community+"_writing_no_seq.nextval,?,?,?,0,sysdate,0,?,?,?)");
+			pstmt.setString(1, board.getTitle());
+			pstmt.setString(2, board.getContents());
+			pstmt.setString(3, board.getNickname());
+			pstmt.setString(4, board.getBizType());
+			pstmt.setString(5, board.getBizSize());
+			pstmt.setString(6, board.getBizLocal());
 			
 			int count = pstmt.executeUpdate();
 			if(count != 0) {
@@ -76,15 +78,15 @@ public class CommunityDAO {
 		return false;
 	}
 	
-	public static boolean updateCommunity(String community, CommunityDTO board) throws SQLException {
+	public static boolean updateCommunity(String community, String title, String contents, String num) throws SQLException {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		try {
 			conn = DBUtil.getConnection();
 			pstmt = conn.prepareStatement("UPDATE "+community+" SET title=?, contents=? WHERE writing_no=?");
-			pstmt.setString(1, board.getTitle());
-			pstmt.setString(2, board.getContents());
-			pstmt.setInt(3, board.getNum());
+			pstmt.setString(1, title);
+			pstmt.setString(2, contents);
+			pstmt.setString(3, num);
 			int count = pstmt.executeUpdate();
 			if(count != 0) {
 				return true;

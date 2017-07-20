@@ -42,7 +42,7 @@ public class Controller extends HttpServlet {
 		}
 	}
 	
-	// Start CommunityMkt
+	//Start CommunityMkt
 	private void communityMkt(HttpServletRequest request, HttpServletResponse response) {
 		String command = request.getParameter("boardCommand");
 		if(command != null) {
@@ -56,6 +56,9 @@ public class Controller extends HttpServlet {
 				updateCommunityMkt(request, response);
 			}else if(command.equals("deleteCommunityMkt")) {
 				deleteCommunityMkt(request, response);
+			}else if(command.equals("moveUpdateCommunityMktById")) {
+				moveUpdateCommunityMktById(request, response);
+				System.out.println("moveUpdateCommunityMktById");
 			}
 		}
 	}
@@ -71,13 +74,32 @@ public class Controller extends HttpServlet {
 	
 	private void selectCommunityMktById(HttpServletRequest request, HttpServletResponse response) {
 		try {
+			request.setCharacterEncoding("euc-kr");
+			response.setContentType("euc-kr");
+			System.out.println("selectCommunityMktById");
 			String num = request.getParameter("boardNum");
 			CommunityDTO dto = CommunityDAO.selectCommunityById("MktBoard", num);
-			CommunityDAO.updateViewNum("MktBoard", num);
-			dto.setComments(CommentDAO.selectAllComment("Mkt", num));
+			//CommunityDAO.updateViewNum("MktBoard", num);
+			//dto.setComments(CommentDAO.selectAllComment("Mkt", num));
+			System.out.println("selectCommunityMktById2");
 			request.setAttribute("data", dto);
-			
-			request.getRequestDispatcher("detail.jsp").forward(request, response);
+			System.out.println(dto);
+			request.getRequestDispatcher("boardview.jsp").forward(request, response);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	private void moveUpdateCommunityMktById(HttpServletRequest request, HttpServletResponse response) {
+		try {
+			System.out.println("moveUpdateCommunityMktById");
+			request.setCharacterEncoding("euc-kr");
+			response.setContentType("euc-kr");
+			String num = request.getParameter("boardNum");
+			CommunityDTO dto = CommunityDAO.selectCommunityById("MktBoard", num);
+			request.setAttribute("data", dto);
+			System.out.println(dto);
+			request.getRequestDispatcher("boardUpdate.jsp").forward(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -91,8 +113,10 @@ public class Controller extends HttpServlet {
 			String bizType = request.getParameter("bizType");
 			String bizSize = request.getParameter("bizSize");
 			String bizLocal = request.getParameter("bizLocal");
-			CommunityDAO.createCommunity("MktBoard", 
-					new CommunityDTO(0, title, contents, nickname, 0, null, 0, bizType, bizSize, bizLocal, null));
+			 CommunityDAO.createCommunity("MktBoard", 
+						new CommunityDTO(0, title, contents, nickname, 0, null, 0, bizType, bizSize, bizLocal, null));
+			 
+			request.setAttribute("list", CommunityDAO.selectAllCommunity("MktBoard"));
 			request.getRequestDispatcher("board.jsp").forward(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -101,7 +125,18 @@ public class Controller extends HttpServlet {
 	
 	private void updateCommunityMkt(HttpServletRequest request, HttpServletResponse response) {
 		try {
+			String title = request.getParameter("title");
+			String contents = request.getParameter("contents");
+			String num = request.getParameter("boardNum");
+			System.out.println(title);
+			System.out.println(contents);
+			System.out.println(num);
 			
+			
+			CommunityDAO.updateCommunity("MktBoard", title, contents, num);
+			request.setAttribute("data", CommunityDAO.selectCommunityById("MktBoard", num));
+			System.out.println(CommunityDAO.selectCommunityById("MktBoard", num));
+			request.getRequestDispatcher("boardview.jsp").forward(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
