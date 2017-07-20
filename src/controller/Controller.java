@@ -424,10 +424,20 @@ public class Controller extends HttpServlet {
 	
 	private void selectRecommendList(HttpServletRequest request, HttpServletResponse response) {
 		try {
-			ArrayList<CommunityDTO> pamphletList = CommunityDAO.selectPamphlet();
-			ArrayList<CommunityDTO> SNSList = CommunityDAO.selectSNS();
-			ArrayList<CommunityDTO> newsList = CommunityDAO.selectNews();
-			ArrayList<CommunityDTO> experienceList = CommunityDAO.selectExperience();
+			String bizType = request.getParameter("bizType");
+			String bizSize = request.getParameter("bizSize");
+			String bizlocal = request.getParameter("bizlocal");
+			StringBuffer query = new StringBuffer();
+			if(!bizSize.equals("0")){
+				query.append("business_size='" + bizSize + "' AND ");
+			}
+			if(!bizlocal.equals("0")){
+				query.append("business_local='" + bizlocal + "' AND ");
+			}
+			ArrayList<CommunityDTO> pamphletList = CommunityDAO.selectPamphlet(query.toString());
+			ArrayList<CommunityDTO> SNSList = CommunityDAO.selectSNS(query.toString());
+			ArrayList<CommunityDTO> newsList = CommunityDAO.selectNews(query.toString());
+			ArrayList<CommunityDTO> experienceList = CommunityDAO.selectExperience(query.toString());
 			request.getSession().setAttribute("pamphletList", pamphletList);
 			request.getSession().setAttribute("SNSList", SNSList);
 			request.getSession().setAttribute("newsList", newsList);

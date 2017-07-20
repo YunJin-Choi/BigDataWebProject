@@ -1,20 +1,34 @@
 function recommend() {
-	bizType = document.getElementById("bizType").value;
-	bizSize = document.getElementById("bizSize").value;
-	bielocal = document.getElementById("bizlocal").value;
-	$.ajax({
-		url: "Controller",
-		data: {
-			command: "recommend", recommend: "selectRecommendList"
-		},
-		method: "post",
-		dataType: "html",
-		success: function(result){
-			result = eval("("+result+")");
-			makeChart(result.Pamphlet, result.SNS, result.News, result.Experience);
-		}
-	});	
+	bizTypeValue = document.getElementById("bizType").value;
+	bizSizeValue = document.getElementById("bizSize").value;
+	bizlocalValue = document.getElementById("bizlocal").value;
+	if(bizTypeValue == ""){
+		alert("업종을 선택해 주세요.");
+	}else if(bizSizeValue == ""){
+		alert("규모를 선택해 주세요.");
+	}else if(bizlocalValue == ""){
+		alert("지역을 선택해 주세요.");
+	}else{
+		$.ajax({
+			url: "Controller",
+			data: {
+				command: "recommend", recommend: "selectRecommendList",
+				bizType: bizTypeValue, bizSize: bizSizeValue, bizlocal: bizlocalValue
+			},
+			method: "post",
+			dataType: "html",
+			success: function(result){
+				result = eval("("+result+")");
+				if(result.Pamphlet == 0 && result.SNS == 0 && result.News == 0 && result.Experience == 0){
+					alert("해당하는 데이터가 없습니다.");
+				}else{
+					makeChart(result.Pamphlet, result.SNS, result.News, result.Experience);
+				}
+			}
+		});	
+	}
 }
+
 function makeChart(pamphlet, SNS, News, Experience){
 	google.charts.load('current', {packages:['corechart']});
 	google.charts.setOnLoadCallback(drawChart);

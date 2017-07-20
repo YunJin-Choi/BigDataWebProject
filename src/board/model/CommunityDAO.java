@@ -131,14 +131,14 @@ public class CommunityDAO {
 	}
 	
 	// Recommend
-	public static ArrayList<CommunityDTO> selectPamphlet() throws SQLException {
+	public static ArrayList<CommunityDTO> selectPamphlet(String query) throws SQLException {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
 		ArrayList<CommunityDTO> boardList = null;
 		try {
 			conn = DBUtil.getConnection();
-			pstmt = conn.prepareStatement("SELECT * FROM MktBoard WHERE title like '%전단지%' OR contents like '%전단지%'");
+			pstmt = conn.prepareStatement("SELECT * FROM MktBoard WHERE "+query+"(title like '%전단지%' OR contents like '%전단지%')");
 			rset = pstmt.executeQuery();
 			boardList = new ArrayList<>();
 			while (rset.next()) {
@@ -151,14 +151,14 @@ public class CommunityDAO {
 		return boardList;
 	}
 	
-	public static ArrayList<CommunityDTO> selectSNS() throws SQLException {
+	public static ArrayList<CommunityDTO> selectSNS(String query) throws SQLException {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
 		ArrayList<CommunityDTO> boardList = null;
 		try {
 			conn = DBUtil.getConnection();
-			pstmt = conn.prepareStatement("SELECT * FROM MktBoard WHERE title like '%페이스북%' OR title like '%인스타%' OR title like '%블로그%' OR contents like '%페이스북%' OR contents like '%인스타%' OR contents like '%블로그%'");
+			pstmt = conn.prepareStatement("SELECT * FROM MktBoard WHERE "+query+"(title like '%페이스북%' OR title like '%인스타%' OR title like '%블로그%' OR contents like '%페이스북%' OR contents like '%인스타%' OR contents like '%블로그%')");
 			rset = pstmt.executeQuery();
 			boardList = new ArrayList<>();
 			while (rset.next()) {
@@ -171,14 +171,14 @@ public class CommunityDAO {
 		return boardList;
 	}
 	
-	public static ArrayList<CommunityDTO> selectNews() throws SQLException {
+	public static ArrayList<CommunityDTO> selectNews(String query) throws SQLException {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
 		ArrayList<CommunityDTO> boardList = null;
 		try {
 			conn = DBUtil.getConnection();
-			pstmt = conn.prepareStatement("SELECT * FROM MktBoard WHERE title like '%뉴스%' OR contents like '%뉴스%'");
+			pstmt = conn.prepareStatement("SELECT * FROM MktBoard WHERE "+query+"(title like '%뉴스%' OR contents like '%뉴스%')");
 			rset = pstmt.executeQuery();
 			boardList = new ArrayList<>();
 			while (rset.next()) {
@@ -191,14 +191,14 @@ public class CommunityDAO {
 		return boardList;
 	}
 	
-	public static ArrayList<CommunityDTO> selectExperience() throws SQLException {
+	public static ArrayList<CommunityDTO> selectExperience(String query) throws SQLException {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
 		ArrayList<CommunityDTO> boardList = null;
 		try {
 			conn = DBUtil.getConnection();
-			pstmt = conn.prepareStatement("SELECT * FROM MktBoard WHERE title like '%체험%' OR contents like '%체험%'");
+			pstmt = conn.prepareStatement("SELECT * FROM MktBoard WHERE "+query+"(title like '%체험%' OR contents like '%체험%')");
 			rset = pstmt.executeQuery();
 			boardList = new ArrayList<>();
 			while (rset.next()) {
