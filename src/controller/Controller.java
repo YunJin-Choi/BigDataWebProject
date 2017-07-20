@@ -127,6 +127,7 @@ public class Controller extends HttpServlet {
 	
 	private void createCommunityMkt(HttpServletRequest request, HttpServletResponse response) {
 		try {
+			request.setCharacterEncoding("euc-kr");
 			System.out.println("createCommunityMkt");
 			String title = request.getParameter("title");
 			String contents = request.getParameter("contents");

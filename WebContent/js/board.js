@@ -139,18 +139,13 @@ function errorCheck() {
 		ffm.contents.focus();
 		return false;
 	}
-	if (document.ffm.pwd.value == "") {
-		alert("비밀번호를 입력하세요");
-		ffm.pwd.focus();
-		return false;
-	}else{
+	else{
 		insert();
 
 	}
 }
 
 function insert() {
-	alert(1);
 	var titleV = document.getElementById("titleId").value;
 	var contentV = $("#contentId").val();
 	var typeV = $("#typeId").val();
