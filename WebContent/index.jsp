@@ -136,7 +136,7 @@ function showDivs(n) {
 								style="width:auto;"><span>Login</span></a></li>
 							</c:when>
 							<c:otherwise>
-								<li><a><span>${Member.nickName}</span></a></li>
+								<li><a href="#" onclick="logout()"><span>${Member.nickName}</span></a></li>
 							</c:otherwise>
 						</c:choose>
 					</ul>

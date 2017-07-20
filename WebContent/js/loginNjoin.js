@@ -151,3 +151,14 @@ function joinCheck() {
 		});	
 	}
 }
+
+function logout(){
+	$.ajax({
+		url: "logout.jsp",
+		method: "post",
+		dataType: "html",
+		success: function(result){
+			location.href="index.jsp";
+		}
+	});	
+}
