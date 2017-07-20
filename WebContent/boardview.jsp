@@ -7,6 +7,7 @@
 <head>
 
 <script src="./js/board.js"></script>
+<script src="./js/comment.js"></script>
 <link rel="stylesheet" href="css/board.css">
 <link href="./bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
 <!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요한) -->
@@ -41,41 +42,36 @@
 
  <!-- 댓글 -->
  <table id="commentTable" class="table table-condensed">
-<table class="table table-condensed">
-                        <tr>
-                            <td>
-                                <span class="form-inline" role="form">
-                                    <p>
-                                        <div class="form-group">
-                                            <input type="text" id="commentParentName" name="commentParentName" class="form-control col-lg-2" data-rule-required="true" placeholder="이름" maxlength="10">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="password" id="commentParentPassword" name="commentParentPassword" class="form-control col-lg-2" data-rule-required="true" placeholder="패스워드" maxlength="10">
-                                        </div>
-                                        <div class="form-group">
-                                            <button type="button" id="commentParentSubmit" name="commentParentSubmit" class="btn btn-default">확인</button>
-                                        </div>
-                                    </p>
-                                        <textarea id="commentParentText" class="form-control col-lg-12" style="width:100%" rows="4"></textarea>
-                                </span>
-                            </td>
-                        </tr>
-                    </table>
-					<table class="table table-condensed">
-                        <thead>
-                            <tr>
-                                <td>
-                                    <span style='float:right'>
-                                        <button type="button" id="list" class="btn btn-default">목록</button>
-                                        <button type="button" id="modify" class="btn btn-default">수정</button>
-                                        <button type="button" id="delete" class="btn btn-default">삭제</button>
-                                        <button type="button" id="write" class="btn btn-default">글쓰기</button>
-                                    </span>
-                                </td>
-                            </tr>
-                        </thead>
-                    </table>
-</table>                  
+ 		<!-- 댓글 입력테이블 부분 -->
+	    <c:if test="${!empty cList}">
+    			<c:forEach var="list" items="${cList}" varStatus="status">
+     			<tr class="r1" name="commentCode">
+	      			<td colspan=2>
+		       			<strong>관리자</strong> 
+		       			<a style="cursor:pointer;" name="pDel">삭제</a>
+		      			 <p>${list.cmttext}</p>
+	      			</td>
+     			</tr>
+    			</c:forEach>
+    		</c:if>
+          <!-- 수정 삭제 댓글쓰기 버튼 --> 
+		 <table class="table table-condensed">
+         	<thead>
+             	<tr>
+                 	<td>
+                     	<span style='float:right'>
+                     		<button type="button" id="list" class="btn btn-default">목록</button>
+                         	 <button type="button" id="modify" class="btn btn-default">수정</button>
+                              <button type="button" id="delete" class="btn btn-default">삭제</button>
+                              <button type="button" id="write" class="btn btn-default">댓글쓰기</button>
+                         </span>
+                 	</td>
+             	</tr>
+          	</thead>
+          </table>
+          
+</table>
+    
 
 
 </body>
