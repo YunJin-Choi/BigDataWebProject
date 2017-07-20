@@ -40,20 +40,53 @@ function QnAboardList(){
 	});	
 }
 
-function boardView(boardName, num){
+function MrkboardMoveUpdate(num){
 	$.ajax({
 		url: "Controller",
 		data: {
-			command: boardName, boardName: selectCommunityMktById, boardNum: num
+			command: "communityMkt", boardCommand: "moveUpdateCommunityMktById", boardNum: num
 		},
 		method: "post",
 		dataType: "html",
 		success: function(result){
-			$("#dataView").html(result);
+			alert(result);
+			$("#boardView").html(result);
 		}	
 	});
 }
 
+function MrkboardView(num){
+	$.ajax({
+		url: "Controller",
+		data: {
+			command: "communityMkt", boardCommand: "selectCommunityMktById", boardNum: num
+		},
+		method: "post",
+		dataType: "html",
+		success: function(result){
+			alert(result);
+			$("#boardView").html(result);
+		}	
+	});
+}
+
+function MrkboardUpdate(num){
+	var tValue = $("#titleId").val();
+	var cValue = $("#contentId").val();
+	$.ajax({
+		url: "Controller",
+		data: {
+			command: "communityMkt", boardCommand: "updateCommunityMkt",
+			boardNum: num, title: tValue, contents : cValue
+		},
+		method: "post",
+		dataType: "html",
+		success: function(result){
+			alert(result);
+			$("#boardView").html(result);
+		}	
+	});
+}
 
 function errorCheck() {
 	if (document.ffm.title.value == "") {
