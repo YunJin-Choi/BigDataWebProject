@@ -130,12 +130,12 @@ function showDivs(n) {
 					    </li>
 						<c:choose>
 							
-							<c:when test="${empty Member.nickname}">
+							<c:when test="${empty Member}">
 								<li class="call-to-action"><a href="#" onclick="document.getElementById('id01').style.display='block'" 
 								style="width:auto;"><span>Login</span></a></li>
 							</c:when>
 							<c:otherwise>
-								<li><a><span>${Member.nickname}¥‘ æ»≥Á«œººø‰.</span></a></li>
+								<li><a><span>${Member.nickName}</span></a></li>
 							</c:otherwise>
 						</c:choose>
 						

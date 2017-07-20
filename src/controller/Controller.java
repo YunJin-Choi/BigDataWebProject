@@ -355,7 +355,7 @@ public class Controller extends HttpServlet {
 	// End Recommend
 	
 	// Start Member
-	private void member(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	private void member(HttpServletRequest request, HttpServletResponse response) {
 		String command = request.getParameter("member");
 		
 		if(command != null) {
@@ -366,16 +366,16 @@ public class Controller extends HttpServlet {
 		
 	}
 	
-	private void loginMember(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	private void loginMember(HttpServletRequest request, HttpServletResponse response) {
 		try {
 			String email = request.getParameter("email");
 			String password = request.getParameter("password");
 			MemberDTO member = MemberDAO.loginMember(email, password);
 			
-			PrintWriter out = response.getWriter();
 			if(member != null) {
-				request.setAttribute("Member", member);
+				request.getSession().setAttribute("Member", member);
 			}else {
+				PrintWriter out = response.getWriter();
 				out.print("fail");
 			}
 		} catch (Exception e) {
