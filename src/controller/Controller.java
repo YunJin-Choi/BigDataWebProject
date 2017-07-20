@@ -375,7 +375,6 @@ public class Controller extends HttpServlet {
 			PrintWriter out = response.getWriter();
 			if(member != null) {
 				request.setAttribute("Member", member);
-				request.getRequestDispatcher("response.jsp").forward(request, response);
 			}else {
 				out.print("fail");
 			}
