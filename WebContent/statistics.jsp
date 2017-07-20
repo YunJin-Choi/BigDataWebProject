@@ -5,14 +5,15 @@
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript" src="js/statistics.js"></script>
 <div style="height: 100px"></div>
-<div align="center">
-	<div style="width: 20%">
+<div style="width: 100%">
+<div style="float: left; margin-left: 23%; margin-top: 80px">
+	<div style="width: 240px">
 		<select class="w3-select" id="bizType">
 		    <option value="" disabled selected>Choose your business type</option>
 		    <option value="1">식당</option>
 		</select>
 	</div>
-	<div style="width: 20%">
+	<div style="width: 240px">
 		<select class="w3-select" id="bizSize">
 		    <option value="" disabled selected>Choose your business size</option>
 		    <option value="5천">5000만원</option>
@@ -22,7 +23,7 @@
 		    <option value="5">모두</option>
 		</select>
 	</div>
-	<div style="width: 20%">
+	<div style="width: 240px">
 		<select class="w3-select" id="bizlocal">
 		    <option value="" disabled selected>Choose your business location</option>
 		    <option value="1">서울</option>
@@ -40,8 +41,8 @@
 		</select>
 	</div>
 	<br>
-	<button class="w3-button w3-light-grey w3-block" onclick="statistics()" style="width: 20%">검색</button>
+	<button class="w3-button w3-light-grey w3-block" onclick="statistics()" style="width: 240px">검색</button>
 </div>
-<!-- <div id="chartView" align="center"></div> -->
-<div id="chartView" align="center"></div>
+<div id="chartView" style="float: right; margin-right: 7%"></div>
+</div>
 <div id="boardView"></div>
