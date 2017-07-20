@@ -99,11 +99,33 @@ public class CommunityDTO {
 	public void setComments(ArrayList<CommentDTO> comments) {
 		this.comments = comments;
 	}
-
+	
 	@Override
 	public String toString() {
-		return "boardFreeDTO [num=" + num + ", title=" + title + ", contents=" + contents + ", viewNum=" + viewNum
-				+ ", date=" + date + ", comNum=" + comNum + ", bizType=" + bizType + ", bizSize=" + bizSize
-				+ ", bizLocal=" + bizLocal + "]";
-	}	
+		StringBuilder builder = new StringBuilder();
+		builder.append("CommunityDTO [num=");
+		builder.append(num);
+		builder.append(", title=");
+		builder.append(title);
+		builder.append(", contents=");
+		builder.append(contents);
+		builder.append(", nickname=");
+		builder.append(nickname);
+		builder.append(", viewNum=");
+		builder.append(viewNum);
+		builder.append(", date=");
+		builder.append(date);
+		builder.append(", comNum=");
+		builder.append(comNum);
+		builder.append(", bizType=");
+		builder.append(bizType);
+		builder.append(", bizSize=");
+		builder.append(bizSize);
+		builder.append(", bizLocal=");
+		builder.append(bizLocal);
+		builder.append(", comments=");
+		builder.append(comments);
+		builder.append("]");
+		return builder.toString();
+	}
 }

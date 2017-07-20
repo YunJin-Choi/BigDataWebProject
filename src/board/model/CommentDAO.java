@@ -14,17 +14,15 @@ public class CommentDAO {
 	static ResourceBundle sql = DBUtil.getResourceBundle();
 	
 
-	public static boolean createCommentOwner(String moq, int writing_no, String nickname, String contents) throws SQLException{		
+	public static boolean createCommentMkt(String writing_no, String nickname, String contents) throws SQLException{		
 		Connection con = null;	
 		PreparedStatement pstmt = null;
 		try {
 			con = DBUtil.getConnection();
-			pstmt = con.prepareStatement(sql.getString("createCommentOwner"));
-			pstmt.setString(1, moq);
-			pstmt.setString(2, moq);
-			pstmt.setInt(3, writing_no);
-			pstmt.setString(4, nickname);
-			pstmt.setString(5, contents);
+			pstmt = con.prepareStatement(sql.getString("createCommentMkt"));
+			pstmt.setString(1, writing_no);
+			pstmt.setString(2, nickname);
+			pstmt.setString(3, contents);
 			int count = pstmt.executeUpdate();
 			if(count != 0) {
 				return true;
@@ -35,7 +33,7 @@ public class CommentDAO {
 		return false;
 	}
 
-	public static ArrayList<CommentDTO> selectAllComment(String moq, String writing_no) throws SQLException{		
+	public static ArrayList<CommentDTO> selectAllCommentMkt(String writing_no) throws SQLException{		
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
@@ -43,12 +41,11 @@ public class CommentDAO {
 		
 		try {
 			con = DBUtil.getConnection();
-			pstmt = con.prepareStatement(sql.getString("selectAllComment"));
-			pstmt.setString(1, moq);
-			pstmt.setString(2, writing_no);
+			pstmt = con.prepareStatement(sql.getString("selectAllCommentMkt"));
+			pstmt.setString(1, writing_no);
 			rset = pstmt.executeQuery();
 			commentList = new ArrayList<>();
-			if(rset.next()) {
+			while(rset.next()) {
 				commentList.add(new CommentDTO(rset.getInt(1), rset.getInt(2), rset.getString(3),
 						rset.getString(4),rset.getString(5)));
 			}

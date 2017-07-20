@@ -175,6 +175,32 @@ function insert() {
 	});
 }
 
+function commendInsert() {
+	var commendContentsValue = $("#commendContents").val();
+	var commentMemberValue = document.getElementById("commendMember").value;
+	var writeNoValue = $("#writeNo").val();
+	if(commendContents == ""){
+		alert("댓글을 입력해주세요.");
+	}else{
+		$.ajax({
+			url: "Controller",
+			data : {
+				command : "comment",
+				comment : "createCommentMkt",
+				writeNo : writeNoValue,
+				commentMember : commentMemberValue,
+				commendContents : commendContentsValue
+			},
+			method: "get",
+			dataType: "html",
+			success: function(result){
+				alert(result);
+				$("#boardView").html(result);
+			}
+		});
+	}
+}
+
 function recommendboardView(num){
 	$.ajax({
 		url: "Controller",

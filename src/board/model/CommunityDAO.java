@@ -113,6 +113,23 @@ public class CommunityDAO {
 		return false;
 	}
 	
+	public static boolean updateCommentNum(String community, String num) throws SQLException {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		try {
+			conn = DBUtil.getConnection();
+			pstmt = conn.prepareStatement("UPDATE "+community+" SET comment_no=comment_no+1 WHERE writing_no=?");
+			pstmt.setString(1, num);
+			int count = pstmt.executeUpdate();
+			if(count != 0) {
+				return true;
+			}
+		} finally {
+			DBUtil.close(conn, pstmt);
+		}
+		return false;
+	}
+	
 	public static boolean deleteCommunity(String community, String num) throws SQLException {
 		Connection conn = null;
 		PreparedStatement pstmt = null;

@@ -39,6 +39,8 @@ public class Controller extends HttpServlet {
 				recommend(request, response);
 			}else if(command.equals("member")) {
 				member(request, response);
+			}else if(command.equals("comment")) {
+				comment(request, response);
 			}
 		}
 	}
@@ -84,7 +86,7 @@ public class Controller extends HttpServlet {
 			String num = request.getParameter("boardNum");
 			CommunityDTO dto = CommunityDAO.selectCommunityById("MktBoard", num);
 			CommunityDAO.updateViewNum("MktBoard", num);
-			//dto.setComments(CommentDAO.selectAllComment("Mkt", num));
+			dto.setComments(CommentDAO.selectAllCommentMkt(num));
 			System.out.println("selectCommunityMktById2");
 			request.setAttribute("data", dto);
 			System.out.println(dto);
@@ -101,7 +103,7 @@ public class Controller extends HttpServlet {
 			String num = request.getParameter("boardNum");
 			CommunityDTO dto = CommunityDAO.selectCommunityById("MktBoard", num);
 			CommunityDAO.updateViewNum("MktBoard", num);
-			//dto.setComments(CommentDAO.selectAllComment("Mkt", num));
+			dto.setComments(CommentDAO.selectAllCommentMkt(num));
 			request.setAttribute("data", dto);
 			System.out.println(dto);
 			request.getRequestDispatcher("boardviewRecommend.jsp").forward(request, response);
@@ -216,7 +218,7 @@ public class Controller extends HttpServlet {
 		try {
 			CommunityDTO dto = CommunityDAO.selectCommunityById("OwnerBoard", num);
 			CommunityDAO.updateViewNum("OwnerBoard", num);
-			dto.setComments(CommentDAO.selectAllComment("Owner", num));
+//			dto.setComments(CommentDAO.selectAllCommentOwner(num));
 			request.setAttribute("data", dto);
 			request.getRequestDispatcher("detail.jsp").forward(request, response);
 		} catch (Exception e) {
@@ -292,7 +294,7 @@ public class Controller extends HttpServlet {
 		try {
 			QnABoardDTO dto = QnADAO.selectQnABoardOwnerById(num);
 			QnADAO.updateViewNumQnA(num);
-			dto.setComments(CommentDAO.selectAllComment("QA", num));
+//			dto.setComments(CommentDAO.selectAllComment("QA", num));
 			request.setAttribute("data", dto);
 			request.getRequestDispatcher("detail.jsp").forward(request, response);
 		} catch (Exception e) {
@@ -529,4 +531,29 @@ public class Controller extends HttpServlet {
 		}
 	}
 	// End Member
+	
+	// Start Comment
+	private void comment(HttpServletRequest request, HttpServletResponse response) {
+		String command = request.getParameter("comment");
+		
+		if(command != null) {
+			if(command.equals("createCommentMkt")) {
+				createCommentMkt(request, response);
+			}
+		}
+	}
+	
+	private void createCommentMkt(HttpServletRequest request, HttpServletResponse response) {
+		try {
+			String commendContents = request.getParameter("commendContents");
+			String commentMember = request.getParameter("commentMember");
+			String writeNo = request.getParameter("writeNo");
+			CommentDAO.createCommentMkt(writeNo, commentMember, commendContents);
+			CommunityDAO.updateCommentNum("MktBoard", writeNo);
+			selectAllCommunityMkt(request, response);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	// End Comment
 }

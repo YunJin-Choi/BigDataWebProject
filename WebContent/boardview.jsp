@@ -26,30 +26,35 @@
 	<tr>
 		<td class="boardtd" align="center" style="border: 1px solid #ddd; width: 100%; height: 200px;">${data.contents}</td>
 	</tr>
-	
-	<tr align="right"  style="width: 70%">
-	<td class="boardtd" align="right"><button onclick="MrkboardMoveUpdate(${data.num})">수정하기</button>
-	<input type="hidden" name="command" value="MktBoard"></td>
-	<td class="boardtd" align="right"><button onclick="MrkboardDelete(${data.num})">삭제하기</button></td>
-	</tr>
+		<tr align="right"  style="width: 70%">
+			<td class="boardtd" align="right"><button onclick="MrkboardMoveUpdate(${data.num})">수정하기</button>
+			<input type="hidden" name="command" value="MktBoard"></td>
+			<td class="boardtd" align="right"><button onclick="MrkboardDelete(${data.num})">삭제하기</button></td>
+		</tr>
 </table>
 
 <!-- 댓글 좌라락 보기 -->
-<c:forEach items="${data.comments}" var= "data">
 <table class="boardTable" align="center" style="width: 50%">
-	<tr><td class="boardtd" style="font-weight: bold;">${list.nickName}</td>
-	<td align="right" ><input type="button" name="command" value="commentreWrite" ></td>
-	<td align="right" ><input type="button" name="command" value="commentreDelete" ></td></tr>
-	<tr><td class="boardtd">${list.contents}</td></tr>
-</table>
+<c:forEach items="${data.comments}" var= "data2">
+	<tr>
+		<td class="boardtd" style="font-weight: bold;">${data2.nickName}</td>
+		<td align="right" ><input type="button" name="command" value="commentreWrite" ></td>
+		<td align="right" ><input type="button" name="command" value="commentreDelete" ></td>
+	</tr>
+	<tr>
+		<td class="boardtd">${data2.contents}</td>
+	</tr>
 </c:forEach>
+</table>
 <!-- 댓글 달기 -->
 <table class="boardTable" align="center" style="width: 50%">
 	<tr><td class="boardtd" style="font-size: 13px">댓글을 입력해 주세요</td></tr>
 	<tr><td class="boardtd">
-		<input style="width: 100%; border: 1px solid #ddd; height: 50" type="text" name="dataComment">
+		<input style="width: 100%; border: 1px solid #ddd; height: 50" type="text" id="commendContents">
+		<input type="hidden" id="commendMember" value="${Member.nickName}">
+		<input type="hidden" id="writeNo" value="${data.num}">
 	</td></tr>
-	<tr><td align="left"><input type="button" name="command" value="commentInsert"></td>
+	<tr><td align="left"><input type="button" value="commentInsert" onclick="commendInsert()"></td>
 </table> 
 
 </body>
