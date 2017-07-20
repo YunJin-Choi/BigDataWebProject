@@ -109,10 +109,18 @@ function showDivs(n) {
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
 						<li class="active"><a href="#" id="homeMenu" onclick="homeMenu()"><span>Home</span></a></li>
-						<li><a href="#" id="communityMktMenu" onclick="boardMenu('communityMkt')"><span>Marketing Board</span></a></li>
-						<li><a href="#" id="communityOwnerMenu" onclick="boardMenu('communityOwner')"><span>Owner Board</span></a></li>
-						<li><a href="#" id="QnAMenu" onclick="boardMenu('QnA')"><span>QnA Board</span></a></li>
-						<li><a href="#" id="recommendMenu" onclick="recommendMenu()"><span>Recommend</span></a></li>
+						<c:choose>
+							<c:when test="${empty Member}"></c:when>
+							<c:when test="${Member.job eq 'marketer'}">
+								<li><a href="#" id="communityMktMenu" onclick="boardMenu('communityMkt')"><span>Marketing Board</span></a></li>
+								<li><a href="#" id="QnAMenu" onclick="boardMenu('QnA')"><span>QnA Board</span></a></li>
+							</c:when>
+							<c:otherwise>
+								<li><a href="#" id="communityOwnerMenu" onclick="boardMenu('communityOwner')"><span>Owner Board</span></a></li>
+								<li><a href="#" id="QnAMenu" onclick="boardMenu('QnA')"><span>QnA Board</span></a></li>
+								<li><a href="#" id="recommendMenu" onclick="recommendMenu()"><span>Recommend</span></a></li>
+							</c:otherwise>
+						</c:choose>
 						<!-- <li><a href="#" id="hotIssueMenu" onclick="hotIssueMenu()"><span>Hot Issue</span></a></li> -->
 						<li class="dropdown"><a href="#" id="trendMenu" class="dropbtn"><span>Trend</span></a>
 					      	<div class="dropdown-content">
