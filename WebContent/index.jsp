@@ -137,7 +137,7 @@ function showDivs(n) {
 	<!-- 메뉴바 끝 -->
 	
 	<!-- Home Page Start -->
-		<!-- Slide show -->
+	<div class="menu" id="home" style="display: block">
 		<div class="w3-container">
 			<div class="w3-display-container mySlides">
 				<img src="" style="width: 100%">
@@ -161,8 +161,7 @@ function showDivs(n) {
 				<div class="w3-right" onclick="plusDivs(1)">
 					<i class="fa fa-arrow-circle-right w3-hover-text-teal"></i>
 				</div>
-
-				<div class="w3-center">
+					<div class="w3-center">
 					<span
 						class="w3-tag demodots w3-border w3-transparent w3-hover-white"
 						onclick="currentDiv(1)"></span> <span
@@ -182,8 +181,7 @@ function showDivs(n) {
 				width="700" style="border: 5px solid grey;"> </iframe></center>
 		</div>
 		<!-- 유용한 페이지 End -->
-
-		<!-- 만든 사람들 시작 -->
+			<!-- 만든 사람들 시작 -->
 		<section id="fh5co-team" data-section="team">
 		<div class="fh5co-team">
 			<div class="container">
@@ -202,138 +200,139 @@ function showDivs(n) {
 					<div class="col-md-4">
 						<div class="team-box text-center to-animate-2">
 							<div class="user"><img class="img-reponsive" src="images/person4.jpg" alt="Roger Garfield"></div>
-							<h3>Roger Garfield</h3>
-							<span class="position">Co-Founder, Lead Developer</span>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, 
-							there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-							<ul class="social-media">
-								<li><a href="https://www.facebook.com/" target="blank" class="facebook"><i class="icon-facebook"></i></a></li>
-								<li><a href="https://www.github.com/" target="blank" class="github"><i class="icon-github-alt"></i></a></li>
-							</ul>
+								<h3>Roger Garfield</h3>
+								<span class="position">Co-Founder, Lead Developer</span>
+								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, 
+								there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+								<ul class="social-media">
+									<li><a href="https://www.facebook.com/" target="blank" class="facebook"><i class="icon-facebook"></i></a></li>
+									<li><a href="https://www.github.com/" target="blank" class="github"><i class="icon-github-alt"></i></a></li>
+								</ul>
+							</div>
 						</div>
-					</div>
-					
+						
 						<div class="row">
-					<div class="col-md-4">
-						<div class="team-box text-center to-animate-2">
-							<div class="user"><img class="img-reponsive" src="images/person4.jpg" alt="Roger Garfield"></div>
-							<h3>Roger Garfield</h3>
-							<span class="position">Co-Founder, Lead Developer</span>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, 
-							there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-							<ul class="social-media">
-								<li><a href="https://www.facebook.com/" target="blank" class="facebook"><i class="icon-facebook"></i></a></li>
-								<li><a href="https://www.github.com/" target="blank" class="github"><i class="icon-github-alt"></i></a></li>
-							</ul>
+						<div class="col-md-4">
+							<div class="team-box text-center to-animate-2">
+								<div class="user"><img class="img-reponsive" src="images/person4.jpg" alt="Roger Garfield"></div>
+								<h3>Roger Garfield</h3>
+								<span class="position">Co-Founder, Lead Developer</span>
+								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, 
+								there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+								<ul class="social-media">
+									<li><a href="https://www.facebook.com/" target="blank" class="facebook"><i class="icon-facebook"></i></a></li>
+									<li><a href="https://www.github.com/" target="blank" class="github"><i class="icon-github-alt"></i></a></li>
+								</ul>
+							</div>
 						</div>
-					</div>
-
-					<div class="col-md-4">
-						<div class="team-box text-center to-animate-2">
-							<div class="user"><img class="img-reponsive" src="images/person2.jpg" alt="Roger Garfield"></div>
-							<h3>Kevin Steve</h3>
-							<span class="position">Co-Founder, Product Designer</span>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, 
-							there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-							<ul class="social-media">
-								<li><a href="https://www.facebook.com/" target="blank" class="facebook"><i class="icon-facebook"></i></a></li>
-								<li><a href="https://www.github.com/" target="blank" class="github"><i class="icon-github-alt"></i></a></li>
-							</ul>
-						</div>
-					</div>
-
-					<div class="col-md-4">
-						<div class="team-box text-center to-animate-2">
-							<div class="user"><img class="img-reponsive" src="images/person3.jpg" alt="Roger Garfield"></div>
-							<h3>Ross Standford</h3>
-							<span class="position">Full Stack Developer</span>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-							 there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-							<ul class="social-media">
-								<li><a href="https://www.facebook.com/" target="blank" class="facebook"><i class="icon-facebook"></i></a></li>
-								<li><a href="https://www.github.com/" target="blank" class="github"><i class="icon-github-alt"></i></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- 만든 사람들 끝 -->
 	
-	<!-- sign up free start-->
-	<div class="getting-started getting-started-2">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6 to-animate">
-					<h3>커뮤니티 시작하기</h3>
-					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-				</div>
-				<div class="col-md-6 to-animate-2">
-					<div class="call-to-action text-right">
-						<a href="#" onclick="document.getElementById('id01').style.display='block'" 
-						style="width:auto;" class="sign-up">회 원 가 입</a>
+						<div class="col-md-4">
+							<div class="team-box text-center to-animate-2">
+								<div class="user"><img class="img-reponsive" src="images/person2.jpg" alt="Roger Garfield"></div>
+								<h3>Kevin Steve</h3>
+								<span class="position">Co-Founder, Product Designer</span>
+								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, 
+								there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+								<ul class="social-media">
+									<li><a href="https://www.facebook.com/" target="blank" class="facebook"><i class="icon-facebook"></i></a></li>
+									<li><a href="https://www.github.com/" target="blank" class="github"><i class="icon-github-alt"></i></a></li>
+								</ul>
+							</div>
+						</div>
+	
+						<div class="col-md-4">
+							<div class="team-box text-center to-animate-2">
+								<div class="user"><img class="img-reponsive" src="images/person3.jpg" alt="Roger Garfield"></div>
+								<h3>Ross Standford</h3>
+								<span class="position">Full Stack Developer</span>
+								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
+								 there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+								<ul class="social-media">
+									<li><a href="https://www.facebook.com/" target="blank" class="facebook"><i class="icon-facebook"></i></a></li>
+									<li><a href="https://www.github.com/" target="blank" class="github"><i class="icon-github-alt"></i></a></li>
+								</ul>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<!-- sign up free end-->
-	
-	<!-- Footer start -->
-	<div id="fh5co-footer" role="contentinfo">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-4 to-animate">
-					<h3 class="section-title">About Us</h3>
-					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-					 there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics.</p>
-					<p class="copy-right">&copy; 2015 Union Free Template. <br>All Rights Reserved. <br>
-						Designed by <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a>
-						Demo Images: <a href="http://unsplash.com/" target="_blank">Unsplash</a> &amp; Dribbble Image by <a href="https://dribbble.com/tibi_neamu" target="_blank">Tiberiu</a>
-					</p>
-				</div>
-
-				<div class="col-md-4 to-animate">
-					<h3 class="section-title">Our Address</h3>
-					<ul class="contact-info">
-						<li><i class="icon-map-marker"></i>198 West 21th Street, Suite 721 New York NY 10016</li>
-						<li><i class="icon-phone"></i>+ 1235 2355 98</li>
-						<li><i class="icon-envelope"></i><a href="#">info@yoursite.com</a></li>
-						<li><i class="icon-globe2"></i><a href="#">www.yoursite.com</a></li>
-					</ul>
-					<h3 class="section-title">Connect with Us</h3>
-					<ul class="social-media">
-						<li><a href="https://www.facebook.com/" target="blank" class="facebook"><i class="icon-facebook"></i></a></li>
-						<li><a href="https://www.github.com/" target="blank" class="github"><i class="icon-github-alt"></i></a></li>
-					</ul>
-				</div>
-
-				<div class="col-md-4 to-animate">
-					<h3 class="section-title">Drop us a line</h3>
-					<form class="contact-form">
-						<div class="form-group">
-							<label for="name" class="sr-only">Name</label>
-							<input type="name" class="form-control" id="name" placeholder="Name">
+		</section>
+		<!-- 만든 사람들 끝 -->
+		
+		<!-- sign up free start-->
+		<div class="getting-started getting-started-2">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 to-animate">
+						<h3>커뮤니티 시작하기</h3>
+						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+					</div>
+					<div class="col-md-6 to-animate-2">
+						<div class="call-to-action text-right">
+							<a href="#" onclick="document.getElementById('id01').style.display='block'" 
+							style="width:auto;" class="sign-up">회 원 가 입</a>
 						</div>
-						<div class="form-group">
-							<label for="email" class="sr-only">Email</label>
-							<input type="email" class="form-control" id="email" placeholder="Email">
-						</div>
-						<div class="form-group">
-							<label for="message" class="sr-only">Message</label>
-							<textarea class="form-control" id="message" rows="7" placeholder="Message"></textarea>
-						</div>
-						<div class="form-group">
-							<input type="submit" id="btn-submit" class="btn btn-send-message btn-md" value="Send Message">
-						</div>
-					</form>
+					</div>
 				</div>
 			</div>
 		</div>
+		<!-- sign up free end-->
+		
+		<!-- Footer start -->
+		<div id="fh5co-footer" role="contentinfo">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 to-animate">
+						<h3 class="section-title">About Us</h3>
+						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
+						 there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics.</p>
+						<p class="copy-right">&copy; 2015 Union Free Template. <br>All Rights Reserved. <br>
+							Designed by <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a>
+							Demo Images: <a href="http://unsplash.com/" target="_blank">Unsplash</a> &amp; Dribbble Image by <a href="https://dribbble.com/tibi_neamu" target="_blank">Tiberiu</a>
+						</p>
+					</div>
+	
+					<div class="col-md-4 to-animate">
+						<h3 class="section-title">Our Address</h3>
+						<ul class="contact-info">
+							<li><i class="icon-map-marker"></i>198 West 21th Street, Suite 721 New York NY 10016</li>
+							<li><i class="icon-phone"></i>+ 1235 2355 98</li>
+							<li><i class="icon-envelope"></i><a href="#">info@yoursite.com</a></li>
+							<li><i class="icon-globe2"></i><a href="#">www.yoursite.com</a></li>
+						</ul>
+						<h3 class="section-title">Connect with Us</h3>
+						<ul class="social-media">
+							<li><a href="https://www.facebook.com/" target="blank" class="facebook"><i class="icon-facebook"></i></a></li>
+							<li><a href="https://www.github.com/" target="blank" class="github"><i class="icon-github-alt"></i></a></li>
+						</ul>
+					</div>
+	
+					<div class="col-md-4 to-animate">
+						<h3 class="section-title">Drop us a line</h3>
+						<form class="contact-form">
+							<div class="form-group">
+								<label for="name" class="sr-only">Name</label>
+								<input type="name" class="form-control" id="name" placeholder="Name">
+							</div>
+							<div class="form-group">
+								<label for="email" class="sr-only">Email</label>
+								<input type="email" class="form-control" id="email" placeholder="Email">
+							</div>
+							<div class="form-group">
+								<label for="message" class="sr-only">Message</label>
+								<textarea class="form-control" id="message" rows="7" placeholder="Message"></textarea>
+							</div>
+							<div class="form-group">
+								<input type="submit" id="btn-submit" class="btn btn-send-message btn-md" value="Send Message">
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Footer end -->	
 	</div>
-	<!-- Footer end -->	
-
 	<!-- End Home -->
 	<!-- Start Board -->
 	<div class="menu" id="board" style="display: none;">
