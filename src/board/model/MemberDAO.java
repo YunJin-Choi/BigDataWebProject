@@ -48,6 +48,27 @@ public class MemberDAO {
 		return false;
 	}
 	
+	public static boolean insertMember(MemberDTO member) throws SQLException {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		try {
+			conn = DBUtil.getConnection();
+			pstmt = conn.prepareStatement(sql.getString("insertMember"));
+			pstmt.setString(1, member.getNickName());
+			pstmt.setString(2, member.getEmail());
+			pstmt.setString(3, member.getPassword());
+			pstmt.setString(4, member.getCallNum());
+			pstmt.setString(5, member.getJob());
+			int count = pstmt.executeUpdate();
+			if(count != 0) {
+				return true;
+			}
+		} finally {
+			DBUtil.close(conn, pstmt);
+		}
+		return false;
+	}
+	
 	public static MemberDTO loginMember(String email, String password) throws SQLException {
 		Connection conn = null;
 		PreparedStatement pstmt = null;

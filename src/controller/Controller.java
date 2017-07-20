@@ -361,9 +361,57 @@ public class Controller extends HttpServlet {
 		if(command != null) {
 			if(command.equals("loginMember")) {
 				loginMember(request, response);
+			}else if(command.equals("selectMemberByEmail")) {
+				selectMemberByEmail(request, response);
+			}else if(command.equals("selectMemberByNickname")) {
+				selectMemberByNickname(request, response);
+			}else if(command.equals("insertMember")) {
+				insertMember(request, response);
 			}
 		}
 		
+	}
+	
+	private void selectMemberByEmail(HttpServletRequest request, HttpServletResponse response) {
+		try {
+			String email = request.getParameter("email");
+			
+			if(MemberDAO.selectMemberByEmail(email)) {
+				PrintWriter out = response.getWriter();
+				out.print("fail");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	private void selectMemberByNickname(HttpServletRequest request, HttpServletResponse response) {
+		try {
+			String nickname = request.getParameter("nickname");
+			
+			if(MemberDAO.selectMemberByNickname(nickname)) {
+				PrintWriter out = response.getWriter();
+				out.print("fail");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	private void insertMember(HttpServletRequest request, HttpServletResponse response) {
+		try {
+			String nickname = request.getParameter("nickname");
+			String email = request.getParameter("email");
+			String password = request.getParameter("password");
+			String callnum = request.getParameter("callnum");
+			String job = request.getParameter("job");
+			if(!MemberDAO.insertMember(new MemberDTO(nickname, email, password, callnum, job, 0))) {
+				PrintWriter out = response.getWriter();
+				out.print("fail");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	private void loginMember(HttpServletRequest request, HttpServletResponse response) {
