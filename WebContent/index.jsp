@@ -108,16 +108,17 @@ function showDivs(n) {
 				</div>
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
-						<li class="active"><a href="#" id="homeMenu" onclick="homeMenu();"><span>Home</span></a></li>
+						<li class="active"><a href="#" id="homeMenu" onclick="homeMenu()"><span>Home</span></a></li>
 						<li><a href="#" id="communityMktMenu" onclick="boardMenu('communityMkt')"><span>Marketing Board</span></a></li>
-						<li><a href="#" id="communityOwnerMenu" onclick="boardMenu('communityOwner');"><span>Owner Board</span></a></li>
-						<li><a href="#" id="QnAMenu" onclick="boardMenu('QnA');"><span>QnA Board</span></a></li>
-						<li><a href="#" id="hotIssueMenu" onclick="hotIssueMenu();"><span>Hot Issue</span></a></li>
+						<li><a href="#" id="communityOwnerMenu" onclick="boardMenu('communityOwner')"><span>Owner Board</span></a></li>
+						<li><a href="#" id="QnAMenu" onclick="boardMenu('QnA')"><span>QnA Board</span></a></li>
+						<li><a href="#" id="recommendMenu" onclick="recommendMenu()"><span>Recommend</span></a></li>
+						<!-- <li><a href="#" id="hotIssueMenu" onclick="hotIssueMenu()"><span>Hot Issue</span></a></li> -->
 						<li class="dropdown"><a href="#" id="trendMenu" class="dropbtn"><span>Trend</span></a>
 					      	<div class="dropdown-content">
-					        	<a href="#" onclick="trendMenu('us');">US</a>
-					        	<a href="#" onclick="trendMenu('china');">China</a>
-					        	<a href="#" onclick="trendMenu('japan');">Japan</a>
+					        	<a href="#" onclick="trendMenu('us')">US</a>
+					        	<a href="#" onclick="trendMenu('china')">China</a>
+					        	<a href="#" onclick="trendMenu('japan')">Japan</a>
 					      	</div>
 					    </li>
 						<c:choose>
@@ -336,7 +337,7 @@ function showDivs(n) {
 	<!-- End Home -->
 	<!-- Start Board -->
 	<div class="menu" id="board" style="display: none;">
-		<div style="height: 300px"></div>
+		<div style="height: 150px"></div>
 		<div id="boardView" align="center"></div>
 	</div>
 	<!-- End Board -->
@@ -350,6 +351,14 @@ function showDivs(n) {
 		<div style="height: 50px"></div>
 	</div>
 	<!-- End Trend -->
+	
+	<!-- Start Recommend -->
+	<div class="menu" id="recommend" style="display: none;">
+		<div style="height: 100px"></div>
+		<div id="recommendView"></div>
+		<div style="height: 50px"></div>
+	</div>
+	<!-- End Recommend -->
 	
 	<!-- Hot Issue -->
 	<div class="menu" id="hotIssue" style="display: none;">

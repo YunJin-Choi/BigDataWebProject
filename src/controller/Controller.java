@@ -2,6 +2,7 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -386,6 +387,30 @@ public class Controller extends HttpServlet {
 	private void recommend(HttpServletRequest request, HttpServletResponse response) {
 		String command = request.getParameter("recommend");
 		
+		if(command != null) {
+			if(command.equals("selectRecommendList")) {
+				selectRecommendList(request, response);
+			}
+		}
+	}
+	
+	private void selectRecommendList(HttpServletRequest request, HttpServletResponse response) {
+		try {
+			ArrayList<CommunityDTO> pamphletList = CommunityDAO.selectPamphlet();
+			ArrayList<CommunityDTO> SNSList = CommunityDAO.selectSNS();
+			ArrayList<CommunityDTO> newsList = CommunityDAO.selectNews();
+			ArrayList<CommunityDTO> experienceList = CommunityDAO.selectExperience();
+			request.setAttribute("pamphletList", pamphletList);
+			request.setAttribute("SNSList", SNSList);
+			request.setAttribute("newsList", newsList);
+			request.setAttribute("experienceList", experienceList);
+			
+			PrintWriter out = response.getWriter();
+			out.println("{Pamphlet:"+pamphletList.size()+", SNS:"+SNSList.size()+", News:"+newsList.size()
+			+ ", Experience:"+experienceList.size());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	// End Recommend
 	

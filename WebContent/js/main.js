@@ -707,6 +707,21 @@ function trendMenu( trendName ){
 	setCookie("viewPage", trendName);
 }
 
+function recommendMenu(){
+	$(".menu").hide();
+	$("#recommend").show();
+	$(".active").removeClass();
+	$("#recommendMenu").parent().addClass("active");
+	$.ajax({
+		url: "statistics.jsp",
+		method: "post",
+		dataType: "html",
+		success: function(result){
+			$("#recommendView").html(result);
+		}	
+	});
+}
+
 function hotIssueMenu(){
 	$(".menu").hide();
 	$("#hotIssue").show();

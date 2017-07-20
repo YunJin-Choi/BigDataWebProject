@@ -13,6 +13,7 @@ import dbutil.DBUtil;
 public class CommunityDAO {
 	static ResourceBundle sql = DBUtil.getResourceBundle();
 	
+	// Board
 	public static ArrayList<CommunityDTO> selectAllCommunity(String community) throws SQLException {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -129,5 +130,86 @@ public class CommunityDAO {
 			DBUtil.close(conn, pstmt);
 		}
 		return false;
+	}
+	
+	// Recommend
+	public static ArrayList<CommunityDTO> selectPamphlet() throws SQLException {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		ArrayList<CommunityDTO> boardList = null;
+		try {
+			conn = DBUtil.getConnection();
+			pstmt = conn.prepareStatement(sql.getString("selectPamphlet"));
+			rset = pstmt.executeQuery();
+			boardList = new ArrayList<>();
+			while (rset.next()) {
+				boardList.add(new CommunityDTO(rset.getInt(1), rset.getString(2), rset.getString(3), rset.getString(4), rset.getInt(5),
+						rset.getString(6), rset.getInt(7), rset.getString(8), rset.getString(9), rset.getString(10), null));
+			}
+		} finally {
+			DBUtil.close(conn, pstmt, rset);
+		}
+		return boardList;
+	}
+	
+	public static ArrayList<CommunityDTO> selectSNS() throws SQLException {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		ArrayList<CommunityDTO> boardList = null;
+		try {
+			conn = DBUtil.getConnection();
+			pstmt = conn.prepareStatement(sql.getString("selectSNS"));
+			rset = pstmt.executeQuery();
+			boardList = new ArrayList<>();
+			while (rset.next()) {
+				boardList.add(new CommunityDTO(rset.getInt(1), rset.getString(2), rset.getString(3), rset.getString(4), rset.getInt(5),
+						rset.getString(6), rset.getInt(7), rset.getString(8), rset.getString(9), rset.getString(10), null));
+			}
+		} finally {
+			DBUtil.close(conn, pstmt, rset);
+		}
+		return boardList;
+	}
+	
+	public static ArrayList<CommunityDTO> selectNews() throws SQLException {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		ArrayList<CommunityDTO> boardList = null;
+		try {
+			conn = DBUtil.getConnection();
+			pstmt = conn.prepareStatement(sql.getString("selectNews"));
+			rset = pstmt.executeQuery();
+			boardList = new ArrayList<>();
+			while (rset.next()) {
+				boardList.add(new CommunityDTO(rset.getInt(1), rset.getString(2), rset.getString(3), rset.getString(4), rset.getInt(5),
+						rset.getString(6), rset.getInt(7), rset.getString(8), rset.getString(9), rset.getString(10), null));
+			}
+		} finally {
+			DBUtil.close(conn, pstmt, rset);
+		}
+		return boardList;
+	}
+	
+	public static ArrayList<CommunityDTO> selectExperience() throws SQLException {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		ArrayList<CommunityDTO> boardList = null;
+		try {
+			conn = DBUtil.getConnection();
+			pstmt = conn.prepareStatement(sql.getString("selectExperience"));
+			rset = pstmt.executeQuery();
+			boardList = new ArrayList<>();
+			while (rset.next()) {
+				boardList.add(new CommunityDTO(rset.getInt(1), rset.getString(2), rset.getString(3), rset.getString(4), rset.getInt(5),
+						rset.getString(6), rset.getInt(7), rset.getString(8), rset.getString(9), rset.getString(10), null));
+			}
+		} finally {
+			DBUtil.close(conn, pstmt, rset);
+		}
+		return boardList;
 	}
 }

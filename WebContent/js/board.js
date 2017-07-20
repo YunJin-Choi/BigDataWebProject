@@ -30,7 +30,7 @@ function QnAboardList(){
 	$.ajax({
 		url: "Controller",
 		data: {
-			command: "communityQnA", boardCommand: "selectAllCommunityQnA"
+			command: "QnA", boardCommand: "selectAllQnABoardOwner"
 		},
 		method: "post",
 		dataType: "html",
