@@ -68,8 +68,9 @@ function MrkboardView(num){
 			$("#boardView").html(result);
 		}	
 	});
-	
-}function MrkboardUpdate(num){
+}
+
+function MrkboardUpdate(num){
 	var tValue = $("#titleId").val();
 	var cValue = $("#contentId").val();
 	$.ajax({
@@ -86,8 +87,6 @@ function MrkboardView(num){
 		}	
 	});
 }
-
-
 
 function errorCheck() {
 	if (document.ffm.title.value == "") {

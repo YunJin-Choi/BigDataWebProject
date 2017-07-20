@@ -39,4 +39,5 @@
 </table>
 <br><br>
 <center><a href="boardwrite.jsp"><input type="button" value="±Û¾²±â"></a></center>
-<body>
+</body>
+</html>
