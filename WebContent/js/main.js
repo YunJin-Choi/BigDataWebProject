@@ -691,6 +691,22 @@ function boardMenu( boardName ){
 	setCookie("viewPage", boardName);
 }
 
+function trendMenu( trendName ){
+	$(".menu").hide();
+	$("#trend").show();
+	$(".active").removeClass();
+	$("#trendMenu").parent().addClass("active");
+	$.ajax({
+		url: "trend/"+trendName+".html",
+		method: "post",
+		dataType: "html",
+		success: function(result){
+			$("#trendView").html(result);
+		}	
+	});
+	setCookie("viewPage", trendName);
+}
+
 function hotIssueMenu(){
 	$(".menu").hide();
 	$("#hotIssue").show();

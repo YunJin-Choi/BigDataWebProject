@@ -89,6 +89,8 @@ function showDivs(n) {
 	<link rel="stylesheet" href="css/owl.theme.default.min.css">
 	<!-- Style -->
 	<link rel="stylesheet" href="css/style.css">
+	<!-- w3school css -->
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
@@ -119,12 +121,18 @@ function showDivs(n) {
 						<li><a href="#" id="communityOwnerMenu" onclick="boardMenu('communityOwner');"><span>Owner Board</span></a></li>
 						<li><a href="#" id="QnAMenu" onclick="boardMenu('QnA');"><span>QnA Board</span></a></li>
 						<li><a href="#" id="hotIssueMenu" onclick="hotIssueMenu();"><span>Hot Issue</span></a></li>
+						<li class="dropdown"><a href="#" id="trendMenu" class="dropbtn"><span>Trend</span></a>
+					      	<div class="dropdown-content">
+					        	<a href="#" onclick="trendMenu('us');">US</a>
+					        	<a href="#" onclick="trendMenu('china');">China</a>
+					        	<a href="#" onclick="trendMenu('japan');">Japan</a>
+					      	</div>
+					    </li>
 						<c:choose>
 							
 							<c:when test="${1==1}">
 								<li class="call-to-action"><a href="#" onclick="document.getElementById('id01').style.display='block'" 
 								style="width:auto;"><span>Login</span></a></li>
-								<li><a><span>${Member.nickname}¥‘ æ»≥Á«œººø‰.</span></a></li>
 							</c:when>
 							<c:otherwise>
 								<li><a><span>${Member.nickname}¥‘ æ»≥Á«œººø‰.</span></a></li>
@@ -238,6 +246,13 @@ function showDivs(n) {
 		<div id="boardView" align="center"></div>
 	</div>
 	<!-- End Board -->
+	
+	<!-- Start Trend -->
+	<div class="menu" id="trend" style="display: none;">
+		<div style="height: 80px"></div>
+		<div id="trendView" align="center"></div>
+	</div>
+	<!-- End Trend -->
 	
 	<!-- Hot Issue -->
 	<div class="menu" id="hotIssue" style="display: none;">
