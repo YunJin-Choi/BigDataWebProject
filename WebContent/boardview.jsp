@@ -2,11 +2,15 @@
 	pageEncoding="EUC-KR"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <!-- board CSS -->
 <head>
 
 <script src="./js/board.js"></script>
 <link rel="stylesheet" href="css/board.css">
+<link href="./bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+<!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요한) -->
+<script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
 </head>
 
 <html>
@@ -21,6 +25,7 @@
 	<td class="boardtd">지역 : ${data.bizLocal}</td>
 	</tr>
 </table><br><br><br>
+
 <!-- 하단 버튼 -->
 <table align="center" class="boardTable" align="center" style="width: 70%">
 	<tr>
@@ -33,23 +38,45 @@
 	<input type="button" name="boardCommand" value="deleteCommunityMkt"></td>
 	</tr>
 </table>
-<!-- 댓글 좌라락 보기 -->
-<c:forEach items="${data.comments}" var= "data">
-<table class="boardTable" align="center" style="width: 50%">
-	<tr><td class="boardtd" style="font-weight: bold;">${list.nickName}</td>
-	<td align="right" ><input type="button" name="command" value="commentreWrite" ></td>
-	<td align="right" ><input type="button" name="command" value="commentreDelete" ></td></tr>
-	<tr><td class="boardtd">${list.contents}</td></tr>
-</table>
-</c:forEach>
-<!-- 댓글 달기 -->
-<table class="boardTable" align="center" style="width: 50%">
-	<tr><td class="boardtd" style="font-size: 13px">댓글을 입력해 주세요</td></tr>
-	<tr><td class="boardtd">
-		<input style="width: 100%; border: 1px solid #ddd; height: 50" type="text" name="data.comment">
-	</td></tr>
-	<tr><td align="left"><input type="button" name="command" value="commentInsert"></td>
-</table> 
+
+ <!-- 댓글 -->
+ <table id="commentTable" class="table table-condensed">
+<table class="table table-condensed">
+                        <tr>
+                            <td>
+                                <span class="form-inline" role="form">
+                                    <p>
+                                        <div class="form-group">
+                                            <input type="text" id="commentParentName" name="commentParentName" class="form-control col-lg-2" data-rule-required="true" placeholder="이름" maxlength="10">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" id="commentParentPassword" name="commentParentPassword" class="form-control col-lg-2" data-rule-required="true" placeholder="패스워드" maxlength="10">
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="button" id="commentParentSubmit" name="commentParentSubmit" class="btn btn-default">확인</button>
+                                        </div>
+                                    </p>
+                                        <textarea id="commentParentText" class="form-control col-lg-12" style="width:100%" rows="4"></textarea>
+                                </span>
+                            </td>
+                        </tr>
+                    </table>
+					<table class="table table-condensed">
+                        <thead>
+                            <tr>
+                                <td>
+                                    <span style='float:right'>
+                                        <button type="button" id="list" class="btn btn-default">목록</button>
+                                        <button type="button" id="modify" class="btn btn-default">수정</button>
+                                        <button type="button" id="delete" class="btn btn-default">삭제</button>
+                                        <button type="button" id="write" class="btn btn-default">글쓰기</button>
+                                    </span>
+                                </td>
+                            </tr>
+                        </thead>
+                    </table>
+</table>                  
+
 
 </body>
 </html>

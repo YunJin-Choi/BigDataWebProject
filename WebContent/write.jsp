@@ -36,8 +36,10 @@
 			<td colspan="2"><input type="text" name="contents" size="100"></td>
 		</tr>
 	</table>
+	
 	<input type="hidden" name="communityMktCommand" value="createCommunityMkt">
 	<center><input type="submit" name="command" value="communityMkt"></center>
+	
 </form>
 </body>
 </html>

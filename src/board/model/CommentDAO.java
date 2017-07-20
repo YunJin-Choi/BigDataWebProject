@@ -1,12 +1,3 @@
-/* 1. 占쏙옙占쏙옙占쏙옙 2. 占쌘울옙占쏙옙占쏙옙
- * 	1. 커占승댐옙티
- * 		         占쏙옙占�
-					C : createCommentOwner
-					R : selectAllCommentOwner(占쏙옙체)
-					    selectCommentOwnerById(특占쏙옙)
-					U : updateCommentOwner
-					D : deleteCommentOwner (占쏙옙占� 占쏙옙占쏙옙 占쏙옙占쏙옙)
- */
 package board.model;
 
 import java.sql.Connection;
@@ -21,7 +12,8 @@ import dbutil.DBUtil;
 
 public class CommentDAO {
 	static ResourceBundle sql = DBUtil.getResourceBundle();
-	// createCommentOwner
+	
+
 	public static boolean createCommentOwner(String moq, int writing_no, String nickname, String contents) throws SQLException{		
 		Connection con = null;	
 		PreparedStatement pstmt = null;
@@ -42,8 +34,7 @@ public class CommentDAO {
 		}
 		return false;
 	}
-	// R 
-	// selectAllComment(占쏙옙체)
+
 	public static ArrayList<CommentDTO> selectAllComment(String moq, String writing_no) throws SQLException{		
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -67,7 +58,7 @@ public class CommentDAO {
 		return commentList;
 	}
 	
-	// U : updateCommentOwne (占쏙옙占쏙옙)
+
 	public static boolean updateComment(String moq, int comment_no, String contents) throws SQLException{		
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -88,7 +79,7 @@ public class CommentDAO {
 		return false;
 	}
 	
-	//D : deleteComment
+
 	public static boolean deleteComment(String moq, int comment_no, String contents) throws SQLException{		
 		Connection con = null;
 		PreparedStatement pstmt = null;
