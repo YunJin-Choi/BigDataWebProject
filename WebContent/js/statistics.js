@@ -46,8 +46,10 @@ function makeChart(pamphlet, SNS, News, Experience){
 		chart.draw(data, options);
 
 		google.visualization.events.addListener(chart, 'select', function(e){
-			var selection = chart.getSelection()[0];
-			
+			var selection = chart.getSelection()[0].row;
+			if(selection == 0) {
+				alert(0);
+			}
 	    });
 	}
 }
