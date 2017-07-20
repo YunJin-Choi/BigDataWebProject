@@ -1211,7 +1211,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*# sourceMappingURL=style.css.map */
-.loginInput[type=text], .loginInput[type=password] {
+.inputForm[type=text], .inputForm[type=password], .inputForm[type=tel]{
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -1221,7 +1221,27 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Set a style for all buttons */
-.loginButton {
+.buttonForm1 {
+    background-color: #ff3b30;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 49%;
+}
+
+.buttonForm2 {
+    background-color: #c0c0c0;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 49%;
+}
+
+.buttonForm3 {
     background-color: #ff3b30;
     color: white;
     padding: 14px 20px;
@@ -1231,7 +1251,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
 }
 
-.loginButton:hover {
+.buttonForm1 .buttonForm2 .buttonForm3:hover {
     opacity: 0.8;
 }
 

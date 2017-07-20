@@ -246,22 +246,47 @@ function showDivs(n) {
 	</div>
 	<!-- End Hot Issue -->
 	<!-- Start Login -->
-	<div id="id01" class="modal">
-		<form class="modal-content animate" method="post" name=login>
+	<div class="modal" id="id01">
+		<div class="modal-content animate" id="login">
 			<div class="imgcontainer">
 				<span onclick="document.getElementById('id01').style.display='none'"
 					class="close" title="Close Modal">&times;</span> 
 			</div>
 			<div class="containerLogin">
 				<label><b>Email</b></label> 
-				<input class="loginInput" type="text" placeholder="Enter Email" name="email" required> 
+				<input class="inputForm" type="text" placeholder="Enter Email" name="email"> 
 				<label><b>Password</b></label>
-				<input class="loginInput" type="password" placeholder="Enter Password" name="password" required>
-				<button class="loginButton" type="submit" onclick="loginCheck()">Login</button>
+				<input class="inputForm" type="password" placeholder="Enter Password" name="password">
+				<button class="buttonForm1" type="submit" onclick="loginCheck()">Login</button>
+				<button class="buttonForm2" onclick="join()">Join</button>
 			</div>
-		</form>
+		</div>
 	</div>
 	<!-- End Login -->
+	
+	<!-- Start Join -->
+	<div class="modal" id="id02">
+		<div class="modal-content animate" id="join">
+			<div class="imgcontainer">
+				<span onclick="document.getElementById('id02').style.display='none'"
+					class="close" title="Close Modal">&times;</span> 
+			</div>
+			<div class="containerLogin">
+				<label><b>Email</b></label> 
+				<input class="inputForm" type="text" placeholder="Enter Email" name="email"> 
+				<label><b>Password</b></label>
+				<input class="inputForm" type="password" placeholder="Enter Password" name="password">
+				<label><b>Nick Name</b></label> 
+				<input class="inputForm" type="text" placeholder="Enter Nick Name" name="nickname"> 
+				<label><b>Call Number</b></label>
+				<input class="inputForm" type="tel" placeholder="Enter Call Number" name="callnumber" maxlength="11">
+				<center><input type="radio" name="job" value="mkt">Marketer
+                <input type="radio" name="job" value="owner">Owner</center>
+				<button class="buttonForm3" type="submit" onclick="joinCheck()">Join</button>
+			</div>
+		</div>
+	</div>
+	<!-- End Join -->
 	<!-- Main JS (Do not remove) -->
 	<script src="js/main.js" charset="utf-8"></script>
 	</body>
