@@ -100,11 +100,8 @@ function showDivs(n) {
 	<link rel="stylesheet" href="css/datalab.css">
 	<!-- w3schools Icon -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
 	</head>
+
 	<body>
 	<header role="banner" id="fh5co-header">
 		<div class="fluid-container">
@@ -144,10 +141,10 @@ function showDivs(n) {
 			</nav>
 	  </div>
 	</header>
+	
 	<!-- Home Page -->
 		<!-- Content -->
 	<div class="menu" id="home" style="display: block;">
-
 		<div class="w3-panel">
 			<h1>
 				<b>MARKETING</b>
@@ -189,7 +186,6 @@ function showDivs(n) {
 			</div>
 		</div>
 
-		<!-- Grid -->
 		<div class="w3-row w3-container">
 			<div class="w3-center w3-padding-64">
 				<span
@@ -199,44 +195,145 @@ function showDivs(n) {
 				width="700" style="border: 5px solid grey;"> </iframe>
 		</div>
 
-		<!-- Contact -->
-		<div class="w3-center w3-padding-64" id="contact">
-			<span
-				class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">
-				홈페이지 담당자에게 연락하세요 </span>
+		<!-- 만든 사람들 시작 -->
+		<section id="fh5co-team" data-section="team">
+		<div class="fh5co-team">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 section-heading text-center">
+						<h2 class="to-animate">Meet The Team</h2>
+						<div class="row">
+							<div class="col-md-8 col-md-offset-2 subtext">
+								<h3 class="to-animate">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove. </h3>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<div class="team-box text-center to-animate-2">
+							<div class="user"><img class="img-reponsive" src="images/person4.jpg" alt="Roger Garfield"></div>
+							<h3>Roger Garfield</h3>
+							<span class="position">Co-Founder, Lead Developer</span>
+							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+							<ul class="social-media">
+								<li><a href="#" class="facebook"><i class="icon-facebook"></i></a></li>
+								<li><a href="#" class="twitter"><i class="icon-twitter"></i></a></li>
+								<li><a href="#" class="dribbble"><i class="icon-dribbble"></i></a></li>
+								<li><a href="#" class="codepen"><i class="icon-codepen"></i></a></li>
+								<li><a href="#" class="github"><i class="icon-github-alt"></i></a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="col-md-4">
+						<div class="team-box text-center to-animate-2">
+							<div class="user"><img class="img-reponsive" src="images/person2.jpg" alt="Roger Garfield"></div>
+							<h3>Kevin Steve</h3>
+							<span class="position">Co-Founder, Product Designer</span>
+							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+							<ul class="social-media">
+								<li><a href="#" class="facebook"><i class="icon-facebook"></i></a></li>
+								<li><a href="#" class="twitter"><i class="icon-twitter"></i></a></li>
+								<li><a href="#" class="dribbble"><i class="icon-dribbble"></i></a></li>
+								<li><a href="#" class="codepen"><i class="icon-codepen"></i></a></li>
+								<li><a href="#" class="github"><i class="icon-github-alt"></i></a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="col-md-4">
+						<div class="team-box text-center to-animate-2">
+							<div class="user"><img class="img-reponsive" src="images/person3.jpg" alt="Roger Garfield"></div>
+							<h3>Ross Standford</h3>
+							<span class="position">Full Stack Developer</span>
+							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+							<ul class="social-media">
+								<li><a href="#" class="facebook"><i class="icon-facebook"></i></a></li>
+								<li><a href="#" class="twitter"><i class="icon-twitter"></i></a></li>
+								<li><a href="#" class="dribbble"><i class="icon-dribbble"></i></a></li>
+								<li><a href="#" class="codepen"><i class="icon-codepen"></i></a></li>
+								<li><a href="#" class="github"><i class="icon-github-alt"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
-
-		<form class="w3-container" action="/action_page.php" target="_blank">
-
-			<div class="w3-section">
-				<label>Name</label> <input
-					class="w3-input w3-border w3-hover-border-black"
-					style="width: 100%;" type="text" name="Name" required>
+	</section>
+	<!-- 만든 사람들 끝 -->
+	<!-- sign up free start-->
+	<div class="getting-started getting-started-2">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 to-animate">
+					<h3>Getting Started</h3>
+					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+				</div>
+				<div class="col-md-6 to-animate-2">
+					<div class="call-to-action text-right">
+						<a href="#" class="sign-up">Sign Up For Free</a>
+					</div>
+				</div>
 			</div>
-
-			<div class="w3-section">
-				<label>Email</label> <input
-					class="w3-input w3-border w3-hover-border-black"
-					style="width: 100%;" type="text" name="Email" required>
-			</div>
-
-			<div class="w3-section">
-				<label>Subject</label> <input
-					class="w3-input w3-border w3-hover-border-black"
-					style="width: 100%;" name="Subject" required>
-			</div>
-
-			<div class="w3-section">
-				<label>Message</label> <input
-					class="w3-input w3-border w3-hover-border-black"
-					style="width: 100%;" name="Message" required>
-			</div>
-
-			<button type="submit" class="w3-button w3-block w3-black">Send</button>
-
-		</form>
-
+		</div>
 	</div>
+	<!-- sign up free end-->
+	<!-- Footer start -->
+	<div id="fh5co-footer" role="contentinfo">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 to-animate">
+					<h3 class="section-title">About Us</h3>
+					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics.</p>
+					<p class="copy-right">&copy; 2015 Union Free Template. <br>All Rights Reserved. <br>
+						Designed by <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a>
+						Demo Images: <a href="http://unsplash.com/" target="_blank">Unsplash</a> &amp; Dribbble Image by <a href="https://dribbble.com/tibi_neamu" target="_blank">Tiberiu</a>
+					</p>
+				</div>
+
+				<div class="col-md-4 to-animate">
+					<h3 class="section-title">Our Address</h3>
+					<ul class="contact-info">
+						<li><i class="icon-map-marker"></i>198 West 21th Street, Suite 721 New York NY 10016</li>
+						<li><i class="icon-phone"></i>+ 1235 2355 98</li>
+						<li><i class="icon-envelope"></i><a href="#">info@yoursite.com</a></li>
+						<li><i class="icon-globe2"></i><a href="#">www.yoursite.com</a></li>
+					</ul>
+					<h3 class="section-title">Connect with Us</h3>
+					<ul class="social-media">
+						<li><a href="#" class="facebook"><i class="icon-facebook"></i></a></li>
+						<li><a href="#" class="twitter"><i class="icon-twitter"></i></a></li>
+						<li><a href="#" class="dribbble"><i class="icon-dribbble"></i></a></li>
+						<li><a href="#" class="github"><i class="icon-github-alt"></i></a></li>
+					</ul>
+				</div>
+
+				<div class="col-md-4 to-animate">
+					<h3 class="section-title">Drop us a line</h3>
+					<form class="contact-form">
+						<div class="form-group">
+							<label for="name" class="sr-only">Name</label>
+							<input type="name" class="form-control" id="name" placeholder="Name">
+						</div>
+						<div class="form-group">
+							<label for="email" class="sr-only">Email</label>
+							<input type="email" class="form-control" id="email" placeholder="Email">
+						</div>
+						<div class="form-group">
+							<label for="message" class="sr-only">Message</label>
+							<textarea class="form-control" id="message" rows="7" placeholder="Message"></textarea>
+						</div>
+						<div class="form-group">
+							<input type="submit" id="btn-submit" class="btn btn-send-message btn-md" value="Send Message">
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Footer end -->	
+
 	<!-- End Home -->
 	<!-- Start Board -->
 	<div class="menu" id="board" style="display: none;">
