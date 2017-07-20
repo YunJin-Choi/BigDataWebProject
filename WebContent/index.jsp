@@ -178,11 +178,11 @@ function showDivs(n) {
 				<span
 					class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">유용한페이지</span>
 			</div>
-			<iframe src="http://www.i-boss.co.kr/ab-74576" height="500"
-				width="700" style="border: 5px solid grey;"> </iframe>
+			<center><iframe src="http://www.i-boss.co.kr/ab-74576" display:block margin:0 auto height="500"
+				width="700" style="border: 5px solid grey;"> </iframe></center>
 		</div>
 		<!-- 유용한 페이지 End -->
-		
+
 		<!-- 만든 사람들 시작 -->
 		<section id="fh5co-team" data-section="team">
 		<div class="fh5co-team">
@@ -199,6 +199,21 @@ function showDivs(n) {
 					</div>
 				</div>
 				<div class="row">
+					<div class="col-md-4">
+						<div class="team-box text-center to-animate-2">
+							<div class="user"><img class="img-reponsive" src="images/person4.jpg" alt="Roger Garfield"></div>
+							<h3>Roger Garfield</h3>
+							<span class="position">Co-Founder, Lead Developer</span>
+							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, 
+							there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+							<ul class="social-media">
+								<li><a href="https://www.facebook.com/" target="blank" class="facebook"><i class="icon-facebook"></i></a></li>
+								<li><a href="https://www.github.com/" target="blank" class="github"><i class="icon-github-alt"></i></a></li>
+							</ul>
+						</div>
+					</div>
+					
+						<div class="row">
 					<div class="col-md-4">
 						<div class="team-box text-center to-animate-2">
 							<div class="user"><img class="img-reponsive" src="images/person4.jpg" alt="Roger Garfield"></div>
