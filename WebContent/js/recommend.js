@@ -1,4 +1,4 @@
-function statistics() {
+function recommend() {
 	bizType = document.getElementById("bizType").value;
 	bizSize = document.getElementById("bizSize").value;
 	bielocal = document.getElementById("bizlocal").value;
@@ -44,12 +44,26 @@ function makeChart(pamphlet, SNS, News, Experience){
 		
 		var chart = new google.visualization.PieChart(document.getElementById('chartView'));
 		chart.draw(data, options);
-
 		google.visualization.events.addListener(chart, 'select', function(e){
 			var selection = chart.getSelection()[0].row;
+			var boardURL;
 			if(selection == 0) {
-				alert(0);
+				boardURL = 'boardPamphlet.jsp';
+			}else if(selection == 1) {
+				boardURL = 'boardSNS.jsp';
+			}else if(selection == 2) {
+				boardURL = 'boardNews.jsp';
+			}else if(selection == 3) {
+				boardURL = 'boardExperience.jsp';
 			}
+			$.ajax({
+				url: boardURL,
+				method: "post",
+				dataType: "html",
+				success: function(result){
+					$("#recommendBoardView").html(result);
+				}	
+			});	
 	    });
 	}
 }

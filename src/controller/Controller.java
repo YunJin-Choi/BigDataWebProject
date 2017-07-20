@@ -61,6 +61,8 @@ public class Controller extends HttpServlet {
 			}else if(command.equals("moveUpdateCommunityMktById")) {
 				moveUpdateCommunityMktById(request, response);
 				System.out.println("moveUpdateCommunityMktById");
+			}else if(command.equals("selectCommunityMktByIdRecommend")) {
+				selectCommunityMktByIdRecommend(request, response);
 			}
 		}
 	}
@@ -87,6 +89,22 @@ public class Controller extends HttpServlet {
 			request.setAttribute("data", dto);
 			System.out.println(dto);
 			request.getRequestDispatcher("boardview.jsp").forward(request, response);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	private void selectCommunityMktByIdRecommend(HttpServletRequest request, HttpServletResponse response) {
+		try {
+			request.setCharacterEncoding("euc-kr");
+			response.setContentType("euc-kr");
+			String num = request.getParameter("boardNum");
+			CommunityDTO dto = CommunityDAO.selectCommunityById("MktBoard", num);
+			CommunityDAO.updateViewNum("MktBoard", num);
+			//dto.setComments(CommentDAO.selectAllComment("Mkt", num));
+			request.setAttribute("data", dto);
+			System.out.println(dto);
+			request.getRequestDispatcher("boardviewRecommend.jsp").forward(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -410,10 +428,10 @@ public class Controller extends HttpServlet {
 			ArrayList<CommunityDTO> SNSList = CommunityDAO.selectSNS();
 			ArrayList<CommunityDTO> newsList = CommunityDAO.selectNews();
 			ArrayList<CommunityDTO> experienceList = CommunityDAO.selectExperience();
-			request.setAttribute("pamphletList", pamphletList);
-			request.setAttribute("SNSList", SNSList);
-			request.setAttribute("newsList", newsList);
-			request.setAttribute("experienceList", experienceList);
+			request.getSession().setAttribute("pamphletList", pamphletList);
+			request.getSession().setAttribute("SNSList", SNSList);
+			request.getSession().setAttribute("newsList", newsList);
+			request.getSession().setAttribute("experienceList", experienceList);
 			PrintWriter out = response.getWriter();
 			out.println("{Pamphlet:"+pamphletList.size()+", SNS:"+SNSList.size()+", News:"+newsList.size()
 			+ ", Experience:"+experienceList.size()+"}");

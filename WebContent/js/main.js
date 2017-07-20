@@ -643,7 +643,10 @@ $(document).keydown(function(e){
     		boardMenu("QnA");
     	}else if(value == "hotIssue"){
     		hotIssueMenu();
-    	}else{
+    	}else if(value == "recommed"){
+    		recommendMenu();
+    	}
+    	else{
     		homeMenu();
     	}
         e.preventDefault();
@@ -713,13 +716,14 @@ function recommendMenu(){
 	$(".active").removeClass();
 	$("#recommendMenu").parent().addClass("active");
 	$.ajax({
-		url: "statistics.jsp",
+		url: "recommend.jsp",
 		method: "post",
 		dataType: "html",
 		success: function(result){
 			$("#recommendView").html(result);
 		}	
 	});
+	setCookie("viewPage", "recommend");
 }
 
 function hotIssueMenu(){

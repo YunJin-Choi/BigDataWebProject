@@ -179,4 +179,18 @@ function insert() {
 		}
 	});
 }
+
+function recommendboardView(num){
+	$.ajax({
+		url: "Controller",
+		data: {
+			command: "communityMkt", boardCommand: "selectCommunityMktByIdRecommend", boardNum: num
+		},
+		method: "post",
+		dataType: "html",
+		success: function(result){
+			$("#recommendBoardView").html(result);
+		}	
+	});
+}
 	

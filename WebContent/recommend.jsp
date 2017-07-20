@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script type="text/javascript" src="js/statistics.js"></script>
+<script type="text/javascript" src="js/recommend.js"></script>
 <div style="height: 100px"></div>
 <div style="width: 100%">
 <div style="float: left; margin-left: 23%; margin-top: 80px">
@@ -41,8 +41,8 @@
 		</select>
 	</div>
 	<br>
-	<button class="w3-button w3-light-grey w3-block" onclick="statistics()" style="width: 240px">검색</button>
+	<button class="w3-button w3-light-grey w3-block" onclick="recommend()" style="width: 240px">검색</button>
 </div>
 <div id="chartView" style="float: right; margin-right: 7%"></div>
 </div>
-<div id="boardView"></div>
+<div id="recommendBoardView"></div>
