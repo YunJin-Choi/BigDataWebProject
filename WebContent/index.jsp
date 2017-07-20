@@ -18,12 +18,6 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 .w3-tag {height:15px;width:15px;padding:0;margin-top:6px}
 </style>
 
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
-	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
-	<meta name="author" content="FREEHTML5.CO" />
- 	<meta name="Generator" content="EditPlus®">
- 	<meta name="Author" content="">
 	
 <script>
 // Slideshow
@@ -103,6 +97,7 @@ function showDivs(n) {
 	</head>
 
 	<body>
+	<!--  메뉴 -->
 	<header role="banner" id="fh5co-header">
 		<div class="fluid-container">
 			<nav class="navbar navbar-default">
@@ -126,7 +121,6 @@ function showDivs(n) {
 					      	</div>
 					    </li>
 						<c:choose>
-							
 							<c:when test="${empty Member}">
 								<li class="call-to-action"><a href="#" onclick="document.getElementById('id01').style.display='block'" 
 								style="width:auto;"><span>Login</span></a></li>
@@ -135,23 +129,15 @@ function showDivs(n) {
 								<li><a><span>${Member.nickName}</span></a></li>
 							</c:otherwise>
 						</c:choose>
-						
 					</ul>
 				</div>
 			</nav>
 	  </div>
 	</header>
+	<!-- 메뉴바 끝 -->
 	
-	<!-- Home Page -->
-		<!-- Content -->
-	<div class="menu" id="home" style="display: block;">
-		<div class="w3-panel">
-			<h1>
-				<b>MARKETING</b>
-			</h1>
-		</div>
-
-		<!-- Slideshow -->
+	<!-- Home Page Start -->
+		<!-- Slide show -->
 		<div class="w3-container">
 			<div class="w3-display-container mySlides">
 				<img src="" style="width: 100%">
@@ -167,7 +153,7 @@ function showDivs(n) {
 						카테고리</span>
 				</div>
 			</div>
-			<!-- Slideshow next/previous buttons -->
+			<!-- Slide show next/previous buttons -->
 			<div class="w3-container w3-dark-grey w3-padding w3-xlarge">
 				<div class="w3-left" onclick="plusDivs(-1)">
 					<i class="fa fa-arrow-circle-left w3-hover-text-teal"></i>
@@ -185,7 +171,8 @@ function showDivs(n) {
 				</div>
 			</div>
 		</div>
-
+		
+		<!--  유용한 페이지 Start -->
 		<div class="w3-row w3-container">
 			<div class="w3-center w3-padding-64">
 				<span
@@ -194,7 +181,8 @@ function showDivs(n) {
 			<iframe src="http://www.i-boss.co.kr/ab-74576" height="500"
 				width="700" style="border: 5px solid grey;"> </iframe>
 		</div>
-
+		<!-- 유용한 페이지 End -->
+		
 		<!-- 만든 사람들 시작 -->
 		<section id="fh5co-team" data-section="team">
 		<div class="fh5co-team">
@@ -262,6 +250,7 @@ function showDivs(n) {
 		</div>
 	</section>
 	<!-- 만든 사람들 끝 -->
+	
 	<!-- sign up free start-->
 	<div class="getting-started getting-started-2">
 		<div class="container">
@@ -279,6 +268,7 @@ function showDivs(n) {
 		</div>
 	</div>
 	<!-- sign up free end-->
+	
 	<!-- Footer start -->
 	<div id="fh5co-footer" role="contentinfo">
 		<div class="container">
