@@ -11,7 +11,6 @@
 <script type="text/javascript" src="./js/board.js"></script>
 
 </head>
-
 <body>
 <input type="hidden" name="boardName" value="communityMkt">
 <table class="boardTable" align="center" style="width: 80%">
