@@ -341,10 +341,12 @@ function showDivs(n) {
 	</div>
 	<!-- End Board -->
 	
+	<!-- Trend Script -->
+	<script type="text/javascript" src="js/trend.js"></script>
 	<!-- Start Trend -->
 	<div class="menu" id="trend" style="display: none;">
 		<div style="height: 100px"></div>
-		<div id="trendView" align="center"></div>
+		<div id="trendView"></div>
 		<div style="height: 50px"></div>
 	</div>
 	<!-- End Trend -->
