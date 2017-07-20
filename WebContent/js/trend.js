@@ -1,6 +1,6 @@
-function trendChina(trendChinaName) {
+function trend(trendName, country) {
 	$.ajax({
-		url: "trend/china/"+trendChinaName+".html",
+		url: "trend/"+country+"/"+trendName+".html",
 		method: "post",
 		dataType: "html",
 		success: function(result){
