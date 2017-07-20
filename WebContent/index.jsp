@@ -124,6 +124,7 @@ function showDivs(n) {
 						<!-- <li><a href="#" id="hotIssueMenu" onclick="hotIssueMenu()"><span>Hot Issue</span></a></li> -->
 						<li class="dropdown"><a href="#" id="trendMenu" class="dropbtn"><span>Trend</span></a>
 					      	<div class="dropdown-content">
+					        	<a href="#" onclick="trendMenu('korea')">Korea</a>
 					        	<a href="#" onclick="trendMenu('us')">US</a>
 					        	<a href="#" onclick="trendMenu('china')">China</a>
 					        	<a href="#" onclick="trendMenu('japan')">Japan</a>
@@ -413,7 +414,7 @@ function showDivs(n) {
 				<input class="inputForm" type="text" placeholder="Enter Nick Name" name="nickname"> 
 				<label><b>Call Number</b></label>
 				<input class="inputForm" type="tel" placeholder="Enter Call Number" name="callnumber" maxlength="11">
-				<center><input type="radio" name="job" value="mkt">Marketer
+				<center><input type="radio" name="job" value="marketer">Marketer
                 <input type="radio" name="job" value="owner">Owner</center>
 				<button class="buttonForm3" onclick="joinCheck()">Join</button>
 			</div>

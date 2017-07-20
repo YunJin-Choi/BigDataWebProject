@@ -47,7 +47,7 @@
 <table class="boardTable" align="center" style="width: 50%">
 	<tr><td class="boardtd" style="font-size: 13px">댓글을 입력해 주세요</td></tr>
 	<tr><td class="boardtd">
-		<input style="width: 100%; border: 1px solid #ddd; height: 50" type="text" name="data.comment">
+		<input style="width: 100%; border: 1px solid #ddd; height: 50" type="text" name="dataComment">
 	</td></tr>
 	<tr><td align="left"><input type="button" name="command" value="commentInsert"></td>
 </table> 
