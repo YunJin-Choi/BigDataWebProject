@@ -44,12 +44,12 @@ function MrkboardMoveUpdate(num){
 	$.ajax({
 		url: "Controller",
 		data: {
-			command: "communityMkt", boardCommand: "moveUpdateCommunityMktById", boardNum: num
+			command: "communityMkt", boardCommand: "moveUpdateCommunityMktById",
+			boardNum: num
 		},
 		method: "post",
 		dataType: "html",
 		success: function(result){
-			alert(result);
 			$("#boardView").html(result);
 		}	
 	});
@@ -64,7 +64,6 @@ function QnAboardMoveUpdate(num){
 		method: "post",
 		dataType: "html",
 		success: function(result){
-			alert(result);
 			$("#boardView").html(result);
 		}	
 	});
@@ -79,7 +78,6 @@ function MrkboardView(num){
 		method: "post",
 		dataType: "html",
 		success: function(result){
-			alert(result);
 			$("#boardView").html(result);
 		}	
 	});
@@ -94,7 +92,6 @@ function QnAboardView(num){
 		method: "post",
 		dataType: "html",
 		success: function(result){
-			alert(result);
 			$("#boardView2").html(result);
 		}	
 	});
@@ -109,7 +106,6 @@ function MrkboardDelete(num){
 		method: "post",
 		dataType: "html",
 		success: function(result){
-			alert(result);
 			alert("삭제되었습니다!");
 			$("#boardView").html(result);
 		}	
@@ -128,7 +124,6 @@ function MrkboardUpdate(num){
 		method: "post",
 		dataType: "html",
 		success: function(result){
-			alert(result);
 			$("#boardView").html(result);
 		}	
 	});
@@ -199,7 +194,6 @@ function insert() {
 		method: "get",
 		dataType: "html",
 		success: function(result){
-			alert(result);
 			MrkboardList();
 		}
 	});
@@ -224,7 +218,6 @@ function commendInsert() {
 			method: "get",
 			dataType: "html",
 			success: function(result){
-				alert(result);
 				$("#boardView").html(result);
 			}
 		});

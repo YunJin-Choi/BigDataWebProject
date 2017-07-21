@@ -197,6 +197,8 @@ public class Controller extends HttpServlet {
 				selectCommunityOwnerById(request, response);
 			}else if(command.equals("createCommunityOwner")) {
 				createCommunityOwner(request, response);
+			}else if(command.equals("moveUpdateCommunityOwnerById")) {
+				moveUpdateCommunityOwnerById(request, response);
 			}else if(command.equals("updateCommunityOwner")) {
 				updateCommunityOwner(request, response);
 			}else if(command.equals("deleteCommunityOwner")) {
@@ -208,7 +210,7 @@ public class Controller extends HttpServlet {
 	private void selectAllCommunityOwner(HttpServletRequest request, HttpServletResponse response) {
 		try {
 			request.setAttribute("list", CommunityDAO.selectAllCommunity("OwnerBoard"));
-			request.getRequestDispatcher("board.jsp").forward(request, response);
+			request.getRequestDispatcher("ownerboard.jsp").forward(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -219,9 +221,9 @@ public class Controller extends HttpServlet {
 		try {
 			CommunityDTO dto = CommunityDAO.selectCommunityById("OwnerBoard", num);
 			CommunityDAO.updateViewNum("OwnerBoard", num);
-//			dto.setComments(CommentDAO.selectAllCommentOwner(num));
+			dto.setComments(CommentDAO.selectAllCommentOwner(num));
 			request.setAttribute("data", dto);
-			request.getRequestDispatcher("detail.jsp").forward(request, response);
+			request.getRequestDispatcher("ownerboardview.jsp").forward(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -237,7 +239,20 @@ public class Controller extends HttpServlet {
 			String bizLocal = request.getParameter("bizLocal");
 			CommunityDAO.createCommunity("OwnerBoard", 
 					new CommunityDTO(0, title, contents, nickname, 0, null, 0, bizType, bizSize, bizLocal, null));
-			request.getRequestDispatcher("board.jsp").forward(request, response);
+			request.getRequestDispatcher("ownerboard.jsp").forward(request, response);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	private void moveUpdateCommunityOwnerById(HttpServletRequest request, HttpServletResponse response) {
+		try {
+			request.setCharacterEncoding("euc-kr");
+			response.setContentType("euc-kr");
+			String num = request.getParameter("boardNum");
+			CommunityDTO dto = CommunityDAO.selectCommunityById("OwnerBoard", num);
+			request.setAttribute("data", dto);
+			request.getRequestDispatcher("ownerboardUpdate.jsp").forward(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -245,7 +260,13 @@ public class Controller extends HttpServlet {
 	
 	private void updateCommunityOwner(HttpServletRequest request, HttpServletResponse response) {
 		try {
-			
+			String title = request.getParameter("title");
+			String contents = request.getParameter("contents");
+			String num = request.getParameter("boardNum");
+			System.out.println(title + "\t" + contents + "\t" + num);
+			CommunityDAO.updateCommunity("OwnerBoard", title, contents, num);
+			request.setAttribute("data", CommunityDAO.selectCommunityById("OwnerBoard", num));
+			request.getRequestDispatcher("ownerboardview.jsp").forward(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -253,9 +274,11 @@ public class Controller extends HttpServlet {
 	
 	private void deleteCommunityOwner(HttpServletRequest request, HttpServletResponse response) {
 		try {
-			String num = request.getParameter("num");
+			String num = request.getParameter("boardNum");
 			CommunityDAO.deleteCommunity("OwnerBoard", num);
-			
+
+			request.setAttribute("list", CommunityDAO.selectAllCommunity("OwnerBoard"));
+			request.getRequestDispatcher("ownerboard.jsp").forward(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

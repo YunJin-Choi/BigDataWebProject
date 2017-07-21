@@ -61,8 +61,10 @@ function showDivs(n) {
 	<script src="js/jquery.stellar.min.js"></script>
 	<!-- Owl Carousel -->
 	<script src="js/owl.carousel.min.js"></script>
-	<!-- board JS -->
-	<script src="js/board.js"></script>
+	<!-- Marketer board JS -->
+	<script src="js/board.js" charset="utf-8"></script>
+	<!-- Owner board JS -->
+	<script src="js/ownerboard.js" charset="utf-8"></script>
 	<!-- hotIssue JS -->
 	<script src="js/hotIssue.js"></script>
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -409,7 +411,7 @@ function showDivs(n) {
 	</div>
 	<!-- End Join -->
 	<!-- Main JS (Do not remove) -->
-	<script src="js/main.js"></script>
+	<script src="js/main.js" charset="utf-8"></script>
 	</body>
 </html>
 

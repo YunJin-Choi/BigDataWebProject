@@ -55,6 +55,28 @@ public class CommentDAO {
 		return commentList;
 	}
 	
+	public static ArrayList<CommentDTO> selectAllCommentOwner(String writing_no) throws SQLException{		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		ArrayList<CommentDTO> commentList = null;
+		
+		try {
+			con = DBUtil.getConnection();
+			pstmt = con.prepareStatement(sql.getString("selectAllCommentOwner"));
+			pstmt.setString(1, writing_no);
+			rset = pstmt.executeQuery();
+			commentList = new ArrayList<>();
+			while(rset.next()) {
+				commentList.add(new CommentDTO(rset.getInt(1), rset.getInt(2), rset.getString(3),
+						rset.getString(4),rset.getString(5)));
+			}
+		} finally {
+			DBUtil.close(con, pstmt, rset);
+		}
+		return commentList;
+	}
+	
 
 	public static boolean updateComment(String moq, int comment_no, String contents) throws SQLException{		
 		Connection con = null;

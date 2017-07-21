@@ -58,7 +58,6 @@ public class CommunityDAO {
 		PreparedStatement pstmt = null;
 		try {
 			conn = DBUtil.getConnection();
-			
 			pstmt = conn.prepareStatement("INSERT INTO "+community+	" VALUES("+community+"_writing_no_seq.nextval,?,?,?,0,sysdate,0,?,?,?)");
 			pstmt.setString(1, board.getTitle());
 			pstmt.setString(2, board.getContents());
