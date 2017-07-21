@@ -645,6 +645,14 @@ $(document).keydown(function(e){
     		hotIssueMenu();
     	}else if(value == "recommed"){
     		recommendMenu();
+    	}else if(value == "korea"){
+    		trendMenu('korea');
+    	}else if(value == "us"){
+    		trendMenu('us');
+    	}else if(value == "china"){
+    		trendMenu('china');
+    	}else if(value == "japan"){
+    		trendMenu('japan');
     	}
     	else{
     		homeMenu();

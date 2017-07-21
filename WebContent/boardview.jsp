@@ -21,17 +21,18 @@
 	<td class="boardtd">지역 : ${data.bizLocal}</td>
 	</tr>
 </table><br><br><br>
-
 <!-- 하단 버튼 -->
 <table align="center" class="boardTable" align="center" style="width: 70%">
 	<tr>
 		<td class="boardtd" align="center" style="border: 1px solid #ddd; width: 100%; height: 200px;">${data.contents}</td>
 	</tr>
+	<c:if test="${Member.nickName eq data.nickname }">
 		<tr align="right"  style="width: 70%">
 			<td class="boardtd" align="right"><button onclick="MrkboardMoveUpdate(${data.num})">수정하기</button>
 			<input type="hidden" name="command" value="MktBoard"></td>
 			<td class="boardtd" align="right"><button onclick="MrkboardDelete(${data.num})">삭제하기</button></td>
 		</tr>
+	</c:if>
 </table>
 
 <!-- 댓글 좌라락 보기 -->
@@ -39,8 +40,10 @@
 <c:forEach items="${data.comments}" var= "data2">
 	<tr>
 		<td class="boardtd" style="font-weight: bold;">${data2.nickName}</td>
-		<td align="right" ><input type="button" name="command" value="commentreWrite" ></td>
-		<td align="right" ><input type="button" name="command" value="commentreDelete" ></td>
+		<c:if test="${Member.nickName eq data2.nickName}">
+			<td align="right" ><input type="button" name="command" value="commentreWrite" ></td>
+			<td align="right" ><input type="button" name="command" value="commentreDelete" ></td>
+		</c:if>
 	</tr>
 	<tr>
 		<td class="boardtd">${data2.contents}</td>
