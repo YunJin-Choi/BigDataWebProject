@@ -142,31 +142,20 @@ function errorCheck() {
 	if (document.ffm.title.value == "") {
 		alert("제목을 입력하세요");
 		ffm.title.focus();
-		return false;
-	}
-	if (document.ffm.bizType.value == "") {
+	}else if (document.ffm.bizType.value == "") {
 		alert("업종을 선택하세요");
 		ffm.bizType.focus();
-		return false;
-	}
-	if (document.ffm.bizLocal.value == "") {
+	}else if (document.ffm.bizLocal.value == "") {
 		alert("지역을 선택하세요");
 		ffm.bizLocal.focus();
-		return false;
-	}
-	if (document.ffm.bizSize.value == "") {
+	}else if (document.ffm.bizSize.value == "") {
 		alert("규모를 입력하세요");
 		ffm.bizSize.focus();
-		return false;
-	}
-	if (document.ffm.contents.value == "") {
+	}else if (document.ffm.contents.value == "") {
 		alert("내용이 없습니다");
 		ffm.contents.focus();
-		return false;
-	}
-	else{
+	}else{
 		insert();
-
 	}
 }
 
@@ -194,7 +183,8 @@ function insert() {
 		method: "post",
 		dataType: "html",
 		success: function(result){
-			MrkboardList();
+			alert(result);
+			$("#boardView").html(result);
 		}
 	});
 }

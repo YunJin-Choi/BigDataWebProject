@@ -28,22 +28,27 @@
 	<tr>
 		<td class="boardtd" align="center" style="border: 1px solid #ddd; width: 100%; height: 200px;">${data.contents}</td>
 	</tr>
-	
-		
-	<tr align="right" style="width: 100%">
-	
-	<td><button class="w3-button w3-black" onclick="ownerboardMoveUpdate(${data.num})">수정하기</button>
-	<button class="w3-button w3-black" onclick="ownerboardDelete(${data.num})">삭제하기</button></td>
-	</tr>
+	<c:if test="${data.nickname eq Member.nickName}">		
+		<tr align="right" style="width: 100%">
+		<td><button class="w3-button w3-black" onclick="ownerboardMoveUpdate(${data.num})">수정하기</button>
+		<button class="w3-button w3-black" onclick="ownerboardDelete(${data.num})">삭제하기</button></td>
+		</tr>
+	</c:if>
 </table>
 
 <!-- 댓글 좌라락 보기 -->
-<c:forEach items="${data.comments}" var= "data">
+<c:forEach items="${data.comments}" var= "data2">
 <table class="boardTable" align="center" style="width: 50%">
-	<tr><td class="boardtd" style="font-weight: bold;">${list.nickName}</td>
-	<td align="right" ><input type="button" name="command" value="commentreWrite" ></td>
-	<td align="right" ><input type="button" name="command" value="commentreDelete" ></td></tr>
-	<tr><td class="boardtd">${list.contents}</td></tr>
+	<tr>
+		<td class="boardtd" style="font-weight: bold;">${data2.nickName}</td>
+		<c:if test="${Member.nickName eq data2.nickName}">
+			<td align="right" ><input type="button" name="command" value="commentreWrite" ></td>
+			<td align="right" ><input type="button" name="command" value="commentreDelete" ></td>
+		</c:if>
+	</tr>
+	<tr>
+		<td class="boardtd">${data2.contents}</td>
+	</tr>
 </table>
 </c:forEach>
 <!-- 댓글 달기 -->

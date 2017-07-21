@@ -1,9 +1,4 @@
 ;(function () {
-	
-	'use strict';
-
-
-
 	// iPad and iPod detection	
 	var isiPad = function(){
 		return (navigator.platform.indexOf("iPad") != -1);
@@ -20,8 +15,6 @@
 	var parallax = function() {
 		$(window).stellar();
 	};
-
-
 
 	// Burger Menu
 	var burgerMenu = function() {
@@ -643,7 +636,7 @@ $(document).keydown(function(e){
     		boardMenu("QnA");
     	}else if(value == "hotIssue"){
     		hotIssueMenu();
-    	}else if(value == "recommed"){
+    	}else if(value == "recommemnd"){
     		recommendMenu();
     	}else if(value == "korea"){
     		trendMenu('korea');
