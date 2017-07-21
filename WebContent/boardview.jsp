@@ -31,44 +31,41 @@
 				style="border: 1px solid #ddd; width: 100%; height: 200px;">${data.contents}</td>
 		</tr>
 		<tr style="height: 10px"></tr>
+		
 		<tr align="right" style="width: 100%">
-			<td><button class="w3-button w3-black"
+			<td>
+		<c:if test="${Member.nickName eq data.nickname }">
+			<button class="w3-button w3-black"
 					onclick="MrkboardMoveUpdate(${data.num})">수정하기</button>
 				<button class="w3-button w3-black"
 					onclick="MrkboardDelete(${data.num})">삭제하기</button>
+		</c:if>
 			<input class="w3-button w3-black" type="button" value="리스트로 돌아가기" onclick="MktboardList()">		
 					</td>
 		</tr>
 	</table>
 
 	<!-- 댓글 좌라락 보기 -->
-	<c:forEach items="${data.comments}" var="data">
-		<table class="boardTable" align="center" style="width: 50%">
-			<tr>
-				<td class="boardtd" style="font-weight: bold;">${list.nickName}</td>
-				<td align="right"><input type="button" name="command"
-					value="commentreWrite"></td>
-				<td align="right"><input type="button" name="command"
-					value="commentreDelete"></td>
-			</tr>
-			<tr>
-				<td class="boardtd">${list.contents}</td>
-			</tr>
-		</table>
-	</c:forEach>
-	<!-- 댓글 달기 -->
-	<table class="boardTable" align="center" style="width: 50%">
-		<tr>
-			<td class="boardtd" style="font-size: 13px; font-weight: bold; font-size: 15px">댓글을 입력해 주세요</td>
-		</tr>
-		<tr>
-			<td class="boardtd"><input
-				style="width: 100%; border: 1px solid #ddd; height: 50" type="text"
-				name="data.comment"></td>
-		</tr>
-		<tr>
-			<td align="left"><button class="w3-button w3-black" name="command">댓글 달기 </button></td>
-	</table>
+<table class="boardTable" align="center" style="width: 50%">
+<c:forEach items="${data.comments}" var= "data2">
+	<tr>
+		<td class="boardtd" style="font-weight: bold;">${data2.nickName}</td>
+	</tr>
+	<tr>
+		<td class="boardtd">${data2.contents}</td>
+	</tr>
+</c:forEach>
+</table>
 
+	<!-- 댓글 달기 -->
+<table class="boardTable" align="center" style="width: 50%">
+	<tr><td class="boardtd" style="font-size: 13px">댓글을 입력해 주세요</td></tr>
+	<tr><td class="boardtd">
+		<input style="width: 100%; border: 1px solid #ddd; height: 50" type="text" id="commendContents">
+		<input type="hidden" id="commendMember" value="${Member.nickName}">
+		<input type="hidden" id="writeNo" value="${data.num}">
+	</td></tr>
+	<tr><td align="left"><input class="w3-button w3-black" type="button" value="댓글 달기" onclick="commendInsert()"></td>
+</table> 
 </body>
 </html>
