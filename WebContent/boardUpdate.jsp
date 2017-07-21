@@ -14,7 +14,7 @@
 <br>
 <form name="ffm" action="Controller" method="post">
 <table class="boardTable" align="center" style="width: 70%">
-	<tr><td class="boardtd" align="center">[${data.bizType}]    
+	<tr><td class="boardtd" align="center" style="width: 150">[${data.bizType}]    
 		<input id ="titleId" type="text" name="title" value="${data.title}"></td></tr>
 	<tr style="font-size: 15px; width: 100%; align-content: center;">
 	<td class="boardtd">글쓴이 : ${data.nickname}</td>
@@ -24,12 +24,15 @@
 </table><br><br><br>
 <table class="boardTable" align="center" style="width: 70%">
 	<tr>
-	<td class="boardtd" align="center" style="width: 100%; height: 200px;">
+	<td class="boardtd" align="center" style="width: 100%; height: 200px">
 		<input id ="contentId" style="width: 100%; height: 100%" type="text" name="contents" value="${data.contents}">&nbsp;&nbsp;</td>
 	</tr>
+	<tr style="height: 10px"></tr>
 	<tr style="width: 100%">
 	<td align="center" >
-		<input type="button" value="수정하기" onclick="MrkboardUpdate(${data.num})"></td>
+		<input class="w3-button w3-black"  type="button" value="수정하기" onclick="MrkboardUpdate(${data.num})">
+		<input class="w3-button w3-black" type="button" value="리스트로 돌아가기" onclick="MktboardList()">
+		</td>
 	</tr>
 </table>
 </form>

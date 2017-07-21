@@ -40,6 +40,6 @@
 </table>
 
 <br><br>
-<center><button onclick="pageMove()">새로 글쓰기</button></center>
+<center><button class="w3-button w3-black" onclick="pageMove()">새로 글쓰기</button></center>
 </body>
 </html>
