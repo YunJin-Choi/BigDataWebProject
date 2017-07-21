@@ -13,7 +13,7 @@ drop sequence MktBoard_writing_no_seq;
 drop sequence OwnerBoard_writing_no_seq;
 drop sequence QABoard_writing_no_seq;
 drop sequence HOTISSUE_writing_no_seq;
-drop sequence Comment_FreeBoard_seq;
+drop sequence Comment_OwnerBoard_seq;
 drop sequence Comment_QABoard_seq;
 drop sequence MarketingTrend_writing_no_seq;
 

@@ -74,15 +74,15 @@ public class QnADAO {
 		return false;
 	}
 	
-	public static boolean updateQnABoard(CommunityDTO board) throws SQLException {
+	public static boolean updateQnABoard(QnABoardDTO qnABoardDTO) throws SQLException {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		try {
 			conn = DBUtil.getConnection();
 			pstmt = conn.prepareStatement(sql.getString("updateQnABoard"));
-			pstmt.setString(1, board.getTitle());
-			pstmt.setString(2, board.getContents());
-			pstmt.setInt(3, board.getNum());
+			pstmt.setString(1, qnABoardDTO.getTitle());
+			pstmt.setString(2, qnABoardDTO.getContents());
+			pstmt.setInt(3, qnABoardDTO.getNum());
 			int count = pstmt.executeUpdate();
 			if(count != 0) {
 				return true;

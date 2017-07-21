@@ -35,7 +35,7 @@ function QnAboardList(){
 		method: "post",
 		dataType: "html",
 		success: function(result){
-			$("#boardView").html(result);
+			$("#boardView2").html(result);
 		}	
 	});	
 }
@@ -45,6 +45,21 @@ function MrkboardMoveUpdate(num){
 		url: "Controller",
 		data: {
 			command: "communityMkt", boardCommand: "moveUpdateCommunityMktById", boardNum: num
+		},
+		method: "post",
+		dataType: "html",
+		success: function(result){
+			alert(result);
+			$("#boardView").html(result);
+		}	
+	});
+}
+
+function QnAboardMoveUpdate(num){
+	$.ajax({
+		url: "Controller",
+		data: {
+			command: "QnA", boardCommand: "updateQnABoard", boardNum: num
 		},
 		method: "post",
 		dataType: "html",
@@ -66,6 +81,21 @@ function MrkboardView(num){
 		success: function(result){
 			alert(result);
 			$("#boardView").html(result);
+		}	
+	});
+}
+
+function QnAboardView(num){
+	$.ajax({
+		url: "Controller",
+		data: {
+			command: "QnA", boardCommand: "selectAllQnABoardOwner", boardNum: num
+		},
+		method: "post",
+		dataType: "html",
+		success: function(result){
+			alert(result);
+			$("#boardView2").html(result);
 		}	
 	});
 }
@@ -115,7 +145,7 @@ function pageMove() {
 
 function errorCheck() {
 	if (document.ffm.title.value == "") {
-		alert("input title");
+		alert("제목을 입력하세요");
 		ffm.title.focus();
 		return false;
 	}

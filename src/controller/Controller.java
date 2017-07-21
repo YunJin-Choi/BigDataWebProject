@@ -284,7 +284,7 @@ public class Controller extends HttpServlet {
 	private void selectAllQnABoardOwner(HttpServletRequest request, HttpServletResponse response) {
 		try {
 			request.setAttribute("list", QnADAO.selectAllQnABoardOwner());
-			request.getRequestDispatcher("board.jsp").forward(request, response);
+			request.getRequestDispatcher("board2.jsp").forward(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -319,7 +319,13 @@ public class Controller extends HttpServlet {
 	
 	private void updateQnABoard(HttpServletRequest request, HttpServletResponse response) {
 		try {
-			
+			String title = request.getParameter("title");
+			String contents = request.getParameter("contents");
+			String nickname = request.getParameter("nickname");
+			String point = request.getParameter("point");
+			String num = request.getParameter("num");
+			QnADAO.updateQnABoard(new QnABoardDTO(0, title, contents, nickname, 0, null, 0,
+					Integer.parseInt(point), null));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -329,7 +335,6 @@ public class Controller extends HttpServlet {
 		try {
 			String num = request.getParameter("num");
 			QnADAO.deleteQnABoard(num);
-			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

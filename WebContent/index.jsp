@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>MainUI 작업중</title>
+<title>Marketing Community</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
@@ -188,7 +188,7 @@ function showDivs(n) {
 					class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">유용한페이지</span>
 			</div>
 			<center><iframe src="http://www.i-boss.co.kr/ab-74576" display:block margin:0 auto height="500"
-				width="700" style="border: 5px solid grey;"> </iframe></center>
+				width="900" style="border: 5px solid grey;"> </iframe></center>
 		</div>
 		<!-- 유용한 페이지 End -->
 			<!-- 만든 사람들 시작 -->
@@ -200,8 +200,7 @@ function showDivs(n) {
 						<h2 class="to-animate">우리팀을 소개합니다</h2>
 						<div class="row">
 							<div class="col-md-8 col-md-offset-2 subtext">
-								<h3 class="to-animate">Far far away, behind the word mountains, far from the countries Vokalia and 
-								Consonantia, there live the blind texts. Separated they live in Bookmarksgrove. </h3>
+								<h3 class="to-animate"> 이 멋진걸 만든 저희 팀입니다!! </h3>
 							</div>
 						</div>
 					</div>
@@ -210,10 +209,9 @@ function showDivs(n) {
 					<div class="col-md-4">
 						<div class="team-box text-center to-animate-2">
 							<div class="user"><img class="img-reponsive" src="images/person4.jpg" alt="Roger Garfield"></div>
-								<h3>Roger Garfield</h3>
-								<span class="position">Co-Founder, Lead Developer</span>
-								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, 
-								there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+								<h3>최윤진</h3>
+								<span class="position">Full Stack Developer</span>
+								<p> 우리팀의 구세주 </p>
 								<ul class="social-media">
 									<li><a href="https://www.facebook.com/" target="blank" class="facebook"><i class="icon-facebook"></i></a></li>
 									<li><a href="https://www.github.com/" target="blank" class="github"><i class="icon-github-alt"></i></a></li>
@@ -225,10 +223,9 @@ function showDivs(n) {
 						<div class="col-md-4">
 							<div class="team-box text-center to-animate-2">
 								<div class="user"><img class="img-reponsive" src="images/person4.jpg" alt="Roger Garfield"></div>
-								<h3>Roger Garfield</h3>
-								<span class="position">Co-Founder, Lead Developer</span>
-								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, 
-								there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+								<h3>이은용</h3>
+								<span class="position">Full Stack Developer</span>
+								<p> 웃는모습으로 다 해결해버리겠다 </p>
 								<ul class="social-media">
 									<li><a href="https://www.facebook.com/" target="blank" class="facebook"><i class="icon-facebook"></i></a></li>
 									<li><a href="https://www.github.com/" target="blank" class="github"><i class="icon-github-alt"></i></a></li>
@@ -239,10 +236,9 @@ function showDivs(n) {
 						<div class="col-md-4">
 							<div class="team-box text-center to-animate-2">
 								<div class="user"><img class="img-reponsive" src="images/person2.jpg" alt="Roger Garfield"></div>
-								<h3>Kevin Steve</h3>
-								<span class="position">Co-Founder, Product Designer</span>
-								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, 
-								there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+								<h3>전현준</h3>
+								<span class="position">Project Manager</span>
+								<p> 입은 내가 책임진다 </p>
 								<ul class="social-media">
 									<li><a href="https://www.facebook.com/" target="blank" class="facebook"><i class="icon-facebook"></i></a></li>
 									<li><a href="https://www.github.com/" target="blank" class="github"><i class="icon-github-alt"></i></a></li>
@@ -253,10 +249,9 @@ function showDivs(n) {
 						<div class="col-md-4">
 							<div class="team-box text-center to-animate-2">
 								<div class="user"><img class="img-reponsive" src="images/person3.jpg" alt="Roger Garfield"></div>
-								<h3>Ross Standford</h3>
+								<h3>김미소</h3>
 								<span class="position">Full Stack Developer</span>
-								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-								 there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+								<p> 검색왕미소 </p>
 								<ul class="social-media">
 									<li><a href="https://www.facebook.com/" target="blank" class="facebook"><i class="icon-facebook"></i></a></li>
 									<li><a href="https://www.github.com/" target="blank" class="github"><i class="icon-github-alt"></i></a></li>
@@ -276,7 +271,7 @@ function showDivs(n) {
 				<div class="row">
 					<div class="col-md-6 to-animate">
 						<h3>커뮤니티 시작하기</h3>
-						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+						<p> 각종 마케팅 정보 및 마케터 교류, 그리고 자영업자분들의 마케팅 방법 추천을 원하시면 로그인하시고 둘러보세요. </p>
 					</div>
 					<div class="col-md-6 to-animate-2">
 						<div class="call-to-action text-right">
@@ -294,22 +289,20 @@ function showDivs(n) {
 			<div class="container">
 				<div class="row">
 					<div class="col-md-4 to-animate">
-						<h3 class="section-title">About Us</h3>
-						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-						 there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics.</p>
-						<p class="copy-right">&copy; 2015 Union Free Template. <br>All Rights Reserved. <br>
+						<h3 class="section-title">About Us</h3><br>
+						<p> 빅데이터청년인재 1기!!! 3day WebProject </p>
+						<p class="copy-right">&copy; 2017 Kdata <br> All Rights Reserved my Team <br>
 							Designed by <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a>
-							Demo Images: <a href="http://unsplash.com/" target="_blank">Unsplash</a> &amp; Dribbble Image by <a href="https://dribbble.com/tibi_neamu" target="_blank">Tiberiu</a>
 						</p>
 					</div>
 	
 					<div class="col-md-4 to-animate">
 						<h3 class="section-title">Our Address</h3>
 						<ul class="contact-info">
-							<li><i class="icon-map-marker"></i>198 West 21th Street, Suite 721 New York NY 10016</li>
-							<li><i class="icon-phone"></i>+ 1235 2355 98</li>
-							<li><i class="icon-envelope"></i><a href="#">info@yoursite.com</a></li>
-							<li><i class="icon-globe2"></i><a href="#">www.yoursite.com</a></li>
+							<li><i class="icon-map-marker"></i>서울특별시 중구 세종대로9길 42 부영빌딩 7층 한국 데이터진흥원</li>
+							<li><i class="icon-phone"></i>+82 02 3708 5300</li>
+							<li><i class="icon-envelope"></i><a href="https://www.google.com">info@gmail.com</a></li>
+							<li><i class="icon-globe2"></i><a href="https://www.google.com">www.google.com</a></li>
 						</ul>
 						<h3 class="section-title">Connect with Us</h3>
 						<ul class="social-media">
@@ -319,7 +312,7 @@ function showDivs(n) {
 					</div>
 	
 					<div class="col-md-4 to-animate">
-						<h3 class="section-title">Drop us a line</h3>
+						<h3 class="section-title">본 사이트에 대해 건의하기</h3>
 						<form class="contact-form">
 							<div class="form-group">
 								<label for="name" class="sr-only">Name</label>
@@ -368,13 +361,7 @@ function showDivs(n) {
 		<div style="height: 50px"></div>
 	</div>
 	<!-- End Recommend -->
-	
-	<!-- Hot Issue -->
-	<div class="menu" id="hotIssue" style="display: none;">
-		<div style="height: 100px"></div>
-		<div id="hotIssueView"></div>
-	</div>
-	<!-- End Hot Issue -->
+		
 	<!-- Login AND Join JavaScript -->
 	<script type="text/javascript" src="js/loginNjoin.js" charset="utf-8"></script>
 	<!-- Start Login -->

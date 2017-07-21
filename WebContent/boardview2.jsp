@@ -29,7 +29,7 @@
 	</tr>
 		<tr align="right"  style="width: 70%">
 			<td class="boardtd" align="right"><button onclick="MrkboardMoveUpdate(${data.num})">수정하기</button>
-			<input type="hidden" name="command" value="MktBoard"></td>
+			<input type="hidden" name="command" value="QnABoard"></td>
 			<td class="boardtd" align="right"><button onclick="MrkboardDelete(${data.num})">삭제하기</button></td>
 		</tr>
 </table>
