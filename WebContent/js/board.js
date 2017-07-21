@@ -191,7 +191,7 @@ function insert() {
 			contents : contentV,
 			bizLocal : localV
 		},
-		method: "get",
+		method: "post",
 		dataType: "html",
 		success: function(result){
 			MrkboardList();
@@ -215,7 +215,7 @@ function commendInsert() {
 				commentMember : commentMemberValue,
 				commendContents : commendContentsValue
 			},
-			method: "get",
+			method: "post",
 			dataType: "html",
 			success: function(result){
 				$("#boardView").html(result);

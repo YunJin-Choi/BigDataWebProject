@@ -136,7 +136,7 @@ function owninsert() {
 			contents : contentV,
 			bizLocal : localV
 		},
-		method: "get",
+		method: "post",
 		dataType: "html",
 		success: function(result){
 			ownerboardList();
