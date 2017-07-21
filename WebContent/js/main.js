@@ -695,7 +695,6 @@ function boardMenu( boardName ){
 	if(boardName == "communityMkt"){
 		MktboardList();
 	}else if(boardName == "communityOwner"){
-		alert("communityOwner");
 		OwnerboardList();
 	}else if(boardName == "QnA"){
 		QnAboardList();

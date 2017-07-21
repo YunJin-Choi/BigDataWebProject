@@ -5,6 +5,12 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face{
+  font-family: 'nanum';
+  src: url("../fonts/NanumBarunGothic.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
 /* =======================================================
 *
 * 	Template Style 
