@@ -32,6 +32,25 @@ public class CommentDAO {
 		}
 		return false;
 	}
+	
+	public static boolean createCommentOwner(String writing_no, String nickname, String contents) throws SQLException{		
+		Connection con = null;	
+		PreparedStatement pstmt = null;
+		try {
+			con = DBUtil.getConnection();
+			pstmt = con.prepareStatement(sql.getString("createCommentOwner"));
+			pstmt.setString(1, writing_no);
+			pstmt.setString(2, nickname);
+			pstmt.setString(3, contents);
+			int count = pstmt.executeUpdate();
+			if(count != 0) {
+				return true;
+			}
+		} finally {
+			DBUtil.close(con, pstmt);
+		}
+		return false;
+	}
 
 	public static ArrayList<CommentDTO> selectAllCommentMkt(String writing_no) throws SQLException{		
 		Connection con = null;

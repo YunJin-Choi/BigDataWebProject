@@ -143,4 +143,29 @@ function owninsert() {
 		}
 	});
 }
+
+function commendOwnerInsert() {
+	var commendContentsValue = $("#commendContents").val();
+	var commentMemberValue = document.getElementById("commendMember").value;
+	var writeNoValue = $("#writeNo").val();
+	if(commendContents == ""){
+		alert("댓글을 입력해주세요.");
+	}else{
+		$.ajax({
+			url: "Controller",
+			data : {
+				command : "comment",
+				comment : "createCommentOwner",
+				writeNo : writeNoValue,
+				commentMember : commentMemberValue,
+				commendContents : commendContentsValue
+			},
+			method: "post",
+			dataType: "html",
+			success: function(result){
+				$("#boardView").html(result);
+			}
+		});
+	}
+}
 	

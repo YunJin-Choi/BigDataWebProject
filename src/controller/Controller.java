@@ -549,6 +549,8 @@ public class Controller extends HttpServlet {
 		if(command != null) {
 			if(command.equals("createCommentMkt")) {
 				createCommentMkt(request, response);
+			}else if(command.equals("createCommentOwner")) {
+				createCommentOwner(request, response);
 			}
 		}
 	}
@@ -561,6 +563,19 @@ public class Controller extends HttpServlet {
 			CommentDAO.createCommentMkt(writeNo, commentMember, commendContents);
 			CommunityDAO.updateCommentNum("MktBoard", writeNo);
 			selectAllCommunityMkt(request, response);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	private void createCommentOwner(HttpServletRequest request, HttpServletResponse response) {
+		try {
+			String commendContents = request.getParameter("commendContents");
+			String commentMember = request.getParameter("commentMember");
+			String writeNo = request.getParameter("writeNo");
+			CommentDAO.createCommentOwner(writeNo, commentMember, commendContents);
+			CommunityDAO.updateCommentNum("OwnerBoard", writeNo);
+			selectAllCommunityOwner(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
