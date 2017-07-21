@@ -61,7 +61,7 @@ function showDivs(n) {
 	<script src="js/jquery.stellar.min.js"></script>
 	<!-- Owl Carousel -->
 	<script src="js/owl.carousel.min.js"></script>
-	<!-- Marketer board JS -->
+	<!-- board JS -->
 	<script src="js/board.js" charset="utf-8"></script>
 	<!-- Owner board JS -->
 	<script src="js/ownerboard.js" charset="utf-8"></script>
@@ -106,36 +106,36 @@ function showDivs(n) {
 				<div class="navbar-header">
 					<!-- Mobile Toggle Menu Button -->
 					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
-					<a class="navbar-brand" href="index.jsp"><span>M</span>arketing Community</a> 
+					<a class="navbar-brand" href="index.jsp"><span><font face="verdana" >M</font></span><font face="verdana" >arketing Community</font></a> 
 				</div>
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
-						<li class="active"><a href="#" id="homeMenu" onclick="homeMenu()"><span>Home</span></a></li>
+						<li class="active"><a href="#" id="homeMenu" onclick="homeMenu()"><span><font face="verdana" >Home</font></span></a></li>
 						<c:choose>
 							<c:when test="${empty Member}"></c:when>
 							<c:when test="${Member.job eq 'marketer'}">
-								<li><a href="#" id="communityMktMenu" onclick="boardMenu('communityMkt')"><span>Marketing Board</span></a></li>
+								<li><a href="#" id="communityMktMenu" onclick="boardMenu('communityMkt')"><span><font face="verdana" >Marketing Board</font></span></a></li>
 								<li><a href="#" id="QnAMenu" onclick="boardMenu('QnA')"><span>QnA Board</span></a></li>
 							</c:when>
 							<c:otherwise>
-								<li><a href="#" id="communityOwnerMenu" onclick="boardMenu('communityOwner')"><span>Owner Board</span></a></li>
-								<li><a href="#" id="QnAMenu" onclick="boardMenu('QnA')"><span>QnA Board</span></a></li>
-								<li><a href="#" id="recommendMenu" onclick="recommendMenu()"><span>Recommend</span></a></li>
+								<li><a href="#" id="communityOwnerMenu" onclick="boardMenu('communityOwner')"><span><font face="verdana" >Owner Board</font></span></a></li>
+								<li><a href="#" id="QnAMenu" onclick="boardMenu('QnA')"><span><font face="verdana" >QnA Board</font></span></a></li>
+								<li><a href="#" id="recommendMenu" onclick="recommendMenu()"><span><font face="verdana" >Recommend</font></span></a></li>
 							</c:otherwise>
 						</c:choose>
 						<!-- <li><a href="#" id="hotIssueMenu" onclick="hotIssueMenu()"><span>Hot Issue</span></a></li> -->
-						<li class="dropdown"><a href="#" id="trendMenu" class="dropbtn"><span>Trend</span></a>
+						<li class="dropdown"><a href="#" id="trendMenu" class="dropbtn"><span><font face="verdana" >Trend</font></span></a>
 					      	<div class="dropdown-content">
-					        	<a href="#" onclick="trendMenu('korea')">Korea</a>
-					        	<a href="#" onclick="trendMenu('us')">US</a>
-					        	<a href="#" onclick="trendMenu('china')">China</a>
-					        	<a href="#" onclick="trendMenu('japan')">Japan</a>
+					        	<a href="#" onclick="trendMenu('korea')"><font face="verdana" >Korea</font></a>
+					        	<a href="#" onclick="trendMenu('us')"><font face="verdana" >US</font></a>
+					        	<a href="#" onclick="trendMenu('china')"><font face="verdana" >China</font></a>
+					        	<a href="#" onclick="trendMenu('japan')"><font face="verdana" >Japan</font></a>
 					      	</div>
 					    </li>
 						<c:choose>
 							<c:when test="${empty Member}">
 								<li class="call-to-action"><a href="#" onclick="document.getElementById('id01').style.display='block'" 
-								style="width:auto;"><span>Login</span></a></li>
+								style="width:auto;"><span><font face="verdana" >Login</font></span></a></li>
 							</c:when>
 							<c:otherwise>
 								<li><a href="#" onclick="logout()"><span>${Member.nickName}</span></a></li>
@@ -187,111 +187,71 @@ function showDivs(n) {
 		<div class="w3-row w3-container">
 			<div class="w3-center w3-padding-64">
 				<span
-					class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">유용한페이지</span>
+					class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Useful Page</span>
 			</div>
 			<center><iframe src="http://www.i-boss.co.kr/ab-74576" display:block margin:0 auto height="500"
 				width="900" style="border: 5px solid grey;"> </iframe></center>
 		</div>
 		<!-- 유용한 페이지 End -->
-			<!-- 만든 사람들 시작 -->
-		<section id="fh5co-team" data-section="team">
-		<div class="fh5co-team">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12 section-heading text-center">
-						<h2 class="to-animate">우리팀을 소개합니다</h2>
-						<div class="row">
-							<div class="col-md-8 col-md-offset-2 subtext">
-								<h3 class="to-animate"> 이 멋진걸 만든 저희 팀입니다!! </h3>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-4">
-						<div class="team-box text-center to-animate-2">
-							<div class="user"><img class="img-reponsive" src="images/person4.jpg" alt="Roger Garfield"></div>
-								<h3>최윤진</h3>
-								<span class="position">Full Stack Developer</span>
-								<p> 우리팀의 구세주 </p>
-								<ul class="social-media">
-									<li><a href="https://www.facebook.com/" target="blank" class="facebook"><i class="icon-facebook"></i></a></li>
-									<li><a href="https://www.github.com/" target="blank" class="github"><i class="icon-github-alt"></i></a></li>
-								</ul>
-							</div>
-						</div>
-						
-						<div class="row">
-						<div class="col-md-4">
-							<div class="team-box text-center to-animate-2">
-								<div class="user"><img class="img-reponsive" src="images/person4.jpg" alt="Roger Garfield"></div>
-								<h3>이은용</h3>
-								<span class="position">Full Stack Developer</span>
-								<p> 웃는모습으로 다 해결해버리겠다 </p>
-								<ul class="social-media">
-									<li><a href="https://www.facebook.com/" target="blank" class="facebook"><i class="icon-facebook"></i></a></li>
-									<li><a href="https://www.github.com/" target="blank" class="github"><i class="icon-github-alt"></i></a></li>
-								</ul>
-							</div>
-						</div>
-	
-						<div class="col-md-4">
-							<div class="team-box text-center to-animate-2">
-								<div class="user"><img class="img-reponsive" src="images/person2.jpg" alt="Roger Garfield"></div>
-								<h3>전현준</h3>
-								<span class="position">Project Manager</span>
-								<p> 입은 내가 책임진다 </p>
-								<ul class="social-media">
-									<li><a href="https://www.facebook.com/" target="blank" class="facebook"><i class="icon-facebook"></i></a></li>
-									<li><a href="https://www.github.com/" target="blank" class="github"><i class="icon-github-alt"></i></a></li>
-								</ul>
-							</div>
-						</div>
-	
-						<div class="col-md-4">
-							<div class="team-box text-center to-animate-2">
-								<div class="user"><img class="img-reponsive" src="images/person3.jpg" alt="Roger Garfield"></div>
-								<h3>김미소</h3>
-								<span class="position">Full Stack Developer</span>
-								<p> 검색왕미소 </p>
-								<ul class="social-media">
-									<li><a href="https://www.facebook.com/" target="blank" class="facebook"><i class="icon-facebook"></i></a></li>
-									<li><a href="https://www.github.com/" target="blank" class="github"><i class="icon-github-alt"></i></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		</section>
-		<!-- 만든 사람들 끝 -->
 		
-		<!-- sign up free start-->
-		<div class="getting-started getting-started-2">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-6 to-animate">
-						<h3>커뮤니티 시작하기</h3>
-						<p> 각종 마케팅 정보 및 마케터 교류, 그리고 자영업자분들의 마케팅 방법 추천을 원하시면 로그인하시고 둘러보세요. </p>
-					</div>
-					<div class="col-md-6 to-animate-2">
-						<div class="call-to-action text-right">
-							<a href="#" onclick="document.getElementById('id01').style.display='block'" 
-							style="width:auto;" class="sign-up">회 원 가 입</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- sign up free end-->
+		 <!-- About Section -->
+  <div class="w3-container w3-padding-32" id="about">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16"><font face="verdana" >About</font></h3>
+    
+  </div>
+
+  <div class="w3-row-padding w3-grayscale" style="margin-left:1%">
+  
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <img src="images/p3.JPG" alt="Yunjin"  style="width:300px; height: 200px">
+      <br><br>
+      <h3><font face="verdana" >Choi Yunjin</font></h3><br>
+      <p class="w3-opacity"><font face="verdana" >Computer Engineering</font></p>
+      <p style="width:300px; height: 80px" ><font face="verdana" >I am a team leader of our project and I have professional skill in this field. </font></p>
+      <p><a href="https://accounts.google.com"><button class="w3-button w3-light-grey w3-block" style="width:300px"><font face="verdana" >Contact</font></button></a></p>
+    </div>
+    
+    
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <img src="images/p4.JPG" alt="Eunyong"  style="width:300px; height: 200px">
+      <br><br>
+      <h3><font face="verdana" >Lee Eunyong</font></h3><br>
+      <p class="w3-opacity"><font face="verdana" >Industrial engineering</font></p>
+      <p style="width:300px; height: 80px" ><font face="verdana" >I have higher concentration when doing our project and I always smile:)</font></p>
+      <p><a href="https://accounts.google.com"><button class="w3-button w3-light-grey w3-block" style="width:300px"><font face="verdana" >Contact</font></button></a></p>
+    </div>
+    
+    
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <img src="images/p2.JPG" alt="Miso" style="width:300px; height: 200px">
+      <br><br>
+      <h3><font face="verdana" >Kim Miso</font></h3><br>
+      <p class="w3-opacity"><font face="verdana" >Statistics</font></p>
+      <p  style="height: 80px"><font face="verdana" >I am only female in our team and I am good at designing web-site and have cooperation mind.</font></p>
+      <p><a href="https://accounts.google.com"><button class="w3-button w3-light-grey w3-block" style="width:300px"><font face="verdana" >Contact</font></button></a></p>
+    </div>
+    
+    
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <img src="images/p1.JPG" alt="Jeon" style="width:300px; height: 200px">
+      <br><br>
+      <h3><font face="verdana" >Jeon hyunjun</font></h3><br>
+      <p class="w3-opacity"><font face="verdana" >Environmental engineering</font></p>
+      <p  style="height: 80px"><font face="verdana" >Although My major is environmental engineering, I am interested in IT and have various IT knowledge. </font></p>
+      <p><a href="https://accounts.google.com"><button class="w3-button w3-light-grey w3-block" style="width:300px"><font face="verdana" >Contact</font></button></a></p>
+    </div>
+  </div>
+  
+  <!-- about 끝 -->
+		
+	
 		
 		<!-- Footer start -->
 		<div id="fh5co-footer" role="contentinfo">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-4 to-animate">
-						<h3 class="section-title">About Us</h3><br>
+						<h3 class="section-title"><font face="verdana" >About Us</font></h3><br>
 						<p> 빅데이터청년인재 1기!!! 3day WebProject </p>
 						<p class="copy-right">&copy; 2017 Kdata <br> All Rights Reserved my Team <br>
 							Designed by <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a>
